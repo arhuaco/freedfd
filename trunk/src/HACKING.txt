@@ -1,0 +1,24 @@
+* No usemos la Standar Template Library
+
+  Es muy buena idea el estándar, pero cambia mucho. Tratemos de escribir
+  código muy simple que no dependa de librerías que cambian con el
+  tiempo.
+
+* No use TABs dentro del código. Esta es una guerra religiosa, y la gente
+  nunca se podrá de acuerdo al respecto. Nelson es un tonto que prefiere
+  usar espacios, y odia los TABs.
+
+* Trate de minimizar el uso de comentarios. Si siente la imperiosa necesidad
+  de escribirlos, ¿No será porque su código es difícil de leer?
+
+* Los comentarios estarán en español. Los nombres de las variables pueden
+  estar en Inglés.
+
+* Use nombres de archivos con guiones, y no con subrayados.
+
+* No usaremos objetos para el manejo de cadenas. La idea es usar new y delete
+  para el manejo de estas. Hay que tener cuidado de no usar strdup ni otras
+  funciones que usen malloc. Si necesita usar una, defina una equivalente en
+  dfd-wrappers.cpp.
+
+Se reciben sugerencias y comentarios en los siguientes puntos.
