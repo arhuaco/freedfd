@@ -1,0 +1,8 @@
+NAME 'Dfd'
+
+DESCRIPTION 'FReeDFD Application - Copyright © 1997-2006. All Rights Reserved.'
+EXETYPE     WINDOWS
+CODE        PRELOAD MOVEABLE DISCARDABLE
+DATA        PRELOAD MOVEABLE
+
+

@@ -1,0 +1,61 @@
+ Dfd (c)
+1
+1
+2
+0
+1
+60
+Obtiene e imprime la sumatoria de un valor leído de teclado.
+5
+1
+1
+N
+12
+1
+9
+Sumatoria
+1
+5
+ X, N
+4
+1
+1
+X
+1
+2
+1
+9
+Sumatoria
+1
+9
+ X,Nivel 
+1
+72
+Rutina recursiva que obtiene la sumatoria de 'Nivel' y la retorna en 'X'
+7
+0
+1
+7
+Nivel>0
+6
+1
+1
+X
+1
+0
+13
+12
+1
+9
+Sumatoria
+1
+15
+ Temp, Nivel-1 
+6
+1
+1
+X
+10
+Temp+Nivel
+13
+3

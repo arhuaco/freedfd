@@ -1,0 +1,220 @@
+ Dfd (c)
+1
+1
+5
+0
+1
+124
+Este algoritmo realiza operaciones sobre una pila de cadenas de caracteres; Para salir ingrese como dato la cadena: 'SALIR'.
+6
+2
+4
+Tope
+1
+0
+4
+Dato
+23
+'Cadenas de caracteres'
+4
+1
+44
+'Ingrese el tamaño de la pila a trabajar...'
+5
+1
+6
+Tamaño
+9
+1
+15
+Dato != 'SALIR'
+12
+1
+6
+Opcion
+1
+8
+ Apilar 
+7
+0
+1
+6
+Apilar
+12
+1
+9
+Desapilar
+1
+18
+ Pila, Tope, Dato 
+13
+12
+1
+6
+Apilar
+1
+25
+ Pila, Tamaño,Tope, Dato 
+13
+12
+1
+11
+MostrarPila
+1
+11
+ Pila, Tope
+11
+1
+2
+1
+6
+Opcion
+1
+8
+ Apilar 
+1
+132
+Lee la opcion a seguir:                              .V.= Apilar,                                                  .F. = Desapilar. 
+4
+1
+103
+'Si desea encolar ingrese .V. ,                                        Si desea desencolar ingrese .F.'
+5
+1
+6
+Apilar
+3
+2
+1
+6
+Apilar
+1
+19
+Pila, n, Tope, Dato
+1
+116
+Apila una cadena de caracters verificando si la pila esta llena o si se desea seguir con la ejecución del algoritmo.
+7
+0
+1
+8
+Tope = n
+4
+1
+25
+'Lea el Dato a apilar...'
+5
+1
+4
+Dato
+7
+0
+1
+16
+ Dato != 'SALIR'
+13
+6
+2
+4
+Tope
+6
+Tope+1
+10
+Pila(Tope)
+4
+Dato
+4
+1
+32
+'Apilando la cadena ', Dato, '.'
+13
+13
+4
+1
+86
+'No se puede apilar el elmento...                               ¡la pila esta llena!' 
+13
+3
+2
+1
+9
+Desapilar
+1
+16
+Pila, Tope, Dato
+1
+132
+Desapila una cadena de caracteres de la pila, verificando si la pila esta vacia y si se desea seguir con la ejecución del algoritmo.
+7
+0
+1
+8
+Tope = 0
+7
+0
+1
+15
+Dato != 'SALIR'
+13
+6
+2
+4
+Dato
+10
+Pila(Tope)
+4
+Tope
+6
+Tope-1
+4
+1
+35
+'Desapilando la cadena ', Dato, '.'
+13
+13
+4
+1
+26
+'¡La pila esta vacia...!' 
+13
+3
+2
+1
+11
+MostrarPila
+1
+7
+Pila, n
+1
+62
+Muestra el contenido actual de la pila y todos sus elementos. 
+7
+0
+1
+4
+N= 0
+4
+1
+35
+'El estado actual de la pila es...'
+8
+1
+1
+i
+1
+1
+1
+1
+1
+n
+1
+1
+1
+4
+1
+36
+'Pila( ', i, ' ) = ', Pila( i ), '.'
+10
+13
+13
+3
