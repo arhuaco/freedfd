@@ -1,4 +1,4 @@
-* No usemos la Standar Template Library
+* No usemos la Standard Template Library
 
   Es muy buena idea el estándar, pero cambia mucho. Tratemos de escribir
   código muy simple que no dependa de librerías que cambian con el
