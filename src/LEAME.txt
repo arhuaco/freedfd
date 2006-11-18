@@ -1,0 +1,9 @@
+
+http://freedfd.freaks-unidos.net
+
+Contenido de los fuentes:
+
+TODO:
+  Lista de cosas por hacer.
+HACKING:
+  Lea si está interesado en contribuir al proyecto.

@@ -1,0 +1,11 @@
+TODO:
+
+* Usar autoconf
+* Tener el intérprete y el evaluador de expresiones en un directorio aparte.
+* Borrar todos los TABs.
+* Necesitamos un ícono. Diseñarlo.
+* No estamos verificando el retorno de "new". ¿Esto está bien?
+
+TODO (tal vez):
+
+* Usar doxygen.
