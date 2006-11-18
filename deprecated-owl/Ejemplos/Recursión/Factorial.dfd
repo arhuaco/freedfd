@@ -1,0 +1,61 @@
+ Dfd (c)
+1
+1
+2
+0
+1
+61
+Obtiene e imprime el factorial de un número leído de teclado.
+5
+1
+1
+N
+12
+1
+4
+Fact
+1
+5
+ X, N
+4
+1
+1
+X
+1
+2
+1
+4
+Fact
+1
+9
+ X,Nivel 
+1
+70
+Rutina recursiva que obtiene el factorial de 'Nivel' y lo retorna en X
+7
+0
+1
+7
+Nivel>0
+6
+1
+1
+X
+1
+1
+13
+12
+1
+4
+Fact
+1
+15
+ Temp, Nivel-1 
+6
+1
+1
+X
+10
+Temp*Nivel
+13
+3

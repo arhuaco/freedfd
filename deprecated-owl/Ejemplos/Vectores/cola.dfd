@@ -1,0 +1,234 @@
+ Dfd (c)
+1
+1
+5
+0
+1
+104
+Este algoritmo permite realizar operaciones en una cola cuyos elementos deben ser cadenas de caracteres.
+6
+3
+7
+Primero
+1
+0
+6
+Ultimo
+1
+0
+4
+Dato
+23
+'Cadenas de caracteres'
+4
+1
+44
+'Ingrese el tamaño de la cola a trabajar...'
+5
+1
+6
+Tamaño
+9
+1
+15
+Dato != 'SALIR'
+12
+1
+6
+Opcion
+1
+10
+ Encolar  
+7
+0
+1
+7
+Encolar
+12
+1
+10
+Desencolar
+1
+28
+ Cola, Primero,Ultimo, Dato 
+13
+12
+1
+7
+Encolar
+1
+27
+ Cola, Tamaño,Ultimo, Dato 
+13
+12
+1
+11
+MostrarCola
+1
+22
+ Cola, Primero, Ultimo
+11
+1
+2
+1
+6
+Opcion
+1
+9
+ Encolar 
+1
+130
+Lee la opción a seguir:                                .V.= Encolar,                                              .F.= Desencolar 
+4
+1
+103
+'Si desea encolar ingrese .V. ,                                        Si desea desencolar ingrese .F.'
+5
+1
+7
+Encolar
+3
+2
+1
+7
+Encolar
+1
+21
+Cola, n, Ultimo, Dato
+1
+111
+Encola una cadena de caracteres verificando  si   la cola   esta  llena o   si  se  desea  salir del algoritmo.
+7
+0
+1
+10
+Ultimo = n
+4
+1
+26
+'Lea el Dato a encolar...'
+5
+1
+4
+Dato
+7
+0
+1
+16
+ Dato != 'SALIR'
+13
+6
+2
+6
+Ultimo
+8
+Ultimo+1
+12
+Cola(Ultimo)
+4
+Dato
+4
+1
+33
+'Encolando la cadena ', Dato, '.'
+13
+13
+4
+1
+92
+'No se puede encolar el elmento...                                    ¡la cola esta llena!' 
+13
+3
+2
+1
+10
+Desencolar
+1
+27
+Cola, Primero, Ultimo, Dato
+1
+115
+Desencola una cadena de caracteres verificando  si   la cola   esta  vacia  o   si  se  desea  salir del algoritmo.
+7
+0
+1
+16
+Primero = Ultimo
+7
+0
+1
+15
+Dato != 'SALIR'
+13
+6
+2
+7
+Primero
+9
+Primero+1
+4
+Dato
+15
+Cola( Primero )
+4
+1
+37
+'Desencolando la cadena: ', Dato, '.'
+13
+13
+4
+1
+26
+'¡La cola esta vacia...!' 
+6
+2
+7
+Primero
+1
+0
+6
+Ultimo
+1
+0
+13
+3
+2
+1
+11
+MostrarCola
+1
+22
+Cola, Primero, Ultimo 
+1
+58
+Muestra el estado actual de la cola y todos sus elementos.
+7
+0
+1
+16
+Primero = Ultimo
+4
+1
+35
+'El estado actual de la cola es...'
+8
+1
+1
+i
+1
+9
+Primero+1
+1
+6
+Ultimo
+1
+1
+1
+4
+1
+36
+'Cola( ', i, ' ) = ', Cola( i ), '.'
+10
+13
+13
+3

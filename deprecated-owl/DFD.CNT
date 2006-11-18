@@ -1,0 +1,155 @@
+:Base Dfd.hlp>W
+:Title Dfd
+1 Conceptos básicos que usted necesitará para trabajar con Dfd
+2 ¿Qué es Dfd?=1.1>w
+2 Algoritmo=TS5>w
+2 Diagrama de Flujo de Datos=TS6>w
+2 Tipos de datos=1.3>w
+2 Campos de datos=1.4>w
+2 Arreglos=1.7>w
+2 Interfaz de usuario=1.2>w
+2 Acción actual=TS1>w
+2 Subprograma actual=TS12>w
+2 Errores de sintaxis=TS16>w
+1 Sistema de menús
+2 Menú Archivo
+3 Nuevo=2.1.1>w
+3 Abrir=2.1.2>w
+3 Guardar=2.1.3>w
+3 Guardar como=2.1.4>w
+3 Imprimir=2.1.6>w
+3 Salir=2.1.7>w
+2 Menú Edición
+3 Cortar=2.2.1>w
+3 Copiar=2.2.2>w
+3 Pegar=2.2.3>w
+3 Eliminar=2.2.4>w
+3 Eliminar subprograma=2.2.5>w
+3 Insertar objeto=2.2.6>w
+3 Editar objeto=2.2.7>w
+2 Menú Objeto
+3 Cursor=2.3.1>w
+3 Asignación=2.3.2>w
+3 Ciclo mientras=2.3.3>w
+3 Ciclo para=2.3.4>w
+3 Decisión=2.3.5>w
+3 Lectura=2.3.6>w
+3 Llamada=2.3.7>w
+3 Salida=2.3.8>w
+3 Nuevo subprograma=2.3.9>w
+2 Menú Ver
+3 Zoom=2.4.1>w
+3 Anterior subprograma=2.4.2>w
+3 Siguiente subprograma=2.4.3>w
+3 Depurador=2.4.4>w
+2 Menú Ejecución
+3 Ejecutar=2.5.1>w
+3 Pausar=2.5.2>w
+3 Detener=2.5.3>w
+2 Menú Depuración
+3 Paso simple=2.6.1>w
+3 Ejecutar hasta=2.6.2>w
+3 Detener=2.6.3>w
+3 Evaluar=2.6.4>w
+2 Menú Opciones
+3 Ángulos=2.7>w
+1 Objetos en Dfd
+2 Inicio=3.1>w
+2 Asignación=3.2>w
+2 Ciclo Mientras=3.3>w
+2 Ciclo Para=3.4>w
+2 Decisión=3.5>w
+2 Lectura=3.6>w
+2 Salida=3.7>w
+2 Llamada=3.8>w
+2 Subprograma=3.9>w
+2 Fin=3.10>w
+2 Cierre Ciclo=3.11>w
+2 Cierre Decisión=3.12>w
+2 Regrese=3.13>w
+1 Referencia de funciones y operadores
+2 Operadores de asociatividad=4.1
+2 Operadores de acceso a arreglos=4.2
+2 Operadores de cadena de caracteres=4.4
+2 Operadores matemáticos
+3 Más unitario=4.3.1.1>w
+3 Menos unitario=4.3.2.1>w
+3 Suma=4.3.1>w
+3 Resta=4.3.2>w
+3 Exponenciación=4.3.3>w
+3 Multiplicación=4.3.4>w
+3 División=4.3.5>w
+3 Módulo=4.3.6>w
+2 Operadores lógicos relacionales
+3 Mayor que=4.5.1>w
+3 Menor que=4.5.2>w
+3 Menor o igual a=4.5.3>w
+3 Mayor o igual a=4.5.4>w
+3 Igual a=4.5.5>w
+3 Diferente de=4.5.6>w
+2 Operadores lógicos booleanos
+3 AND, Y lógico=4.6.1>w
+3 NAND, Negación de AND=4.6.2>w
+3 OR, O lógico=4.6.3>w
+3 NOR, Negación de OR=4.6.4>w
+3 NOT, Negación lógica=4.6.5>w
+3 XOR, O lógico exclusivo=4.6.6>w
+3 XNOR, Negación  exclusiva de OR=4.6.7>w
+2 Funciones matemáticas
+3 ABS, Valor absouto=4.7.1>w
+3 ACOS, Arcocoseno=4.7.2>w
+3 ASIN, Arcoseno=4.7.3>w
+3 ATAN, Arcotangente=4.7.4>w
+3 COS, Coseno=4.7.5>w
+3 COSH, Coseno hiperbólico=4.7.6>w
+3 EXP, Exponencial=4.7.7>w
+3 LN, Logaritmo natural=4.7.8>w
+3 LOG, Logaritmo en base 10=4.7.9>w
+3 RANDOM, Número aleatorio=4.7.10>w
+3 ROUND, Convierte al entero más cercano=4.7.11>w
+3 SIN, Seno=4.7.12>w
+3 SINH, Seno hiperbólico=4.7.13>w
+3 SQRT, Raíz cuadrada=4.7.14>w
+3 TAN, Tangente=4.7.15>w
+3 TANH, Tangente hiperbólica=4.7.16>w
+3 TRUNC, Extrae la parte entera=4.7.17>w
+2 Funciones de cadena de caracteres
+3 LEN, largo de cadena=4.8.1>w
+3 SUBSTRING, Subcadena=4.8.2>w
+1 Mensajes de error
+2 Abierto paréntesis no cerrado=5.1>w
+2 Caracter ilegal=5.2>w
+2 Cerrado paréntresis no abierto=5.3>w
+2 Constante numérica ilegal=5.4>w
+2 Demasiados argumentos=5.5>w
+2 Desbordamiento en la operación=5.6>w
+2 Desbordamiento negativo en la operación=5.7>w
+2 Dimensión no válida=5.8>w
+2 División entre cero=5.9>w
+2 El identificador no es un arreglo=5.10>w
+2 El incremento debe ser una constante Real=5.11>w
+2 El valor del contador debe ser de tipo Real=5.14>w
+2 El valor del límite para el contador debe ser de tipo Real=5.15>w
+2 Ilegal nombre para un subprograma=5.17>w
+2 La asignación de valores solo se realiza en campos variables=5.19>w
+2 La condición debe ser de tipo Lógico=5.20>w
+2 La función requiere argumentos=5.21>w
+2 Llamado de funcíon no válido=5.22>w
+2 Los índices deben ser enteros no negativos menores o iguales a 65535=5.23>w
+2 Los parámetros deben ser variables=5.24>w
+2 Los tipos no coinciden=5.25>w
+2 Muy pocos argumentos=5.26>w
+2 No se encontró el subprograma=5.29>w
+2 Operador ilegal=5.31>w
+2 Operador lógico ilegal=5.32>w
+2 Parámetro repetido=5.33>w
+2 Se esperó ' para delimitar la cadena=5.34>w
+2 Se esperó un operador=5.35>w
+2 Se esperó un operando=5.36>w
+2 Se esperó una constante lógica=5.37>w
+2 Se necesita un valor final para el contador=5.38>w
+2 Se necesita un valor inicial para el contador=5.39>w
+2 Subprograma repetido=5.40>w
+2 Uso ilegal de la coma ó falta expresión=5.41>w
+2 Variable no existe=5.43>w
+2 Variable no inicializada=5.44>w

@@ -1,0 +1,60 @@
+ Dfd (c)
+1
+1
+2
+0
+1
+29
+Clásico elemplo de recursión.
+4
+1
+86
+'¿Con cuantos discos desea usted ver la solución del problema de las torres de Hanoi?'
+5
+1
+7
+Cuántos
+12
+1
+10
+MoverTorre
+1
+13
+1,3,2,Cuántos
+1
+2
+1
+10
+MoverTorre
+1
+12
+ O, D, A, n 
+1
+143
+Esta función implementa la recursión para mover un grupo de n discos desde el poste Origen hasta El poste destino con ayuda del poste Auxiliar 
+7
+0
+1
+5
+n > 0
+13
+12
+1
+10
+MoverTorre
+1
+14
+ O, A, D, n-1 
+4
+1
+34
+'Mover disco de ', O, ' hasta ', D
+12
+1
+10
+MoverTorre
+1
+15
+ A, D , O, n-1 
+13
+3
