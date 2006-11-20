@@ -1,7 +1,7 @@
 # Este es un makefile temporal que luego reemplazaremos con Autoconf
 
 
-all: campos.o errores.o operador.o
+all: campos.o errores.o operador.o tokeniza.o
 	echo Done
 
 campos.o: campos.cpp errores.o 
@@ -12,6 +12,9 @@ errores.o: errores.cpp dfd-wrappers.o
 
 operador.o : operador.cpp operador.h
 	g++ -c operador.cpp -I.
+
+tokeniza.o:
+	g++ -c tokeniza.cpp -I.
 
 dfd-wrappers.o:
 	g++ -c dfd-wrappers.cpp -I.
