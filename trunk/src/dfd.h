@@ -11,7 +11,9 @@
   enum TipoDato  { REAL, STRING, LOGICO };
 
   enum TipoToken { OPERADOR, OPERANDO };
+
   enum AlcanceOperador { UNITARIO, BINARIO, UNITARIOBINARIO, ARRAY };
+
   enum TipoAlmacenamiento { CONSTANTE, VARIABLE };
 
   enum TipoError{

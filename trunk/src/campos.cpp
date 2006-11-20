@@ -18,14 +18,15 @@
  BuzonDeErrores Buzon;
 
 
-   Token::~Token()
-   {
-     --ContadorToken;
+ Token::~Token()
+ {
+   --ContadorToken;
 
-     // TODO: ¿Qué es 'string'? ¡Eso es confuso! ¡Arreglar!
+   // TODO: ¿Qué es 'STRING'? ¡Eso es confuso! ¡Arreglar!
+   // TODO: Ya no me parece tan confuso. Tal vez aclarar que es un tipo de dato.
      
-     if (TipoD == STRING && DatoStr) delete[] DatoStr;
-   }
+   if (TipoD == STRING && DatoStr) delete[] DatoStr;
+ }
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
