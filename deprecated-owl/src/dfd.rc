@@ -1843,7 +1843,6 @@ FILETYPE VFT_APP
  {
   BLOCK "040A04B0"
   {
-	//VALUE "CompanyName", "Microsoft Corporation\000"
 	VALUE "Autores", "Fabián Cárdenas Nelson Castillo Eduardo Daza\000"
 	VALUE "FileDescription", "Dfd\000"
 	VALUE "FileVersion", "1.0\000"
