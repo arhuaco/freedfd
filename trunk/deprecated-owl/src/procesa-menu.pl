@@ -40,3 +40,22 @@ while (<RC>)
   }
   print $orig;
 }
+
+# To generate the intermediate file:
+# my $f = "";
+#
+#
+# while(<>)
+# {
+# # MENUITEM "&Acercar\t+        ", CM_VERZOOMMAS
+# if (/\s*(CM_\w+),\s*(\".*?\")/)
+# {
+#   $f .=  "  #define HELP_$1 $2\n";
+#   print "$1, HELP_$1\n"
+# }
+# else
+# {
+#   die "error";
+# }
+# }
+# print "\n\n" . $f;
