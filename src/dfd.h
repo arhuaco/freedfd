@@ -12,8 +12,6 @@ enum TipoDato { REAL, STRING, LOGICO };
 
 enum TipoToken { OPERADOR, OPERANDO };
 
-enum AlcanceOperador { UNITARIO, BINARIO, UNITARIOBINARIO, ARRAY };
-
 enum TipoAlmacenamiento { CONSTANTE, VARIABLE };
 
 enum TipoError {
@@ -39,6 +37,11 @@ enum TipoError {
     SUBPROGRAMA_REPETIDO, MUCHOS_ARGUMENTOS,
     POCOS_ARGUMENTOS, PARAMETRO_NO_VARIABLE
 };
+
+/* usamos un nombre de clase diferente y singleton para no tener instancias
+ * globales ? */
+#include <operador.h>
+Operadores Operadores;
 
 
 #endif
