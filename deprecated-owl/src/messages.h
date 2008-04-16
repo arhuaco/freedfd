@@ -169,7 +169,6 @@
   /* __SPANISH__ END */
   #elif 0 /* Português by Charles Guimarães Cavalcante - www.charles.art.br - e-mail@charles.art.br */
   /* __PORTUGUESE__ BEGIN */
-  #warning Compilando em Português
   #define TXT_DESBORDAMIENTO "Transbordamento na operação"
   #define TXT_DESBORDAMIENTO_NEGATIVO "Transbordamento negativo na operação"
   #define TXT_LOS_TIPOS_NO_COINCIDEN "Os tipos se coincidem"
