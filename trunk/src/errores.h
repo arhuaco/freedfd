@@ -24,7 +24,7 @@ public:
 
   char *GetError ();
 
-  void SetIdentificadorAsociado (char *Id);
+  void SetIdentificadorAsociado (const char *Id);
 
   void Mostrar ();
 
