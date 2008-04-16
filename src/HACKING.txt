@@ -18,4 +18,8 @@
   funciones que usen malloc. Si necesita usar una, defina una equivalente en
   dfd-wrappers.cpp.
 
+* Encontratá código como "Imprime("No Entiendoooo 124332");
+  La idea es usar assert.h para que el programa se muera si
+  ocurre una excepción.
+
 Se reciben sugerencias y comentarios en los siguientes puntos.
