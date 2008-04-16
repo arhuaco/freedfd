@@ -1,19 +1,4 @@
 /*
- * When translating menus, please try to leave the strings with the same size when
- * they have trailing spaces. For instance:
- *
- * "&Acercar\t+        "
- *
- * Should be translated as:
- *
- * "&Closer\t+         "
- *
- * and not
- *
- * "&Closer\t+"
- *
- * ----------------------
- *
  * You should never use a " in translations. Even if it is scaped.
  *
  * "" => right
@@ -72,6 +57,8 @@
   #define TXT_MUCHOS_ARGUMENTOS ": Demasiados argumentos"
   #define TXT_POCOS_ARGUMENTOS ": Muy pocos argumentos"
   #define TXT_ERROR_INDEFINIDO ": Error no definido"
+
+  /* menú */
 
   #define TXT_MENU_FILE "&Archivo"
   #define TXT_MENU_EDIT "&Edicion"
@@ -237,6 +224,8 @@
   #define TXT_MUCHOS_ARGUMENTOS ": Muitos argumentos"
   #define TXT_POCOS_ARGUMENTOS ": Faltam argumentos"
   #define TXT_ERROR_INDEFINIDO ": Erro não definido"
+
+  /* menú */
 
   #define TXT_MENU_FILE "&Archivo"
   #define TXT_MENU_EDIT "&Edicion"
