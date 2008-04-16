@@ -2239,7 +2239,7 @@
 	DibujarFlecha( cx, cy-Estado.DistanciaPuntos-1 );
 	DibujarLineaEnlace(ActualX, ActualY);
 	TSize Tamanyo= Graficador->GetTextExtent(TXT_RUNNING_OBJECT_BLOCK_END, strlen(TXT_RUNNING_OBJECT_BLOCK_END));
-	Graficador->TextOut(cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, strlen(TXT_RUNNING_OBJECT_BLOCK_END));
+	Graficador->TextOut(cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_BLOCK_END);
 
  }
 
