@@ -27,25 +27,83 @@
 #include <stdio.h>
 #include <string.h>
 
+struct Mensaje
+{
+  char *Info;
+  TipoError Tipo;
+  Mensaje *Sig;
+};
+
+class SingletonError
+{
+private:
+
+  // Para que cada instancia de la clase sea igual. Antes era un objeto
+  // global, definido una vez.
+
+  static bool instanceFlag;
+  static SingletonError *single;
+
+  SingletonError()
+  {
+    Inicio = NULL;
+    IdentificadorAsociado = NULL;
+    HuboError = false;
+  }
+public:
+    static SingletonError* getInstance();
+    void method();
+    ~SingletonError()
+    {
+        instanceFlag = false;
+    }
+
+    /* TODO: Hacer que la clase de errores sea amiga, para no
+     * definir esto publicamente */
+
+    char *IdentificadorAsociado;
+    Mensaje *Inicio;
+    bool  HuboError;
+};
+
+bool SingletonError::instanceFlag = false;
+SingletonError* SingletonError::single = NULL;
+
+SingletonError* SingletonError::getInstance()
+{
+  if(! instanceFlag)
+  {
+    single = new SingletonError();
+    instanceFlag = true;
+    return single;
+  }
+  else
+  {
+     return single;
+  }
+}
+
 void BuzonDeErrores::Vacear ()
 {
   Mensaje *Aux;
 
-  while (Inicio)
+  SingletonError *datos = SingletonError::getInstance();
+
+  while (datos->Inicio)
     {
-      Aux    = Inicio;
-      Inicio = Inicio->Sig;
+      Aux    = datos->Inicio;
+      datos->Inicio = datos->Inicio->Sig;
 
       delete[]  Aux->Info;
       delete    Aux;
     }
 
-  HuboError = false;
+  datos->HuboError = false;
 
-  if (IdentificadorAsociado)
-    delete []IdentificadorAsociado;
+  if (datos->IdentificadorAsociado)
+    delete []datos->IdentificadorAsociado;
 
-  IdentificadorAsociado = NULL;
+  datos->IdentificadorAsociado = NULL;
 }
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -53,21 +111,44 @@ void BuzonDeErrores::Vacear ()
 // TODO: ¿El último parámetro no sirve para algo? Si no, eliminarlo.
 
 void
-BuzonDeErrores::IntroducirError (char *msg, TipoError UnError, int Asociado)
+BuzonDeErrores::IntroducirError (const char *msg, TipoError UnError)
 {
   Mensaje *NuevoError = new Mensaje;
 
   NuevoError->Tipo = UnError;
 
-  NuevoError->Info = new char[strlen (msg) + strlen(IdentificadorAsociado) + 3];
-  strcpy(NuevoError->Info, IdentificadorAsociado);
+  SingletonError *datos = SingletonError::getInstance();
+
+  int len;
+
+  if (datos->IdentificadorAsociado)
+    len = strlen (msg) + strlen(datos->IdentificadorAsociado) + 3;
+  else
+    len = strlen (msg) + 3;
+
+  NuevoError->Info = new char[len];
+  strcpy(NuevoError->Info, datos->IdentificadorAsociado);
   strcat(NuevoError->Info, ": ");
   strcat(NuevoError->Info, msg);
 
-  NuevoError->Sig = Inicio;
-  Inicio = NuevoError;
+  NuevoError->Sig = datos->Inicio;
+  datos->Inicio = NuevoError;
 
-  HuboError = true;
+  datos->HuboError = true;
+}
+
+bool
+BuzonDeErrores::GetHuboError ()
+{
+  SingletonError *datos = SingletonError::getInstance();
+  return datos->HuboError;
+}
+
+char *
+BuzonDeErrores::GetIdentificadorAsociado ()
+{
+  SingletonError *datos = SingletonError::getInstance();
+  return datos->IdentificadorAsociado;
 }
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -75,10 +156,12 @@ BuzonDeErrores::IntroducirError (char *msg, TipoError UnError, int Asociado)
 void
 BuzonDeErrores::SetIdentificadorAsociado (char *str)
 {
-  if (IdentificadorAsociado)
-    delete []IdentificadorAsociado;
+  SingletonError *datos = SingletonError::getInstance();
 
-  IdentificadorAsociado = dfd_strdup(str);
+  if (datos->IdentificadorAsociado)
+    delete []datos->IdentificadorAsociado;
+
+  datos->IdentificadorAsociado = dfd_strdup(str);
 }
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -86,18 +169,19 @@ BuzonDeErrores::SetIdentificadorAsociado (char *str)
 BuzonDeErrores::~BuzonDeErrores ()
 {
   Mensaje *Aux;
+  SingletonError *datos = SingletonError::getInstance();
 
-  while (Inicio)
+  while (datos->Inicio)
     {
-      Aux = Inicio;
-      Inicio = Inicio->Sig;
+      Aux = datos->Inicio;
+      datos->Inicio = datos->Inicio->Sig;
 
       delete[] Aux->Info;
       delete   Aux;
     }
 
-  if (IdentificadorAsociado)
-    delete[] IdentificadorAsociado;
+  if (datos->IdentificadorAsociado)
+    delete[] datos->IdentificadorAsociado;
 }
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -105,15 +189,19 @@ BuzonDeErrores::~BuzonDeErrores ()
 char *
 BuzonDeErrores::GetError ()
 {
-  ASSERT(0);
+  ASSERT(0); // ¿Por qué está este assert aca?
 
-  if (!Inicio)
-     IntroducirError (TXT_ERROR_INDEFINIDO " en BuzonDeErrores::GetError", ERROR_INDEFINIDO, 0);
+  SingletonError *datos = SingletonError::getInstance();
 
-  // TODO: ¿Quén usa este valor retornado? 
+  if (!datos->Inicio)
+     IntroducirError (TXT_ERROR_INDEFINIDO " en BuzonDeErrores::GetError", ERROR_INDEFINIDO);
+
+  // TODO: ¿Quén usa este valor retornado?
   // ¿Por qué se le da una nueva cadena? ¿Causa esto un memory leak?
+  // Creo que es mejor usar la clase string aca y no hacer esta
+  // copia de memoria.
 
-  char *Retorno = dfd_strdup(Inicio->Info);
+  char *Retorno = dfd_strdup(datos->Inicio->Info);
 
   Vacear ();
 
@@ -124,21 +212,27 @@ void
 BuzonDeErrores::Mostrar ()
 {
 
-  if (!Inicio)
+/*
+ * Originalmente esta rutina llamaba un cuadro de diálogo. Eso
+ * es un error. Debe existir un callback para esto, ya que
+ * en esta clase tan básica no debería estar la presentación.
+ * Tener un callback permite que Dfd corra en un
+ * modo en el que no se necesiten los gráficos.
+ */
+
+  SingletonError *datos = SingletonError::getInstance();
+
+  if (!datos->Inicio)
     return;
 
-  fprintf(stderr, "%s error: %s\n", program_name, Inicio->Info);
+  fprintf(stderr, "%s error: %s\n", program_name, datos->Inicio->Info);
 
   Vacear ();
 
-  HuboError = false;
+  datos->HuboError = false;
 
 #if 0
-
-  // Código viejo
-  // No debemos mezclar la presentación con la lógica del
-  // intérprete. Usar un callback mejor.
-
+  Note que se diferencia entre Edición y Ejecución para mostrar el error.
   if (Estado.Accion == EDICION)
     VentanaPrincipal->MessageBox (Inicio->Info,
 				  "Error de revisi›n", MB_ICONSTOP);
@@ -251,52 +345,52 @@ BuzonDeErrores::Error (TipoError UnError)
       break;
 
     case INDICES:
-      IntroducirError (TXT_INDICES, INDICES, 0);
+      IntroducirError (TXT_INDICES, INDICES);
       break;
 
     case ILEGAL_COMA_O_CADENA_VACIA:
-      IntroducirError (TXT_ILEGAL_COMA_O_CADENA_VACIA, ILEGAL_COMA_O_CADENA_VACIA, 0);
+      IntroducirError (TXT_ILEGAL_COMA_O_CADENA_VACIA, ILEGAL_COMA_O_CADENA_VACIA);
       break;
 
     case SOLO_VARIABLES:
-      IntroducirError (TXT_SOLO_VARIABLES, SOLO_VARIABLES, 0);
+      IntroducirError (TXT_SOLO_VARIABLES, SOLO_VARIABLES);
       break;
 
 
     case NO_INDICES:
-      IntroducirError (TXT_NO_INDICES, NO_INDICES, 0);
+      IntroducirError (TXT_NO_INDICES, NO_INDICES);
       break;
 
     case TIPO_DEBE_SER_LOGICO:
-      IntroducirError (TXT_TIPO_DEBE_SER_LOGICO, TIPO_DEBE_SER_LOGICO, 0);
+      IntroducirError (TXT_TIPO_DEBE_SER_LOGICO, TIPO_DEBE_SER_LOGICO);
       break;
 
     case VINICIAL_CONTADOR:
-      IntroducirError (TXT_VINICIAL_CONTADOR,  VINICIAL_CONTADOR, 0);
+      IntroducirError (TXT_VINICIAL_CONTADOR,  VINICIAL_CONTADOR);
       break;
 
     case VFINAL_CONTADOR:
-      IntroducirError (TXT_VFINAL_CONTADOR,  VFINAL_CONTADOR, 0);
+      IntroducirError (TXT_VFINAL_CONTADOR,  VFINAL_CONTADOR);
       break;
 
     case INCREMENTO_CONSTANTE:
-      IntroducirError (TXT_INCREMENTO_CONSTANTE,  INCREMENTO_CONSTANTE, 0);
+      IntroducirError (TXT_INCREMENTO_CONSTANTE,  INCREMENTO_CONSTANTE);
       break;
 
     case CONTADOR_REAL:
-      IntroducirError (TXT_CONTADOR_REAL, CONTADOR_REAL, 0);
+      IntroducirError (TXT_CONTADOR_REAL, CONTADOR_REAL);
       break;
 
     case LIMITE_REAL:
-      IntroducirError (TXT_LIMITE_REAL, LIMITE_REAL, 0);
+      IntroducirError (TXT_LIMITE_REAL, LIMITE_REAL);
       break;
 
     case PARAMETRO_NO_VARIABLE:
-      IntroducirError (TXT_PARAMETRO_NO_VARIABLE,  PARAMETRO_NO_VARIABLE, 0);
+      IntroducirError (TXT_PARAMETRO_NO_VARIABLE,  PARAMETRO_NO_VARIABLE);
       break;
 
     case ILEGAL_NOMBRE_SUBPROGRAMA:
-      IntroducirError (TXT_ILEGAL_NOMBRE_SUBPROGRAMA, ILEGAL_NOMBRE_SUBPROGRAMA, 0);
+      IntroducirError (TXT_ILEGAL_NOMBRE_SUBPROGRAMA, ILEGAL_NOMBRE_SUBPROGRAMA);
       break;
 
     case PARAMETRO_REPETIDO:

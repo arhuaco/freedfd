@@ -5,14 +5,11 @@
   tiempo.
 
 * No use TABs dentro del código. Esta es una guerra religiosa, y la gente
-  nunca se podrá de acuerdo al respecto. Nelson es un tonto que prefiere
-  usar espacios, y odia los TABs.
+  nunca se podrá de acuerdo al respecto.
 
-* Trate de minimizar el uso de comentarios. Si siente la imperiosa necesidad
-  de escribirlos, ¿No será porque su código es difícil de leer?
-
-* Los comentarios estarán en español. Los nombres de las variables pueden
-  estar en Inglés.
+* Trate de minimizar el uso de comentarios. Si siente la necesidad
+  de escribirlos, ¿No será porque su código es difícil de leer? Si no
+  es el caso, por favor poner el comentario :-)
 
 * Use nombres de archivos con guiones, y no con subrayados.
 
