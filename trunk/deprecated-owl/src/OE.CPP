@@ -791,8 +791,8 @@
 	if( Sw ) Graficador->SelectObject( *LapizSolido );
 
 	DibujarFlecha( cx, cy-2*Estado.DistanciaPuntos-1 );
-	TSize Tamanyo= Graficador->GetTextExtent(, 3 );
-	Graficador->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, );
+	TSize Tamanyo= Graficador->GetTextExtent(TXT_RUNNING_OBJECT_END, 3 );
+	Graficador->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_END);
 
  }
 
