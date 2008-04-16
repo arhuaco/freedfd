@@ -5,5 +5,5 @@ Contenido de los fuentes:
 
 TODO:
   Lista de cosas por hacer.
-HACKING:
+HACKING.txt:
   Lea si está interesado en contribuir al proyecto.
