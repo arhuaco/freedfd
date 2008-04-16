@@ -75,25 +75,7 @@ public:
   }
 };
 
-class Operadores
-{
-  NodoOperador *InicioOperadores;
-  void Insertar (const char *Str, int UnPdp, int UnPfp, AlcanceOperador UnAlcance);
-  void Insertar (const char *Str);
-
-  struct NodoFuncion
-  {
-    const char *Dato;
-    NodoFuncion *Sig;
-  } *InicioFunciones;
-
-
-public:
-    Operadores ();
-   ~Operadores ();
-  NodoOperador *Buscar (const char *Operador);
-  bool BuscarFuncion (const char *Funcion);
-
-};
+NodoOperador *operador_buscar (const char *Operador);
+bool operador_funcion_buscar   (const char *Funcion);
 
 #endif

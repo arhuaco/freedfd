@@ -1,11 +1,16 @@
 # Este es un makefile temporal que luego reemplazaremos con Autoconf
 
 
-all: campos.o errores.o operador.o tokeniza.o
+CFLAGS=-Wall -I.
+
+all: main
+	g++ main.cpp campos.o errores.o operador.o tokeniza.o ${CFLAGS}
+
+main: campos.o errores.o operador.o tokeniza.o
 	echo Done
 
 campos.o: campos.cpp errores.o 
-	g++ -c campos.cpp -I.
+	g++ -c campos.cpp -I. 
 
 errores.o: errores.cpp dfd-wrappers.o
 	g++ -c errores.cpp -I.
