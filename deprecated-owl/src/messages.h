@@ -12,10 +12,20 @@
  *
  * "&Closer\t+"
  *
+ * ----------------------
+ *
  * You should never use a " in translations. Even if it is scaped.
  *
  * "" => right
  * "\"" => wrong!
+ *
+ * ----------------------
+ *
+ * Please don't remove the BEGIN, END blocks. Those are like this:
+ *
+ *   __SPANISH__ BEGIN
+ *
+ * Just leave them as they are.
  */
 
 #if 1 /* Español -- Idioma por defecto */
