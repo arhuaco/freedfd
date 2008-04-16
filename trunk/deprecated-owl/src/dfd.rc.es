@@ -37,6 +37,7 @@
 #define IDC_STATICTEXT1	101
 #define IDC_STATICTEXT2	102
 #define IDC_STATICTEXT3	103
+#define IDC_STATICTEXT4 104
 
 #include <owl/except.rc>
 
