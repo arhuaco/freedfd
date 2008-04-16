@@ -51,7 +51,7 @@
 #define __OE_CPP
 
 
-#include"includes.cpp"
+#include "includes.cpp"
 
 
  enum TipoObjeto{ INICIO= 0, FIN, SUBPROGRAMA, REGRESE, IMPRESION, LECTURA,
@@ -739,8 +739,8 @@
 						  cx,cy-2*Estado.DistanciaPuntos,cx+1,cy-2*Estado.DistanciaPuntos );
 	if( Sw ) Graficador->SelectObject( *LapizSolido );
 	DibujarLineaEnlace( ActualX, ActualY );
-	TSize Tamanyo= Graficador->GetTextExtent("Inicio", 6 );
-	Graficador->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, "Inicio" );
+	TSize Tamanyo= Graficador->GetTextExtent(TXT_RUNNING_OBJECT_BEGIN, strlen(TXT_RUNNING_OBJECT_BEGIN));
+	Graficador->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_BEGIN);
 
  }
 
@@ -753,8 +753,8 @@
 						cx+2*Estado.DistanciaPuntos,cy+2*Estado.DistanciaPuntos ,
 						cx,cy-2*Estado.DistanciaPuntos,cx+1,cy-2*Estado.DistanciaPuntos );
 	DibujarLineaEnlaceImp( ActualX, ActualY );
-	TSize Tamanyo= Impresor->GetTextExtent("Inicio", 6 );
-	Impresor->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, "Inicio" );
+	TSize Tamanyo= Impresor->GetTextExtent(TXT_RUNNING_OBJECT_BEGIN, strlen(TXT_RUNNING_OBJECT_BEGIN));
+	Impresor->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_BEGIN);
 
  }
 
@@ -791,8 +791,8 @@
 	if( Sw ) Graficador->SelectObject( *LapizSolido );
 
 	DibujarFlecha( cx, cy-2*Estado.DistanciaPuntos-1 );
-	TSize Tamanyo= Graficador->GetTextExtent("Fin", 3 );
-	Graficador->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, "Fin" );
+	TSize Tamanyo= Graficador->GetTextExtent(, 3 );
+	Graficador->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, );
 
  }
 
@@ -807,8 +807,8 @@
 						cx,cy-2*Estado.DistanciaPuntos,cx+1,cy-2*Estado.DistanciaPuntos );
 
 	DibujarFlechaImp( cx, cy-2*Estado.DistanciaPuntos-1 );
-	TSize Tamanyo= Impresor->GetTextExtent("Fin", 3 );
-	Impresor->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, "Fin" );
+	TSize Tamanyo= Impresor->GetTextExtent(TXT_RUNNING_OBJECT_END, strlen(TXT_RUNNING_OBJECT_END));
+	Impresor->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_END);
 
  }
 
@@ -1180,18 +1180,18 @@
 	if( SiIzquierda ){
 	  Graficador->TextOut( cx-4*Estado.DistanciaPuntos,
 									cy-2*Estado.DistanciaPuntos,
-									"Si" );
+									TXT_RUNNING_OBJECT_YES);
 	  Graficador->TextOut( cx+3*Estado.DistanciaPuntos,
 									cy-2*Estado.DistanciaPuntos,
-									"No" );
+									TXT_RUNNING_OBJECT_NO);
 	}
 	else{
 	  Graficador->TextOut( cx-4*Estado.DistanciaPuntos,
 									cy-2*Estado.DistanciaPuntos,
-									"No" );
+									TXT_RUNNING_OBJECT_NO);
 	  Graficador->TextOut( cx+3*Estado.DistanciaPuntos,
 									cy-2*Estado.DistanciaPuntos,
-									"Si" );
+									TXT_RUNNING_OBJECT_YES);
 	}
 
  }
@@ -1251,18 +1251,18 @@
 	if( SiIzquierda ){
 	  Impresor->TextOut( cx-4*Estado.DistanciaPuntos,
 									cy-2*Estado.DistanciaPuntos,
-									"Si" );
+									TXT_RUNNING_OBJECT_YES);
 	  Impresor->TextOut( cx+3*Estado.DistanciaPuntos,
 									cy-2*Estado.DistanciaPuntos,
-									"No" );
+									TXT_RUNNING_OBJECT_NO);
 	}
 	else{
 	  Impresor->TextOut( cx-4*Estado.DistanciaPuntos,
 									cy-2*Estado.DistanciaPuntos,
-									"No" );
+									TXT_RUNNING_OBJECT_NO);
 	  Impresor->TextOut( cx+3*Estado.DistanciaPuntos,
 									cy-2*Estado.DistanciaPuntos,
-									"Si" );
+									TXT_RUNNING_OBJECT_YES);
 	}
 
  }
@@ -1831,7 +1831,7 @@
 	DibujarFlecha( cx, cy-Estado.DistanciaPuntos-1 );
 	DibujarLineaEnlace(ActualX, ActualY);
 	Graficador->
-	TextOut(cx-6*Estado.DistanciaPuntos, cy-Estado.DistanciaPuntos/2, "Para" );
+	TextOut(cx-6*Estado.DistanciaPuntos, cy-Estado.DistanciaPuntos/2, TXT_RUNNING_OBJECT_FOR);
 
 	if( CadenaId ){
 	  TRect Region
@@ -1904,7 +1904,7 @@
 	DibujarFlechaImp( cx, cy-Estado.DistanciaPuntos-1 );
 	DibujarLineaEnlaceImp(ActualX, ActualY);
 	Impresor->
-	TextOut(cx-6*Estado.DistanciaPuntos, cy-Estado.DistanciaPuntos/2, "Para" );
+	TextOut(cx-6*Estado.DistanciaPuntos, cy-Estado.DistanciaPuntos/2, TXT_RUNNING_OBJECT_FOR);
 
 	if( CadenaId ){
 	  TRect Region
@@ -2157,9 +2157,8 @@
 	DibujarFlecha( cx, cy-Estado.DistanciaPuntos-1 );
 
 	DibujarLineaEnlace(ActualX, ActualY);
-	TSize Tamanyo= Graficador->GetTextExtent("Cierre", 6 );
-	Graficador->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, "Cierre" );
-
+	TSize Tamanyo= Graficador->GetTextExtent(TXT_RUNNING_OBJECT_BLOCK_END, strlen(TXT_RUNNING_OBJECT_BLOCK_END));
+	Graficador->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_BLOCK_END);
 
  }
 
@@ -2185,9 +2184,8 @@
 	DibujarFlechaImp( cx, cy-Estado.DistanciaPuntos-1 );
 
 	DibujarLineaEnlaceImp(ActualX, ActualY);
-	TSize Tamanyo= Impresor->GetTextExtent("Cierre", 6 );
-	Impresor->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, "Cierre" );
-
+	TSize Tamanyo= Impresor->GetTextExtent(TXT_RUNNING_OBJECT_BLOCK_END, strlen(TXT_RUNNING_OBJECT_BLOCK_END));
+	Impresor->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_BLOCK_END);
 
  }
 
@@ -2240,8 +2238,8 @@
 	  Graficador->SelectObject( *LapizSolido );
 	DibujarFlecha( cx, cy-Estado.DistanciaPuntos-1 );
 	DibujarLineaEnlace(ActualX, ActualY);
-	TSize Tamanyo= Graficador->GetTextExtent("Cierre", 6 );
-	Graficador->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, "Cierre" );
+	TSize Tamanyo= Graficador->GetTextExtent(TXT_RUNNING_OBJECT_BLOCK_END, strlen(TXT_RUNNING_OBJECT_BLOCK_END));
+	Graficador->TextOut(cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, strlen(TXT_RUNNING_OBJECT_BLOCK_END));
 
  }
 
@@ -2265,8 +2263,8 @@
 						  cx+2*Estado.DistanciaPuntos,cy-Estado.DistanciaPuntos	);
 	DibujarFlechaImp( cx, cy-Estado.DistanciaPuntos-1 );
 	DibujarLineaEnlaceImp(ActualX, ActualY);
-	TSize Tamanyo= Impresor->GetTextExtent("Cierre", 6 );
-	Impresor->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, "Cierre" );
+	TSize Tamanyo= Impresor->GetTextExtent(TXT_RUNNING_OBJECT_BLOCK_END, strlen(TXT_RUNNING_OBJECT_BLOCK_END) );
+	Impresor->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_BLOCK_END);
 
  }
 

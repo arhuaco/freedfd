@@ -179,6 +179,15 @@
   #define TXT_DIALOG_PROGRAM_CHECK_ERROR "Error de revisión"
   #define TXT_DIALOG_PROGRAM_RUN_ERROR "Error de revisión"
 
+  /* Objetos en Ejecución */
+
+  #define TXT_RUNNING_OBJECT_YES "Sí"
+  #define TXT_RUNNING_OBJECT_NO "No"
+  #define TXT_RUNNING_OBJECT_FOR "Para"
+  #define TXT_RUNNING_OBJECT_BEGIN "Inicio"
+  #define TXT_RUNNING_OBJECT_END "Fin"
+  #define TXT_RUNNING_OBJECT_BLOCK_END "Cierre"
+
   /* __SPANISH__ END */
   #elif 0 /* Português by Charles Guimarães Cavalcante - www.charles.art.br - e-mail@charles.art.br */
   /* __PORTUGUESE__ BEGIN */
@@ -345,6 +354,14 @@
   #define TXT_DIALOG_INVALID_FILE_FORMAT "O arquivo não é um arquivo de Dfd"
   #define TXT_DIALOG_PROGRAM_CHECK_ERROR "Erro de revisão"
   #define TXT_DIALOG_PROGRAM_RUN_ERROR "Erro de execução"
+  /* Objetos en Ejecución */
+
+  #define TXT_RUNNING_OBJECT_YES "Pt:Sí"
+  #define TXT_RUNNING_OBJECT_NO "Pt:No"
+  #define TXT_RUNNING_OBJECT_FOR "Pt:Para"
+  #define TXT_RUNNING_OBJECT_BEGIN "Pt:Inicio"
+  #define TXT_RUNNING_OBJECT_END "Pt:Fin"
+  #define TXT_RUNNING_OBJECT_BLOCK_END "Pt:Cierre"
 
   /* __PORTUGUESE__ END */
 #else
