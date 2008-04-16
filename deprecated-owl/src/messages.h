@@ -188,6 +188,7 @@
   #define TXT_RUNNING_OBJECT_BEGIN "Inicio"
   #define TXT_RUNNING_OBJECT_END "Fin"
   #define TXT_RUNNING_OBJECT_BLOCK_END "Cierre"
+  #define TXT_RUNNING_OBJECT_RETURN "Retornar"
 
   /* __SPANISH__ END */
   #elif 0 /* Português by Charles Guimarães Cavalcante - www.charles.art.br - e-mail@charles.art.br */
@@ -360,10 +361,11 @@
   #define TXT_RUNNING_OBJECT_YES "Pt:Sí"
   #define TXT_RUNNING_OBJECT_NO "Pt:No"
   #define TXT_RUNNING_OBJECT_FOR "Pt:Para"
+  #define TXT_RUNNING_OBJECT_WHILE "Pt:Mientras"
   #define TXT_RUNNING_OBJECT_BEGIN "Pt:Inicio"
   #define TXT_RUNNING_OBJECT_END "Pt:Fin"
   #define TXT_RUNNING_OBJECT_BLOCK_END "Pt:Cierre"
-  #define TXT_RUNNING_OBJECT_WHILE "Pt:Mientras"
+  #define TXT_RUNNING_OBJECT_RETURN "Pt:Retornar"
 
   /* __PORTUGUESE__ END */
 #else
