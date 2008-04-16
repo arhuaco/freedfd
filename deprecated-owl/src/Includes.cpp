@@ -81,7 +81,8 @@
     VFINAL_CONTADOR, INCREMENTO_CONSTANTE, CONTADOR_REAL,
     LIMITE_REAL, PARAMETRO_ILEGAL, PARAMETRO_REPETIDO,
     ILEGAL_NOMBRE_SUBPROGRAMA, SUBPROGRAMA_NO_EXISTE,
-    SUBPROGRAMA_REPETIDO, MUCHOS_ARGUMENTOS, POCOS_ARGUMENTOS};
+    SUBPROGRAMA_REPETIDO, MUCHOS_ARGUMENTOS, POCOS_ARGUMENTOS,
+    PARAMETRO_NO_VARIABLE};
 
 	#include <math.h>
 	#include <float.h>
@@ -91,6 +92,7 @@
 	#include <new.h>
 	#include <ctype.h>
 	#include <dir.h>
+   #include "messages.h"
 	#include "errores.cpp"
 	#include "campos.cpp"
 	#include "operador.cpp"

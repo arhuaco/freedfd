@@ -291,6 +291,7 @@ BuzonDeErrores::Error (TipoError UnError)
       IntroducirError (TXT_ERROR_INDEFINIDO, ERROR_INDEFINIDO);
       break;
     }
+  }
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
