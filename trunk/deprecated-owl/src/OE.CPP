@@ -2688,8 +2688,8 @@
 	if( Sw )
 	  Graficador->SelectObject( *LapizSolido );
 	DibujarFlecha( cx, cy-2*Estado.DistanciaPuntos-1 );
-	TSize Tamanyo= Graficador->GetTextExtent("Regrese", 7 );
-	Graficador->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, "Regrese" );
+	TSize Tamanyo= Graficador->GetTextExtent(TXT_RUNNING_OBJECT_RETURN, strlen(TXT_RUNNING_OBJECT_RETURN));
+	Graficador->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_RETURN);
 
  }
 
@@ -2701,8 +2701,8 @@
 						  cx+2*Estado.DistanciaPuntos,cy+2*Estado.DistanciaPuntos ,
 						  cx,cy-2*Estado.DistanciaPuntos,cx+1,cy-2*Estado.DistanciaPuntos );
 	DibujarFlechaImp( cx, cy-2*Estado.DistanciaPuntos-1 );
-	TSize Tamanyo= Impresor->GetTextExtent("Regrese", 7 );
-	Impresor->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, "Regrese" );
+	TSize Tamanyo= Impresor->GetTextExtent(TXT_RUNNING_OBJECT_RETURN, strlen(TXT_RUNNING_OBJECT_RETURN));
+	Impresor->TextOut(cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_RETURN);
 
  }
 
