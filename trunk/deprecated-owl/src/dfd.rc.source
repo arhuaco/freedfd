@@ -271,7 +271,8 @@ CM_ARCHIVOIMPRIMIR, HELP_CM_ARCHIVOIMPRIMIR
 CM_ARCHIVOCONFIGURARIMPRESORA, HELP_CM_ARCHIVOCONFIGURARIMPRESORA
 }
 
-IDD_ABOUT DIALOG 33, 16, 285, 170
+IDD_ABOUT DIALOG 24, 26, 285, 196
+EXSTYLE WS_EX_DLGMODALFRAME
 STYLE DS_MODALFRAME | WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU
 CAPTION "FreeDFD"
 FONT 11, "MS Sans Serif"
@@ -282,14 +283,12 @@ FONT 11, "MS Sans Serif"
  CONTROL "Eduardo de Jesús Daza Castillo", -1, "STATIC", SS_CENTER | WS_CHILD | WS_VISIBLE | WS_GROUP, 16, 50, 150, 8
  CONTROL "Fabián Alberto Cárdenas Varela", -1, "STATIC", SS_CENTER | WS_CHILD | WS_VISIBLE | WS_GROUP, 16, 36, 150, 8
  CONTROL "Nelson Enrique Castillo Izquierdo", -1, "STATIC", SS_CENTER | WS_CHILD | WS_VISIBLE | WS_GROUP, 16, 43, 150, 8
- CONTROL "", -1, "BorShade", BSS_HDIP | BSS_LEFT | WS_CHILD | WS_VISIBLE, 12, 66, 256, 4
+ CONTROL "", -1, "BorShade", BSS_HDIP | BSS_LEFT | WS_CHILD | WS_VISIBLE, 12, 81, 256, 4
  CONTROL "http://freedfd.freaks-unidos.net", IDC_STATICTEXT1, "static", SS_CENTER | WS_CHILD | WS_VISIBLE, 34, 14, 116, 9
- CONTROL "FreeDFD es Software Libre, y está cubierto por la licencia  pública GNU (GPL).\n\nUsted puede tener acceso al código fuente, y puede modificarlo de acuerdo a sus necesidades si cumple con la licencia. Lo invitamos a copiar y distribuir este programa.\n\nEstamos trabajando en una versión portable que funcione en Windows y GNU/Linux de forma nativa, ya que para correr FreeDFD dentro de GNU/Linux se usa el programa Wine. Necesitamos ayuda para el desarrollo. Favor visitar la página (http://freedfd.freaks-unidos.net) para obtener más información sobre el desarrollo de la nueva version, o escribir a freedfd@listas.el-directorio.org.", IDC_STATICTEXT2, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 76, 264, 84
- CONTROL "Copyright(c) 1997-2006", IDC_STATICTEXT3, "static", SS_CENTER | WS_CHILD | WS_VISIBLE, 9, 28, 160, 9
+ CONTROL "FreeDFD es Software Libre, y está cubierto por la licencia  pública GNU (GPL).\n\nUsted puede tener acceso al código fuente, y puede modificarlo de acuerdo a sus necesidades si cumple con la licencia. Lo invitamos a copiar y distribuir este programa.\n\nEstamos trabajando en una versión portable que funcione en Windows y GNU/Linux de forma nativa, ya que para correr FreeDFD dentro de GNU/Linux se usa el programa Wine. Necesitamos ayuda para el desarrollo. Favor visitar la página (http://freedfd.freaks-unidos.net) para obtener más información sobre el desarrollo de la nueva version, o escribir a freedfd@listas.el-directorio.org.", IDC_STATICTEXT2, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 91, 264, 84
+ CONTROL "Copyright(c) 1997-2008", IDC_STATICTEXT3, "static", SS_CENTER | WS_CHILD | WS_VISIBLE, 9, 28, 160, 9
+ CONTROL "Consulte la página web para ver la lista completa de autores y colaboradores", IDC_STATICTEXT4, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 20, 68, 258, 8
 }
-
-
-
 
 CM_ARCHIVONUEVO BITMAP
 {
