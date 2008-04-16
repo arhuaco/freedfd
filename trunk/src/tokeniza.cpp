@@ -23,9 +23,14 @@
 
 #include <dfd.h>
 #include <campos.h>
+#include <operador.h>
+#include <errores.h>
 
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
+
+BuzonDeErrores Buzon;
 
 // TODO : Indentar Bien.
 
@@ -37,7 +42,10 @@
 
    // Funcion que determina si el caracter Ch se encuentra entre la cadena Str.
 
-bool EstaEn(char Ch, char *Str)
+
+/* Nota: Esta función parece duplicar lo que hace strchr */
+
+bool EstaEn(char Ch, const char *Str)
 {
     for (; *Str; ++Str)
 	if (*Str == Ch)
@@ -46,13 +54,16 @@ bool EstaEn(char Ch, char *Str)
     return false;
 }
 
+/* Aca deberiamos usar isalpha, no? Creo que isalpha no funciona bien
+ * con los acentos cuando el LOCALE es C */
+
 inline int EsLetra(char Caracter)
 {
     Caracter = (char) toupper(Caracter);
-    return (Caracter >= 'A' && Caracter <= 'Z')
-	|| EstaEn(Caracter, "ñÑüáéíóúÁÉÍÓÚ");
+    return (Caracter >= 'A' && Caracter <= 'Z') || EstaEn(Caracter, "ñÑüáéíóúÁÉÍÓÚ");
 }
 
+/* Aca podemos usar isdigit de ctype */
 inline int EsDigito(char Caracter)
 {
     return (Caracter >= '0') && (Caracter <= '9');
@@ -67,7 +78,7 @@ inline int EsEspacio(char Caracter)
  // lista controlada con *Inicio y *Ultimo, los dos primeros parametros.
 
 void
-Insertar(Token ** Inicio, Token ** Ultimo, bool ValorLogico,
+Insertar (Token ** Inicio, Token ** Ultimo, bool ValorLogico,
 	 TipoToken UnTipoToken, TipoAlmacenamiento UnTipoA)
 {
 
@@ -85,7 +96,7 @@ Insertar(Token ** Inicio, Token ** Ultimo, bool ValorLogico,
 }
 
 void
-Insertar(Token ** Inicio, Token ** Ultimo, long double ValorReal,
+Insertar (Token ** Inicio, Token ** Ultimo, long double ValorReal,
 	 TipoToken UnTipoToken, TipoAlmacenamiento UnTipoA)
 {
 
@@ -103,7 +114,7 @@ Insertar(Token ** Inicio, Token ** Ultimo, long double ValorReal,
 }
 
 void
-Insertar(Token ** Inicio, Token ** Ultimo, char *ValorStr,
+Insertar (Token ** Inicio, Token ** Ultimo, const char *ValorStr,
 	 TipoToken UnTipoToken, TipoAlmacenamiento UnTipoA,
 	 int Pdp = 0, int Pfp = 0, AlcanceOperador UnAlcance = BINARIO)
 {
@@ -216,8 +227,14 @@ char *Copiar(char *Fuente, int n)
 		    return 0;
 		}
 
-		Insertar(&Inicio, &Ultimo, atol(Nuevo), OPERANDO,
-			 CONSTANTE);
+/* Por hacer: usar strtol y no atol, esto permite obtener errores.
+ * Ver la función strtol_wrapper en:
+ *
+ * http://wiki.freaks-unidos.net/weblogs/arhuaco/up-with-strtol
+ */
+
+		Insertar(&Inicio, &Ultimo, (long double)atol(Nuevo),
+                         OPERANDO, CONSTANTE);
 		if (Buzon.GetHuboError()) {
 		    LiberarListaToken(Inicio);
 		    delete[]Nuevo;
@@ -779,8 +796,9 @@ void PreprocesarExpresion(Token * Expresion)
 		    char Buffer[16] = { '$', '\0' };
 		    if (Operadores.BuscarFuncion(Actual->GetOperador()))
 			Buffer[0] = '@';
-		    itoa(Dimension, Buffer + 1, 10);
-		    Nuevo = new Token(Buffer, OPERADOR, CONSTANTE, 0, 0);
+		    //itoa(Dimension, Buffer + 1, 10); Reemplazado por:
+                    sprintf(Buffer + 1, "%d", Dimension);
+                    Nuevo = new Token(Buffer, OPERADOR, CONSTANTE, 0, 0);
 		}		//BLOQUE
 		Nuevo->SetSig(Siguiente);
 		Actual->SetSig(Nuevo);
