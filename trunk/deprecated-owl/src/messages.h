@@ -363,7 +363,7 @@
   #define TXT_RUNNING_OBJECT_NO "Não"
   #define TXT_RUNNING_OBJECT_FOR "Para"
   #define TXT_RUNNING_OBJECT_WHILE "Enquanto"
-  #define TXT_RUNNING_OBJECT_BEGIN "Começarão"
+  #define TXT_RUNNING_OBJECT_BEGIN "Começar"
   #define TXT_RUNNING_OBJECT_END "Fin"
   #define TXT_RUNNING_OBJECT_BLOCK_END "Fechar"
   #define TXT_RUNNING_OBJECT_RETURN "Voltar"
