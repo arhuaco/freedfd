@@ -2370,7 +2370,7 @@
 	DibujarFlecha( cx, cy-Estado.DistanciaPuntos-1 );
 	DibujarLineaEnlace(ActualX, ActualY);
 	Graficador->TextOut( cx-6*Estado.DistanciaPuntos,
-								cy-Estado.DistanciaPuntos/2, "MQ" );
+								cy-Estado.DistanciaPuntos/2, TXT_RUNNING_OBJECT_WHILE);
 
 
 	if( Cadena ){
@@ -2404,7 +2404,7 @@
 	DibujarFlechaImp( cx, cy-Estado.DistanciaPuntos-1 );
 	DibujarLineaEnlaceImp(ActualX, ActualY);
 	Impresor->TextOut( cx-6*Estado.DistanciaPuntos,
-								cy-Estado.DistanciaPuntos/2, "MQ" );
+								cy-Estado.DistanciaPuntos/2, TXT_RUNNING_OBJECT_WHILE);
 
 
 	if( Cadena ){

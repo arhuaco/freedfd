@@ -184,6 +184,7 @@
   #define TXT_RUNNING_OBJECT_YES "Sí"
   #define TXT_RUNNING_OBJECT_NO "No"
   #define TXT_RUNNING_OBJECT_FOR "Para"
+  #define TXT_RUNNING_OBJECT_WHILE "Mientras"
   #define TXT_RUNNING_OBJECT_BEGIN "Inicio"
   #define TXT_RUNNING_OBJECT_END "Fin"
   #define TXT_RUNNING_OBJECT_BLOCK_END "Cierre"
@@ -362,6 +363,7 @@
   #define TXT_RUNNING_OBJECT_BEGIN "Pt:Inicio"
   #define TXT_RUNNING_OBJECT_END "Pt:Fin"
   #define TXT_RUNNING_OBJECT_BLOCK_END "Pt:Cierre"
+  #define TXT_RUNNING_OBJECT_WHILE "Pt:Mientras"
 
   /* __PORTUGUESE__ END */
 #else
