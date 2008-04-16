@@ -25,6 +25,7 @@
 #include <campos.h>
 #include <operador.h>
 #include <errores.h>
+#include <tokeniza.h>
 
 #include <ctype.h>
 #include <string.h>
@@ -149,7 +150,7 @@ LiberarListaToken (Token * Inicio)
 // Funcion que retorna una cadena dinamica cuyo contenido son los n primeros
 // caracteres de la cadena Fuente.
 char *
-Copiar (char *Fuente, int n)
+Copiar (const char *Fuente, int n)
 {
   char *NuevaCadena = new char[n + 1];
   for (int i = 0; i < n; ++i)
@@ -162,7 +163,7 @@ Copiar (char *Fuente, int n)
 //Funcion que recibe para revisar errores de sintaxis y formar
 // la lista de Token con la que se trabajara.
 Token *
-GetListaToken (char *Expresion)
+GetListaToken (const char *Expresion)
 {
 
   int p, q, Caso;
@@ -1024,7 +1025,7 @@ InfijoAPostfijo (Token * InicioInfijo)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 Token *
-GetPostfijo (char *Expresion)
+GetPostfijo (const char *Expresion)
 {
 
   Token *Retorno = GetListaToken (Expresion);
