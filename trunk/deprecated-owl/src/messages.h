@@ -11,9 +11,15 @@
  * and not
  *
  * "&Closer\t+"
+ *
+ * You should never use a " in translations. Even if it is scaped.
+ *
+ * "" => right
+ * "\"" => wrong!
  */
 
 #if 1 /* Español -- Idioma por defecto */
+  /* __SPANISH__ BEGIN */
   #define TXT_DESBORDAMIENTO "Desbordamiento en la operación"
   #define TXT_DESBORDAMIENTO_NEGATIVO "Desbordamiento negativo en la operación"
   #define TXT_LOS_TIPOS_NO_COINCIDEN "Los tipos no coinciden"
@@ -106,7 +112,63 @@
   #define TXT_CM_ANGULOSENRADIANES "Angulos en &radianes"
   #define TXT_CM_AYUDACONTENIDO "&Contenido...\tF1"
   #define TXT_CM_AYUDAACERCADE "&Acerca de...     "
+
+  /* Ayuda contextual */
+
+  #define HELP_CM_ARCHIVONUEVO "Inicia la sesión de trabajo con un nuevo diagrama"
+  #define HELP_CM_ARCHIVOABRIR "Inicia la sesión de trabajo con un diagrama ya existente"
+  #define HELP_CM_ARCHIVOGUARDAR "Guarda el diagrama en edición"
+  #define HELP_CM_ARCHIVOGUARDARCOMO "Guarda el diagrama en edición con un nuevo nombre"
+  #define HELP_CM_VERZOOMMENOS "Dismunuye el tamaño de los objetos en pantalla"
+  #define HELP_CM_VERZOOMMAS "Aumenta el tamaño de los objetos en pantalla"
+  #define HELP_CM_ARCHIVOSALIR "Salir de Creación"
+  #define HELP_CM_AYUDAACERCADE "Muestra información sobre los autores y la versión"
+  #define HELP_CM_OBJETOASIGNACION "Permite asignar valores a  variables"
+  #define HELP_CM_OBJETOMIENTRAS "Ejecuta un bloque de instrucciones mientras la condición sea verdadera"
+  #define HELP_CM_OBJETOPARA "Ejecuta un bloque de instrucciones hasta que el contador alcance el límite"
+  #define HELP_CM_OBJETODECISION "Selecciona el flujo a seguir de acuerdo al valor lógico de una condición"
+  #define HELP_CM_OBJETOLECTURA "Permite dar valores a las variables desde teclado"
+  #define HELP_CM_OBJETOLLAMADA "Invoca a un subprograma"
+  #define HELP_CM_OBJETOSALIDA "Muestra valores por pantalla"
+  #define HELP_CM_OBJETONUEVOSUBPROGRAMA "Crea un nuevo subprograma"
+  #define HELP_CM_SELECCIONACURSOR "Permite seleccionar objetos del diagrama en edición"
+  #define HELP_CM_EDICIONELIMINARDEPURADOR "Elimina la expresión seleccionado"
+  #define HELP_CM_EDICIONCORTAR "Corta el objeto seleccionado"
+  #define HELP_CM_EDICIONCOPIAR "Copia el objeto seleccionado"
+  #define HELP_CM_EDICIONPEGAR "Inserta a continuación del objeto seleccionado"
+  #define HELP_CM_VERSUBPROGRAMAMAS "Visualiza el siguiente subprograma "
+  #define HELP_CM_VERSUBPROGRAMAMENOS "Visualiza el subprograma anterior"
+  #define HELP_CM_EDICIONELIMINARSUBPROGRAMA "Elimina el subprograma en edición"
+  #define HELP_CM_DEPURAREJECUTAR "Ejecuta el algoritmo representado por el diagrama en edición"
+  #define HELP_CM_DEPURARDETENER "Termina la ejecución del algoritmo"
+  #define HELP_CM_DEPURARPAUSAR "Realiza una pausa en la ejecución del algoritmo"
+  #define HELP_CM_DEPURARPASOSIMPLE "Ejecuta el siguiente objeto"
+  #define HELP_CM_DEPURAREJECUTARHASTA "Ejecuta el algoritmo deteniéndose en el objeto seleccionado"
+  #define HELP_CM_ANGULOSENGRADOS "Angulos en grados para las funciones trigonométricas"
+  #define HELP_CM_ANGULOSENRADIANES "Angulos en radianes para las funciones trionométricas"
+  #define HELP_CM_EDICIONINSERTAROBJETO "Inserta el objeto indicado por el puntero a continuación del objeto seleccionado"
+  #define HELP_CM_EDICIONEDITARDEPURADOR "Edita la expresión seleccionada"
+  #define HELP_CM_VERDEPURADOR "Muestra o esconde la ventana de depuración"
+  #define HELP_CM_VERDEPURADORBOTON "Muestra o esconde la ventana de depuración"
+  #define HELP_CM_EDICIONNUEVO "Inserta una nueva expresión"
+  #define HELP_CM_OBJETOASIGNACIONMENU "Permite asignar valores a  variables"
+  #define HELP_CM_OBJETOMIENTRASMENU "Ejecuta un bloque de instrucciones mientras la condición sea verdadera"
+  #define HELP_CM_OBJETOPARAMENU "Ejecuta un bloque de instrucciones hasta que el contador alcance el límite"
+  #define HELP_CM_OBJETODECISIONMENU "Selecciona el flujo a seguir de acuerdo al valor lógico de una condición"
+  #define HELP_CM_OBJETOLECTURAMENU "Permite dar valores a las variables desde teclado"
+  #define HELP_CM_OBJETOLLAMADAMENU "Invoca a un subprograma"
+  #define HELP_CM_OBJETOSALIDAMENU "Muestra valores por pantalla"
+  #define HELP_CM_SELECCIONACURSORMENU "Permite seleccionar objetos del diagrama en edición"
+  #define HELP_CM_EDICIONELIMINAR "Elimina del diagrama el objeto seleccionado"
+  #define HELP_CM_EDICIONEDITAR "Edita el contenido del objeto seleccionado"
+  #define HELP_CM_DEPURAREVALUAR "Muestra el diálogo para evaluación de expresiones"
+  #define HELP_CM_AYUDACONTENIDO "Muestra el contenido de la ayuda"
+  #define HELP_CM_ARCHIVOIMPRIMIR "Imprime la hoja actual"
+  #define HELP_CM_ARCHIVOCONFIGURARIMPRESORA "Configura las características relacionadas con la impresora"
+
+  /* __SPANISH__ END */
   #elif 0 /* Português by Charles Guimarães Cavalcante - www.charles.art.br - e-mail@charles.art.br */
+  /* __PORTUGUESE__ BEGIN */
   #warning Compilando em Português
   #define TXT_DESBORDAMIENTO "Transbordamento na operação"
   #define TXT_DESBORDAMIENTO_NEGATIVO "Transbordamento negativo na operação"
@@ -201,6 +263,61 @@
   #define TXT_CM_ANGULOSENRADIANES "Angulos en &radianes"
   #define TXT_CM_AYUDACONTENIDO "&Contenido...\tF1"
   #define TXT_CM_AYUDAACERCADE "&Acerca de...     "
+
+  /* ayuda contextual */
+
+  #define HELP_CM_ARCHIVONUEVO "Inicia la sesión de trabajo con un nuevo diagrama"
+  #define HELP_CM_ARCHIVOABRIR "Inicia la sesión de trabajo con un diagrama ya existente"
+  #define HELP_CM_ARCHIVOGUARDAR "Guarda el diagrama en edición"
+  #define HELP_CM_ARCHIVOGUARDARCOMO "Guarda el diagrama en edición con un nuevo nombre"
+  #define HELP_CM_VERZOOMMENOS "Dismunuye el tamaño de los objetos en pantalla"
+  #define HELP_CM_VERZOOMMAS "Aumenta el tamaño de los objetos en pantalla"
+  #define HELP_CM_ARCHIVOSALIR "Salir de Creación"
+  #define HELP_CM_AYUDAACERCADE "Muestra información sobre los autores y la versión"
+  #define HELP_CM_OBJETOASIGNACION "Permite asignar valores a  variables"
+  #define HELP_CM_OBJETOMIENTRAS "Ejecuta un bloque de instrucciones mientras la condición sea verdadera"
+  #define HELP_CM_OBJETOPARA "Ejecuta un bloque de instrucciones hasta que el contador alcance el límite"
+  #define HELP_CM_OBJETODECISION "Selecciona el flujo a seguir de acuerdo al valor lógico de una condición"
+  #define HELP_CM_OBJETOLECTURA "Permite dar valores a las variables desde teclado"
+  #define HELP_CM_OBJETOLLAMADA "Invoca a un subprograma"
+  #define HELP_CM_OBJETOSALIDA "Muestra valores por pantalla"
+  #define HELP_CM_OBJETONUEVOSUBPROGRAMA "Crea un nuevo subprograma"
+  #define HELP_CM_SELECCIONACURSOR "Permite seleccionar objetos del diagrama en edición"
+  #define HELP_CM_EDICIONELIMINARDEPURADOR "Elimina la expresión seleccionado"
+  #define HELP_CM_EDICIONCORTAR "Corta el objeto seleccionado"
+  #define HELP_CM_EDICIONCOPIAR "Copia el objeto seleccionado"
+  #define HELP_CM_EDICIONPEGAR "Inserta a continuación del objeto seleccionado"
+  #define HELP_CM_VERSUBPROGRAMAMAS "Visualiza el siguiente subprograma "
+  #define HELP_CM_VERSUBPROGRAMAMENOS "Visualiza el subprograma anterior"
+  #define HELP_CM_EDICIONELIMINARSUBPROGRAMA "Elimina el subprograma en edición"
+  #define HELP_CM_DEPURAREJECUTAR "Ejecuta el algoritmo representado por el diagrama en edición"
+  #define HELP_CM_DEPURARDETENER "Termina la ejecución del algoritmo"
+  #define HELP_CM_DEPURARPAUSAR "Realiza una pausa en la ejecución del algoritmo"
+  #define HELP_CM_DEPURARPASOSIMPLE "Ejecuta el siguiente objeto"
+  #define HELP_CM_DEPURAREJECUTARHASTA "Ejecuta el algoritmo deteniéndose en el objeto seleccionado"
+  #define HELP_CM_ANGULOSENGRADOS "Angulos en grados para las funciones trigonométricas"
+  #define HELP_CM_ANGULOSENRADIANES "Angulos en radianes para las funciones trionométricas"
+  #define HELP_CM_EDICIONINSERTAROBJETO "Inserta el objeto indicado por el puntero a continuación del objeto seleccionado"
+  #define HELP_CM_EDICIONEDITARDEPURADOR "Edita la expresión seleccionada"
+  #define HELP_CM_VERDEPURADOR "Muestra o esconde la ventana de depuración"
+  #define HELP_CM_VERDEPURADORBOTON "Muestra o esconde la ventana de depuración"
+  #define HELP_CM_EDICIONNUEVO "Inserta una nueva expresión"
+  #define HELP_CM_OBJETOASIGNACIONMENU "Permite asignar valores a  variables"
+  #define HELP_CM_OBJETOMIENTRASMENU "Ejecuta un bloque de instrucciones mientras la condición sea verdadera"
+  #define HELP_CM_OBJETOPARAMENU "Ejecuta un bloque de instrucciones hasta que el contador alcance el límite"
+  #define HELP_CM_OBJETODECISIONMENU "Selecciona el flujo a seguir de acuerdo al valor lógico de una condición"
+  #define HELP_CM_OBJETOLECTURAMENU "Permite dar valores a las variables desde teclado"
+  #define HELP_CM_OBJETOLLAMADAMENU "Invoca a un subprograma"
+  #define HELP_CM_OBJETOSALIDAMENU "Muestra valores por pantalla"
+  #define HELP_CM_SELECCIONACURSORMENU "Permite seleccionar objetos del diagrama en edición"
+  #define HELP_CM_EDICIONELIMINAR "Elimina del diagrama el objeto seleccionado"
+  #define HELP_CM_EDICIONEDITAR "Edita el contenido del objeto seleccionado"
+  #define HELP_CM_DEPURAREVALUAR "Muestra el diálogo para evaluación de expresiones"
+  #define HELP_CM_AYUDACONTENIDO "Muestra el contenido de la ayuda"
+  #define HELP_CM_ARCHIVOIMPRIMIR "Imprime la hoja actual"
+  #define HELP_CM_ARCHIVOCONFIGURARIMPRESORA "Configura las características relacionadas con la impresora"
+
+  /* __PORTUGUESE__ END */
 #else
   #error You should define a language to be compiled
 #endif
