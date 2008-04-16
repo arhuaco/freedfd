@@ -35,6 +35,15 @@ struct Mensaje
   Mensaje *Sig;
 };
 
+
+/*
+ *
+ * Todavía no sé si es mejor tener singleton o una clase global.
+ * El singleton es misterioso, a menos que la clase tenga el nombre
+ * singleton metido.
+ *
+ */
+
 class SingletonError
 {
 private:
