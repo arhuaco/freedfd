@@ -280,11 +280,11 @@ GetListaToken (const char *Expresion)
             for (; EsDigito (Expresion[p]) || EsLetra (Expresion[p]) ||
                  Expresion[p] == '_'; ++p);
             char *Nuevo = Copiar (&Expresion[q], p - q);
-            NodoOperador *Op = Operadores.Buscar (Nuevo);
+            NodoOperador *Op =  operador_buscar (Nuevo);
             for (; EsEspacio (Expresion[p]); ++p);
             char CaracterEnP[2] = { Expresion[p], '\0' };
-            NodoOperador *Op2 = Operadores.Buscar (CaracterEnP);
-            bool EsFuncion = Operadores.BuscarFuncion (Nuevo);
+            NodoOperador *Op2 = operador_buscar (CaracterEnP);
+            bool EsFuncion = operador_funcion_buscar (Nuevo);
             if (EsFuncion && CaracterEnP[0] != '(')
               {
                 Buzon.SetIdentificadorAsociado (Nuevo);
@@ -394,7 +394,7 @@ GetListaToken (const char *Expresion)
                 return 0;
               }
             char CaracterEnP[2] = { Expresion[p], '\0' };
-            NodoOperador *Op = Operadores.Buscar (CaracterEnP);
+            NodoOperador *Op = operador_buscar (CaracterEnP);
             if (Op && !EstaEn (Expresion[p], "=!,)"))
               {
                 Buzon.SetIdentificadorAsociado (CaracterEnP);
@@ -415,7 +415,7 @@ GetListaToken (const char *Expresion)
             for (; EsEspacio (Expresion[p]); ++p);
             Buzon.SetIdentificadorAsociado ("(");
             char CaracterEnP[2] = { Expresion[p], '\0' };
-            NodoOperador *Op = Operadores.Buscar (CaracterEnP);
+            NodoOperador *Op = operador_buscar (CaracterEnP);
             if (!Expresion[p] || Expresion[p] == '_' ||
                 (Op && !EstaEn (Expresion[p], "+-(")))
               {
@@ -423,7 +423,7 @@ GetListaToken (const char *Expresion)
                 LiberarListaToken (Inicio);
                 return 0;
               }
-            NodoOperador *Op2 = Operadores.Buscar ("(");
+            NodoOperador *Op2 = operador_buscar ("(");
             Insertar (&Inicio, &Ultimo, "(", OPERADOR, CONSTANTE,
                       Op2->GetPdp (), Op2->GetPfp (), Op2->GetAlcance ());
             if (Buzon.GetHuboError ())
@@ -444,7 +444,7 @@ GetListaToken (const char *Expresion)
                 LiberarListaToken (Inicio);
                 return 0;
               }
-            NodoOperador *Op = Operadores.Buscar (")");
+            NodoOperador *Op = operador_buscar (")");
             Insertar (&Inicio, &Ultimo, ")", OPERADOR, CONSTANTE,
                       Op->GetPdp (), Op->GetPfp (), Op->GetAlcance ());
             if (Buzon.GetHuboError ())
@@ -460,8 +460,8 @@ GetListaToken (const char *Expresion)
             char OpUnitario[2] = { Expresion[p - 1], '\0' };
             for (; EsEspacio (Expresion[p]); ++p);
             char CaracterEnP[2] = { Expresion[p], '\0' };
-            NodoOperador *Op = Operadores.Buscar (CaracterEnP);
-            NodoOperador *Op2 = Operadores.Buscar (OpUnitario);
+            NodoOperador *Op = operador_buscar (CaracterEnP);
+            NodoOperador *Op2 = operador_buscar (OpUnitario);
             if (EstaEn (Expresion[p], "._)") || !Expresion[p] ||
                 (Op && !EstaEn (Expresion[p], "(+-")))
               {
@@ -485,8 +485,8 @@ GetListaToken (const char *Expresion)
             char OpBinario[2] = { Expresion[p - 1], '\0' };
             for (; EsEspacio (Expresion[p]); ++p);
             char CaracterEnP[2] = { Expresion[p], '\0' };
-            NodoOperador *Op = Operadores.Buscar (CaracterEnP);
-            NodoOperador *Op2 = Operadores.Buscar (OpBinario);
+            NodoOperador *Op = operador_buscar (CaracterEnP);
+            NodoOperador *Op2 = operador_buscar (OpBinario);
             if (EstaEn (Expresion[p], ".'_"))
               {
                 Buzon.SetIdentificadorAsociado (OpBinario);
@@ -522,8 +522,8 @@ GetListaToken (const char *Expresion)
               }
             for (; EsEspacio (Expresion[p]); ++p);
             char CaracterEnP[2] = { Expresion[p], '\0' };
-            NodoOperador *Op = Operadores.Buscar (CaracterEnP);
-            NodoOperador *Op2 = Operadores.Buscar (OpBinario);
+            NodoOperador *Op = operador_buscar (CaracterEnP);
+            NodoOperador *Op2 = operador_buscar (OpBinario);
             if ((Op && !EstaEn (Expresion[p], "+-("))
                 || Expresion[p] == '_' || !Expresion[p])
               {
@@ -547,8 +547,8 @@ GetListaToken (const char *Expresion)
             char OpBinario[2] = { Expresion[p - 1], '\0' };
             for (; EsEspacio (Expresion[p]); ++p);
             char CaracterEnP[2] = { Expresion[p], '\0' };
-            NodoOperador *Op = Operadores.Buscar (CaracterEnP);
-            NodoOperador *Op2 = Operadores.Buscar (OpBinario);
+            NodoOperador *Op = operador_buscar (CaracterEnP);
+            NodoOperador *Op2 = operador_buscar (OpBinario);
             if ((Op && !EstaEn (Expresion[p], "+-("))
                 || Expresion[p] == '_' || !Expresion[p])
               {
@@ -579,8 +579,8 @@ GetListaToken (const char *Expresion)
               }
             for (p = p + 1; EsEspacio (Expresion[p]); ++p);
             char CaracterEnP[2] = { Expresion[p], '\0' };
-            NodoOperador *Op = Operadores.Buscar (CaracterEnP);
-            NodoOperador *Op2 = Operadores.Buscar (OpBinario);
+            NodoOperador *Op = operador_buscar (CaracterEnP);
+            NodoOperador *Op2 = operador_buscar (OpBinario);
             if (!Expresion[p] || (Expresion[p] == '_') ||
                 (Op && !EstaEn (Expresion[p], "(+-")))
               {
@@ -604,7 +604,7 @@ GetListaToken (const char *Expresion)
             char OpComa[2] = { Expresion[p - 1], '\0' };
             for (; EsEspacio (Expresion[p]); ++p);
             char CaracterEnP[2] = { Expresion[p], '\0' };
-            NodoOperador *Op = Operadores.Buscar (CaracterEnP);
+            NodoOperador *Op = operador_buscar (CaracterEnP);
             if (!Expresion[p] || (Expresion[p] == '_') ||
                 (Op && !EstaEn (Expresion[p], "(+-")))
               {
@@ -862,7 +862,7 @@ PreprocesarExpresion (Token * Expresion)
               Token *Nuevo;
               {                 //BLOQUE
                 char Buffer[16] = { '$', '\0' };
-                if (Operadores.BuscarFuncion (Actual->GetOperador ()))
+                if (operador_funcion_buscar (Actual->GetOperador ()))
                   Buffer[0] = '@';
                 //itoa(Dimension, Buffer + 1, 10); Reemplazado por:
                 sprintf (Buffer + 1, "%d", Dimension);

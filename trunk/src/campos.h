@@ -1,6 +1,8 @@
 #ifndef __CAMPOS__H__
 #define __CAMPOS__H__
 
+#include <operador.h>
+
   // TODO: Usar esto en depuración. Para evitar memoria usada y no devuelta
   // TODO: Cambiar por una clase o algo. Ahora mismo es una variable global.
   // extern int ContadorToken;

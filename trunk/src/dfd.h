@@ -3,8 +3,7 @@
 
 #define ASSERT
 
-
-const char *program_name = "FreeDFD";
+extern const char *program_name;
 
 enum Accion { EDICION = 0, EJECUCION, DEPURACION };
 
@@ -37,11 +36,6 @@ enum TipoError {
     SUBPROGRAMA_REPETIDO, MUCHOS_ARGUMENTOS,
     POCOS_ARGUMENTOS, PARAMETRO_NO_VARIABLE
 };
-
-/* usamos un nombre de clase diferente y singleton para no tener instancias
- * globales ? */
-#include <operador.h>
-Operadores Operadores;
 
 
 #endif

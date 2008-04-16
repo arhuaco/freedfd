@@ -23,6 +23,30 @@
 #include<stdlib.h>
 #include<string.h>
 
+struct NodoFuncion
+{
+  const char *Dato;
+  NodoFuncion *Sig;
+} *InicioFunciones;
+
+
+/*
+ * Con la reestructuración lo único importante acá es el destructor.
+ */
+class Operadores
+{
+  void Insertar (const char *Str, int UnPdp, int UnPfp, AlcanceOperador UnAlcance);
+  void Insertar (const char *Str);
+
+public:
+    Operadores ();
+   ~Operadores ();
+};
+
+Operadores Operadores;
+
+
+NodoOperador *InicioOperadores;
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -147,8 +171,7 @@ Operadores::~Operadores ()
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-NodoOperador *
-Operadores::Buscar (const char *Operador)
+NodoOperador *operador_buscar (const char *Operador)
 {
   NodoOperador *Aux = InicioOperadores;
   for (; Aux; Aux = Aux->GetSig ())
@@ -157,14 +180,15 @@ Operadores::Buscar (const char *Operador)
   return 0;
 }
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 bool
-Operadores::BuscarFuncion (const char *Str)
+operador_funcion_buscar   (const char *NombreFuncion)
 {
   NodoFuncion *Aux = InicioFunciones;
   for (; Aux; Aux = Aux->Sig)
-    if (!strcasecmp (Aux->Dato, Str))
+    if (!strcasecmp (Aux->Dato, NombreFuncion))
       return true;
   return false;
 }
