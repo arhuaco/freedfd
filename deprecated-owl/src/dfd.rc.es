@@ -288,7 +288,7 @@ FONT 11, "MS Sans Serif"
  CONTROL "http://freedfd.freaks-unidos.net", IDC_STATICTEXT1, "static", SS_CENTER | WS_CHILD | WS_VISIBLE, 34, 14, 116, 9
  CONTROL "FreeDFD es Software Libre, y está cubierto por la licencia  pública GNU (GPL).\n\nUsted puede tener acceso al código fuente, y puede modificarlo de acuerdo a sus necesidades si cumple con la licencia. Lo invitamos a copiar y distribuir este programa.\n\nEstamos trabajando en una versión portable que funcione en Windows y GNU/Linux de forma nativa, ya que para correr FreeDFD dentro de GNU/Linux se usa el programa Wine. Necesitamos ayuda para el desarrollo. Favor visitar la página (http://freedfd.freaks-unidos.net) para obtener más información sobre el desarrollo de la nueva version, o escribir a freedfd@listas.el-directorio.org.", IDC_STATICTEXT2, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 91, 264, 84
  CONTROL "Copyright(c) 1997-2008", IDC_STATICTEXT3, "static", SS_CENTER | WS_CHILD | WS_VISIBLE, 9, 28, 160, 9
- CONTROL "Consulte la página web para ver la lista completa de autores y colaboradores",IDC_STATICTEXT4, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 20, 68, 258, 8
+ CONTROL "Consulte la página web para ver la lista completa de autores y colaboradores", IDC_STATICTEXT4, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 20, 68, 258, 8
 }
 
 CM_ARCHIVONUEVO BITMAP
