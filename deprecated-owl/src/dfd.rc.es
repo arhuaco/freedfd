@@ -132,144 +132,144 @@
 
 COMMANDS MENU 
 {
- POPUP "&Arquivo"
+ POPUP "&Archivo"
  {
-              MENUITEM "&Novo\tCtrl+N", CM_ARCHIVONUEVO
+              MENUITEM "&Nuevo\tCtrl+N", CM_ARCHIVONUEVO
               MENUITEM "&Abrir...\tCtrl+A", CM_ARCHIVOABRIR
-              MENUITEM "&Salvar\tCtrl+G", CM_ARCHIVOGUARDAR
-              MENUITEM "Salvar &Como...     ", CM_ARCHIVOGUARDARCOMO
+              MENUITEM "&Guardar\tCtrl+G", CM_ARCHIVOGUARDAR
+              MENUITEM "Guardar &Como...     ", CM_ARCHIVOGUARDARCOMO
   MENUITEM SEPARATOR
               MENUITEM "Configurar impresora...", CM_ARCHIVOCONFIGURARIMPRESORA
               MENUITEM "Im&primir...\tCtrl+P", CM_ARCHIVOIMPRIMIR
   MENUITEM SEPARATOR
-              MENUITEM "&Sair\tAlt+F4", CM_ARCHIVOSALIR
+              MENUITEM "&Salir\tAlt+F4", CM_ARCHIVOSALIR
  }
 
- POPUP "&Editar"
+ POPUP "&Edicion"
  {
-              MENUITEM "&Recortar\tCtrl+X", CM_EDICIONCORTAR
+              MENUITEM "&Cortar\tCtrl+X", CM_EDICIONCORTAR
               MENUITEM "C&opiar\tCtrl+C", CM_EDICIONCOPIAR
-              MENUITEM "&Colar\tCtrl+V", CM_EDICIONPEGAR
-              MENUITEM "&Excluir\tDelete", CM_EDICIONELIMINAR
+              MENUITEM "&Pegar\tCtrl+V", CM_EDICIONPEGAR
+              MENUITEM "&Eliminar\tSupr", CM_EDICIONELIMINAR
   MENUITEM SEPARATOR
-              MENUITEM "Excluir &Função", CM_EDICIONELIMINARSUBPROGRAMA
+              MENUITEM "Eliminar &Subprograma", CM_EDICIONELIMINARSUBPROGRAMA
   MENUITEM SEPARATOR
-              MENUITEM "Inserir Objeto\tIns", CM_EDICIONINSERTAROBJETO
+              MENUITEM "Insertar Objeto\tIns", CM_EDICIONINSERTAROBJETO
               MENUITEM "E&ditar Objeto...\tEnter", CM_EDICIONEDITAR
  }
 
  POPUP "&Objeto"
  {
               MENUITEM "&Cursor", CM_SELECCIONACURSORMENU
-              MENUITEM "&Atribuição", CM_OBJETOASIGNACIONMENU
-              MENUITEM "Repetição &Enquanto", CM_OBJETOMIENTRASMENU
-              MENUITEM "Repetição &Para", CM_OBJETOPARAMENU
-              MENUITEM "&Decisão", CM_OBJETODECISIONMENU
-              MENUITEM "L&eitura", CM_OBJETOLECTURAMENU
-              MENUITEM "&Chamada de função", CM_OBJETOLLAMADAMENU
-              MENUITEM "&Saída", CM_OBJETOSALIDAMENU
+              MENUITEM "&Asignacion", CM_OBJETOASIGNACIONMENU
+              MENUITEM "Ciclo &mientras", CM_OBJETOMIENTRASMENU
+              MENUITEM "Ciclo &para", CM_OBJETOPARAMENU
+              MENUITEM "&Decision", CM_OBJETODECISIONMENU
+              MENUITEM "L&ectura", CM_OBJETOLECTURAMENU
+              MENUITEM "&Llamada", CM_OBJETOLLAMADAMENU
+              MENUITEM "&Salida", CM_OBJETOSALIDAMENU
   MENUITEM SEPARATOR
-              MENUITEM "&Nova Função", CM_OBJETONUEVOSUBPROGRAMA
+              MENUITEM "&Nuevo Subprograma", CM_OBJETONUEVOSUBPROGRAMA
  }
 
- POPUP "&Visualizar"
+ POPUP "&Ver"
  {
   POPUP "&Zoom"
   {
-              MENUITEM "&Aumentar\t+        ", CM_VERZOOMMAS
-              MENUITEM "&Diminuir\t-         ", CM_VERZOOMMENOS
+              MENUITEM "&Acercar\t+        ", CM_VERZOOMMAS
+              MENUITEM "A&lejar\t-         ", CM_VERZOOMMENOS
   }
 
   MENUITEM SEPARATOR
-              MENUITEM "Função An&terior\tCtrl+Esquerda", CM_VERSUBPROGRAMAMENOS
-              MENUITEM "&Próxima Função\tCtrl+Direita", CM_VERSUBPROGRAMAMAS
+              MENUITEM "An&terior subprograma\tCtrl+Izquierda", CM_VERSUBPROGRAMAMENOS
+              MENUITEM "&Siguiente Subprograma\tCtrl+Derecha", CM_VERSUBPROGRAMAMAS
   MENUITEM SEPARATOR
               MENUITEM "&Depurador\tF6 ", CM_VERDEPURADOR
  }
 
- POPUP "Exe&cutar"
+ POPUP "Eje&cución"
  {
-              MENUITEM "&Executar\tF9 ", CM_DEPURAREJECUTAR
+              MENUITEM "&Ejecutar\tF9 ", CM_DEPURAREJECUTAR
   MENUITEM SEPARATOR
               MENUITEM "P&ausar\tPausa", CM_DEPURARPAUSAR
-              MENUITEM "&Parar\tCtrl+Pausa", CM_DEPURARDETENER
+              MENUITEM "&Detener\tCtrl+Pausa", CM_DEPURARDETENER
  }
 
- POPUP "&Depurar"
+ POPUP "&Depuración"
  {
-              MENUITEM "Passo &simples\tF7", CM_DEPURARPASOSIMPLE
-              MENUITEM "&Executar até\tF4", CM_DEPURAREJECUTARHASTA
+              MENUITEM "&Paso simple\tF7", CM_DEPURARPASOSIMPLE
+              MENUITEM "&Ejecutar hasta\tF4", CM_DEPURAREJECUTARHASTA
   MENUITEM SEPARATOR
-              MENUITEM "&Parar\tCtrl+Pausa", CM_DEPURARDETENER
+              MENUITEM "&Detener\tCtrl+Pausa", CM_DEPURARDETENER
   MENUITEM SEPARATOR
-              MENUITEM "&Avaliar\tF5", CM_DEPURAREVALUAR
+              MENUITEM "E&valuar\tF5", CM_DEPURAREVALUAR
  }
 
- POPUP "O&pções"
+ POPUP "O&pciones"
  {
-              MENUITEM "Ângulos em &graus", CM_ANGULOSENGRADOS
-              MENUITEM "Ângulos em &radianos", CM_ANGULOSENRADIANES
+              MENUITEM "&Angulos en &grados", CM_ANGULOSENGRADOS
+              MENUITEM "Angulos en &radianes", CM_ANGULOSENRADIANES
  }
 
- POPUP "A&juda"
+ POPUP "A&yuda"
  {
-              MENUITEM "&Conteúdo...\tF1", CM_AYUDACONTENIDO
-              MENUITEM "&Sobre...     ", CM_AYUDAACERCADE
+              MENUITEM "&Contenido...\tF1", CM_AYUDACONTENIDO
+              MENUITEM "&Acerca de...     ", CM_AYUDAACERCADE
  }
 }
 
 STRINGTABLE 
 {
-CM_ARCHIVONUEVO, "Inicia a sessão de trabalho com um novo diagrama"
-CM_ARCHIVOABRIR, "Inicia a sessão de trabalho com um diagrama já existente"
-CM_ARCHIVOGUARDAR, "Salva o diagrama aberto"
-CM_ARCHIVOGUARDARCOMO, "Salva o diagrama aberto com um novo nome"
-CM_VERZOOMMENOS, "Dimínue o tamanho dos objetos na tela"
-CM_VERZOOMMAS, "Aumenta o tamanho dos objetos na tela"
-CM_ARCHIVOSALIR, "Sair do Programa"
-CM_AYUDAACERCADE, "Mostra informação sobre os autores e a versão"
-CM_OBJETOASIGNACION, "Permite atribuir valores à variáveis"
-CM_OBJETOMIENTRAS, "Executa um bloco de instruções enquanto a condição for verdadeira"
-CM_OBJETOPARA, ""
-CM_OBJETODECISION, "Seleciona o fluxo a seguir de acordo com o valor lógico de uma condição"
-CM_OBJETOLECTURA, "Permite atribuir valores às variáveis digitadas"
-CM_OBJETOLLAMADA, "Chama um função"
-CM_OBJETOSALIDA, "Mostra os valores por tela"
-CM_OBJETONUEVOSUBPROGRAMA, "Cria um nova função"
-CM_SELECCIONACURSOR, "Permite selecionar objetos do diagrama aberto"
-CM_EDICIONELIMINARDEPURADOR, "Exclui a expressão selecionada"
-CM_EDICIONCORTAR, "Recorta o objeto selecionado"
-CM_EDICIONCOPIAR, "Copia o objeto selecionado"
-CM_EDICIONPEGAR, "Cola o objeto selecionado"
-CM_VERSUBPROGRAMAMAS, "Visualiza a próxima função "
-CM_VERSUBPROGRAMAMENOS, "Visualiza a função anterior"
-CM_EDICIONELIMINARSUBPROGRAMA, "Exclui a função aberta"
-CM_DEPURAREJECUTAR, "Executa o algorítmo representado pelo diagrama aberto"
-CM_DEPURARDETENER, "Termina a execução do algorítmo"
-CM_DEPURARPAUSAR, "Pausa a execução do algorítmo"
-CM_DEPURARPASOSIMPLE, "Executa o próximo objeto"
-CM_DEPURAREJECUTARHASTA, "Executa o algorítmo parando no objeto selecionado"
-CM_ANGULOSENGRADOS, "Ângulos em graus para as funções trigonométricas"
-CM_ANGULOSENRADIANES, "Ângulos em radianos para as funções trigonométricas"
-CM_EDICIONINSERTAROBJETO, "Insere o objeto indicado pelo cursor depois do objeto selecionado"
-CM_EDICIONEDITARDEPURADOR, "Edita a expressão selecionada"
-CM_VERDEPURADOR, "Mostra ou esconde a janela de depuração"
-CM_VERDEPURADORBOTON, "Mostra ou esconde a janela de depuração"
-CM_EDICIONNUEVO, "Insere uma nova expressão"
-CM_OBJETOASIGNACIONMENU, "Permite atribuir valores à variáveis"
-CM_OBJETOMIENTRASMENU, "Executa um bloco de instruções enquanto a condição for verdadeira"
-CM_OBJETOPARAMENU, "Executa um bloco de instruções até que o contador alcance o limite"
-CM_OBJETODECISIONMENU, "Seleciona o próximo fluxo de acordo com o valor lógico de uma condição"
-CM_OBJETOLECTURAMENU, "Permite dar valores às variáveis digitadas"
-CM_OBJETOLLAMADAMENU, "Chama um função"
-CM_OBJETOSALIDAMENU, "Mostra valores na tela"
-CM_SELECCIONACURSORMENU, "Permite selecionar objetos do diagrama aberto"
-CM_EDICIONELIMINAR, "Exclui do diagrama o objeto selecionado"
-CM_EDICIONEDITAR, "Edita o conteúdo do objeto selecionado"
-CM_DEPURAREVALUAR, "Mostra o diálogo para evaluação de expressões"
-CM_AYUDACONTENIDO, "Mostra o conteúdo da ajuda"
-CM_ARCHIVOIMPRIMIR, "Imprime a página atual"
-CM_ARCHIVOCONFIGURARIMPRESORA, "Configura as propriedades da impressora"
+CM_ARCHIVONUEVO, "Inicia la sesión de trabajo con un nuevo diagrama"
+CM_ARCHIVOABRIR, "Inicia la sesión de trabajo con un diagrama ya existente"
+CM_ARCHIVOGUARDAR, "Guarda el diagrama en edición"
+CM_ARCHIVOGUARDARCOMO, "Guarda el diagrama en edición con un nuevo nombre"
+CM_VERZOOMMENOS, "Dismunuye el tamaño de los objetos en pantalla"
+CM_VERZOOMMAS, "Aumenta el tamaño de los objetos en pantalla"
+CM_ARCHIVOSALIR, "Salir de Creación"
+CM_AYUDAACERCADE, "Muestra información sobre los autores y la versión"
+CM_OBJETOASIGNACION, "Permite asignar valores a  variables"
+CM_OBJETOMIENTRAS, "Ejecuta un bloque de instrucciones mientras la condición sea verdadera"
+CM_OBJETOPARA, "Ejecuta un bloque de instrucciones hasta que el contador alcance el límite"
+CM_OBJETODECISION, "Selecciona el flujo a seguir de acuerdo al valor lógico de una condición"
+CM_OBJETOLECTURA, "Permite dar valores a las variables desde teclado"
+CM_OBJETOLLAMADA, "Invoca a un subprograma"
+CM_OBJETOSALIDA, "Muestra valores por pantalla"
+CM_OBJETONUEVOSUBPROGRAMA, "Crea un nuevo subprograma"
+CM_SELECCIONACURSOR, "Permite seleccionar objetos del diagrama en edición"
+CM_EDICIONELIMINARDEPURADOR, "Elimina la expresión seleccionado"
+CM_EDICIONCORTAR, "Corta el objeto seleccionado"
+CM_EDICIONCOPIAR, "Copia el objeto seleccionado"
+CM_EDICIONPEGAR, "Inserta a continuación del objeto seleccionado"
+CM_VERSUBPROGRAMAMAS, "Visualiza el siguiente subprograma "
+CM_VERSUBPROGRAMAMENOS, "Visualiza el subprograma anterior"
+CM_EDICIONELIMINARSUBPROGRAMA, "Elimina el subprograma en edición"
+CM_DEPURAREJECUTAR, "Ejecuta el algoritmo representado por el diagrama en edición"
+CM_DEPURARDETENER, "Termina la ejecución del algoritmo"
+CM_DEPURARPAUSAR, "Realiza una pausa en la ejecución del algoritmo"
+CM_DEPURARPASOSIMPLE, "Ejecuta el siguiente objeto"
+CM_DEPURAREJECUTARHASTA, "Ejecuta el algoritmo deteniéndose en el objeto seleccionado"
+CM_ANGULOSENGRADOS, "Angulos en grados para las funciones trigonométricas"
+CM_ANGULOSENRADIANES, "Angulos en radianes para las funciones trionométricas"
+CM_EDICIONINSERTAROBJETO, "Inserta el objeto indicado por el puntero a continuación del objeto seleccionado"
+CM_EDICIONEDITARDEPURADOR, "Edita la expresión seleccionada"
+CM_VERDEPURADOR, "Muestra o esconde la ventana de depuración"
+CM_VERDEPURADORBOTON, "Muestra o esconde la ventana de depuración"
+CM_EDICIONNUEVO, "Inserta una nueva expresión"
+CM_OBJETOASIGNACIONMENU, "Permite asignar valores a  variables"
+CM_OBJETOMIENTRASMENU, "Ejecuta un bloque de instrucciones mientras la condición sea verdadera"
+CM_OBJETOPARAMENU, "Ejecuta un bloque de instrucciones hasta que el contador alcance el límite"
+CM_OBJETODECISIONMENU, "Selecciona el flujo a seguir de acuerdo al valor lógico de una condición"
+CM_OBJETOLECTURAMENU, "Permite dar valores a las variables desde teclado"
+CM_OBJETOLLAMADAMENU, "Invoca a un subprograma"
+CM_OBJETOSALIDAMENU, "Muestra valores por pantalla"
+CM_SELECCIONACURSORMENU, "Permite seleccionar objetos del diagrama en edición"
+CM_EDICIONELIMINAR, "Elimina del diagrama el objeto seleccionado"
+CM_EDICIONEDITAR, "Edita el contenido del objeto seleccionado"
+CM_DEPURAREVALUAR, "Muestra el diálogo para evaluación de expresiones"
+CM_AYUDACONTENIDO, "Muestra el contenido de la ayuda"
+CM_ARCHIVOIMPRIMIR, "Imprime la hoja actual"
+CM_ARCHIVOCONFIGURARIMPRESORA, "Configura las características relacionadas con la impresora"
 }
 
 IDD_ABOUT DIALOG 24, 26, 285, 196
