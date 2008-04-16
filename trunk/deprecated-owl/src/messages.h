@@ -356,16 +356,17 @@
   #define TXT_DIALOG_INVALID_FILE_FORMAT "O arquivo não é um arquivo de Dfd"
   #define TXT_DIALOG_PROGRAM_CHECK_ERROR "Erro de revisão"
   #define TXT_DIALOG_PROGRAM_RUN_ERROR "Erro de execução"
-  /* Objetos en Ejecución */
 
-  #define TXT_RUNNING_OBJECT_YES "Pt:Sí"
-  #define TXT_RUNNING_OBJECT_NO "Pt:No"
-  #define TXT_RUNNING_OBJECT_FOR "Pt:Para"
-  #define TXT_RUNNING_OBJECT_WHILE "Pt:Mientras"
-  #define TXT_RUNNING_OBJECT_BEGIN "Pt:Inicio"
-  #define TXT_RUNNING_OBJECT_END "Pt:Fin"
-  #define TXT_RUNNING_OBJECT_BLOCK_END "Pt:Cierre"
-  #define TXT_RUNNING_OBJECT_RETURN "Pt:Retornar"
+  /* Objetos dibujados en pantalla */
+
+  #define TXT_RUNNING_OBJECT_YES "Sim"
+  #define TXT_RUNNING_OBJECT_NO "Não"
+  #define TXT_RUNNING_OBJECT_FOR "Para"
+  #define TXT_RUNNING_OBJECT_WHILE "Enquanto"
+  #define TXT_RUNNING_OBJECT_BEGIN "Começarão"
+  #define TXT_RUNNING_OBJECT_END "Fin"
+  #define TXT_RUNNING_OBJECT_BLOCK_END "Fechar"
+  #define TXT_RUNNING_OBJECT_RETURN "Voltar"
 
   /* __PORTUGUESE__ END */
 #else
