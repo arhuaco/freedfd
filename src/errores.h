@@ -8,38 +8,19 @@
 
 class BuzonDeErrores
 {
-
-  struct Mensaje
-  {
-    char *Info;
-    TipoError Tipo;
-    Mensaje *Sig;
-  } *Inicio;
-
-  char *IdentificadorAsociado;
-  bool  HuboError;
-  void  IntroducirError (char *Id, TipoError UnError, int Asociado = 1);
+  void  IntroducirError (const char *msg, TipoError UnError);
 
 public:
 
     BuzonDeErrores ()
   {
-    Inicio = NULL;
-    IdentificadorAsociado = NULL;
-    HuboError = false;
   }
 
   void Error (TipoError UnError);
 
-  bool GetHuboError ()
-  {
-    return HuboError;
-  }
+  bool GetHuboError ();
 
-  char *GetIdentificadorAsociado ()
-  {
-    return IdentificadorAsociado;
-  }
+  char *GetIdentificadorAsociado ();
 
   char *GetError ();
 
