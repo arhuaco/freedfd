@@ -31,7 +31,14 @@ open RC, '<dfd.rc.source';
 while (<RC>)
 {
   my $orig = $_;
-  foreach my $key (keys %S)
+  foreach my $key (sort {
+                           my $max = length($a);
+                           if (length($b) > $max)
+                           {
+                             $max = length($b);
+                           }
+                           $max - length($a) <=> $max - length ($b)
+                         } (keys %S))
   {
     if ($orig =~ m/$key/)
     {

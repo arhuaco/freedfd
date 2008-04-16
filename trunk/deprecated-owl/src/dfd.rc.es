@@ -197,7 +197,7 @@ COMMANDS MENU
  POPUP "&Depuración"
  {
               MENUITEM "&Paso simple\tF7", CM_DEPURARPASOSIMPLE
-              MENUITEM "&Ejecutar\tF9 "HASTA, CM_DEPURAREJECUTARHASTA
+              MENUITEM "&Ejecutar hasta\tF4", CM_DEPURAREJECUTARHASTA
   MENUITEM SEPARATOR
               MENUITEM "&Detener\tCtrl+Pausa", CM_DEPURARDETENER
   MENUITEM SEPARATOR
@@ -236,13 +236,13 @@ CM_OBJETOLLAMADA, "Invoca a un subprograma"
 CM_OBJETOSALIDA, "Muestra valores por pantalla"
 CM_OBJETONUEVOSUBPROGRAMA, "Crea un nuevo subprograma"
 CM_SELECCIONACURSOR, "Permite seleccionar objetos del diagrama en edición"
-CM_EDICIONELIMINARDEPURADOR, "Elimina del diagrama el objeto seleccionado"DEPURADOR
+CM_EDICIONELIMINARDEPURADOR, "Elimina la expresión seleccionado"
 CM_EDICIONCORTAR, "Corta el objeto seleccionado"
 CM_EDICIONCOPIAR, "Copia el objeto seleccionado"
 CM_EDICIONPEGAR, "Inserta a continuación del objeto seleccionado"
 CM_VERSUBPROGRAMAMAS, "Visualiza el siguiente subprograma "
 CM_VERSUBPROGRAMAMENOS, "Visualiza el subprograma anterior"
-CM_EDICIONELIMINARSUBPROGRAMA, "Elimina del diagrama el objeto seleccionado"SUBPROGRAMA
+CM_EDICIONELIMINARSUBPROGRAMA, "Elimina el subprograma en edición"
 CM_DEPURAREJECUTAR, "Ejecuta el algoritmo representado por el diagrama en edición"
 CM_DEPURARDETENER, "Termina la ejecución del algoritmo"
 CM_DEPURARPAUSAR, "Realiza una pausa en la ejecución del algoritmo"
@@ -251,14 +251,14 @@ CM_DEPURAREJECUTARHASTA, "Ejecuta el algoritmo deteniéndose en el objeto selecci
 CM_ANGULOSENGRADOS, "Angulos en grados para las funciones trigonométricas"
 CM_ANGULOSENRADIANES, "Angulos en radianes para las funciones trionométricas"
 CM_EDICIONINSERTAROBJETO, "Inserta el objeto indicado por el puntero a continuación del objeto seleccionado"
-CM_EDICIONEDITARDEPURADOR, "Edita el contenido del objeto seleccionado"DEPURADOR
+CM_EDICIONEDITARDEPURADOR, "Edita la expresión seleccionada"
 CM_VERDEPURADOR, "Muestra o esconde la ventana de depuración"
 CM_VERDEPURADORBOTON, "Muestra o esconde la ventana de depuración"
 CM_EDICIONNUEVO, "Inserta una nueva expresión"
-CM_OBJETOASIGNACIONMENU, "Permite asignar valores a  variables"MENU
-CM_OBJETOMIENTRASMENU, "Ejecuta un bloque de instrucciones mientras la condición sea verdadera"MENU
+CM_OBJETOASIGNACIONMENU, "Permite asignar valores a  variables"
+CM_OBJETOMIENTRASMENU, "Ejecuta un bloque de instrucciones mientras la condición sea verdadera"
 CM_OBJETOPARAMENU, "Ejecuta un bloque de instrucciones hasta que el contador alcance el límite"
-CM_OBJETODECISIONMENU, "Selecciona el flujo a seguir de acuerdo al valor lógico de una condición"MENU
+CM_OBJETODECISIONMENU, "Selecciona el flujo a seguir de acuerdo al valor lógico de una condición"
 CM_OBJETOLECTURAMENU, "Permite dar valores a las variables desde teclado"
 CM_OBJETOLLAMADAMENU, "Invoca a un subprograma"
 CM_OBJETOSALIDAMENU, "Muestra valores por pantalla"
