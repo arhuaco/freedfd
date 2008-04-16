@@ -176,6 +176,22 @@
   #define HELP_CM_ARCHIVOIMPRIMIR "Imprime la hoja actual"
   #define HELP_CM_ARCHIVOCONFIGURARIMPRESORA "Configura las características relacionadas con la impresora"
 
+  /* Dialogs, message boxes */
+
+  #define TXT_DIALOG_EXECUTION_OK "La ejecución ha terminado con normalidad"
+  #define TXT_DIALOG_REPORT_BUG "Favor informar a los autores para que arreglen el error"
+  #define TXT_DIALOG_CONFIRM_DELETE_SUBPROGRAM1  "Si elimina este objeto eliminará el subprograma completo.\n¿Eliminar?"
+  #define TXT_DIALOG_CONFIRM_DELETE_SUBPROGRAM2 "¿Eliminar el subprograma?"
+  #define TXT_DIALOG_CONFIRM_DELETE_BOTH_BRANCHES "Si elimina este objeto eliminará también su brazo izquierdo y su brazo derecho.\n¿Eliminar? "
+  #define TXT_DIALOG_CONFIRM_DELETE_LOOP "Si elimina este objeto eliminará también el cuerpo del ciclo.\n¿Eliminar?"
+  #define TXT_DIALOG_ADD_CONSTANT "Debe ingresar un valor constante"
+  #define TXT_DIALOG_EVALUATION_ERROR "Error de evaluación"
+  #define TXT_DIALOG_UNABLE_SAVE_FILE "No fue posible guardar el archivo"
+  #define TXT_DIALOG_UNABLE_OPEN_FILE "No fue posible abrir el archivo"
+  #define TXT_DIALOG_INVALID_FILE_FORMAT "El archivo no es un archivo de Dfd"
+  #define TXT_DIALOG_PROGRAM_CHECK_ERROR "Error de revisión"
+  #define TXT_DIALOG_PROGRAM_RUN_ERROR "Error de revisión"
+
   /* __SPANISH__ END */
   #elif 0 /* Português by Charles Guimarães Cavalcante - www.charles.art.br - e-mail@charles.art.br */
   /* __PORTUGUESE__ BEGIN */
@@ -221,7 +237,6 @@
   #define TXT_MUCHOS_ARGUMENTOS ": Muitos argumentos"
   #define TXT_POCOS_ARGUMENTOS ": Faltam argumentos"
   #define TXT_ERROR_INDEFINIDO ": Erro não definido"
-
 
   #define TXT_MENU_FILE "&Archivo"
   #define TXT_MENU_EDIT "&Edicion"
@@ -325,6 +340,22 @@
   #define HELP_CM_AYUDACONTENIDO "Muestra el contenido de la ayuda"
   #define HELP_CM_ARCHIVOIMPRIMIR "Imprime la hoja actual"
   #define HELP_CM_ARCHIVOCONFIGURARIMPRESORA "Configura las características relacionadas con la impresora"
+
+  /* mensajes de diálogo */
+
+  #define TXT_DIALOG_EXECUTION_OK "La ejecución ha terminado con normalidad"
+  #define TXT_DIALOG_REPORT_BUG "Favor informar a los autores para que arreglen el error"
+  #define TXT_DIALOG_CONFIRM_DELETE_SUBPROGRAM1  "Si elimina este objeto eliminará el subprograma completo.\n¿Eliminar?"
+  #define TXT_DIALOG_CONFIRM_DELETE_SUBPROGRAM2 "¿Eliminar el subprograma?"
+  #define TXT_DIALOG_CONFIRM_DELETE_BOTH_BRANCHES "Si elimina este objeto eliminará también su brazo izquierdo y su brazo derecho.\n¿Eliminar? "
+  #define TXT_DIALOG_CONFIRM_DELETE_LOOP "Si elimina este objeto eliminará también el cuerpo del ciclo.\n¿Eliminar?"
+  #define TXT_DIALOG_ADD_CONSTANT "Debe ingresar un valor constante"
+  #define TXT_DIALOG_EVALUATION_ERROR "Error de evaluación"
+  #define TXT_DIALOG_UNABLE_SAVE_FILE "No fue posible guardar el archivo"
+  #define TXT_DIALOG_UNABLE_OPEN_FILE "No fue posible abrir el archivo"
+  #define TXT_DIALOG_INVALID_FILE_FORMAT "El archivo no es un archivo de Dfd"
+  #define TXT_DIALOG_PROGRAM_CHECK_ERROR "Error de revisión"
+  #define TXT_DIALOG_PROGRAM_RUN_ERROR "Error de revisión"
 
   /* __PORTUGUESE__ END */
 #else
