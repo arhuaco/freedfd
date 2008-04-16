@@ -18,23 +18,72 @@
   51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
+#ifndef __OPERADOR__H__
+#define __OPERADOR__H__
 
-#ifndef __CAMPOS__H__
-#define __CAMPOS__H__
+enum AlcanceOperador { UNITARIO, BINARIO, UNITARIOBINARIO, ARRAY };
 
-#include <dfd.h>
+class NodoOperador
+{
+  const char *Dato;
+  int Pdp;  /* prioridad dentro de la pila */
+  int Pfp;  /* prioridad fuera de la pila */
 
-class NodoOperador;
+  NodoOperador *Sig;  /* el siguiente, para una lista */
+  AlcanceOperador Alcance;  /* unitario, binario, etc. */
+
+public:
+
+  NodoOperador (const char *Nombre, int UnPdp, int UnPfp,
+  AlcanceOperador UnAlcance);
+
+  ~NodoOperador (){}
+
+  NodoOperador *GetSig ()
+  {
+    return Sig;
+  }
+
+  void SetSig (NodoOperador * UnSig)
+  {
+    Sig = UnSig;
+  }
+
+  void SetAlcance (AlcanceOperador UnAlcance)
+  {
+    Alcance = UnAlcance;
+  }
+
+  AlcanceOperador GetAlcance ()
+  {
+    return Alcance;
+  }
+
+  const char *GetDato ()
+  {
+    return Dato;
+  }
+
+  int GetPdp ()
+  {
+    return Pdp;
+  }
+
+  int GetPfp ()
+  {
+    return Pfp;
+  }
+};
 
 class Operadores
 {
   NodoOperador *InicioOperadores;
-  void Insertar (char *Str, int UnPdp, int UnPfp, AlcanceOperador UnAlcance);
-  void Insertar (char *Str);
+  void Insertar (const char *Str, int UnPdp, int UnPfp, AlcanceOperador UnAlcance);
+  void Insertar (const char *Str);
 
   struct NodoFuncion
   {
-    char *Dato;
+    const char *Dato;
     NodoFuncion *Sig;
   } *InicioFunciones;
 
@@ -42,8 +91,8 @@ class Operadores
 public:
     Operadores ();
    ~Operadores ();
-  NodoOperador *Buscar (char *Operador);
-  bool BuscarFuncion (char *Funcion);
+  NodoOperador *Buscar (const char *Operador);
+  bool BuscarFuncion (const char *Funcion);
 
 };
 

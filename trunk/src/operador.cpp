@@ -23,61 +23,10 @@
 #include<stdlib.h>
 #include<string.h>
 
-class NodoOperador
-{
-  char *Dato;			/* no se destruye especificamente */
-  int Pdp;			/* prioridad dentro de la pila */
-  int Pfp;			/* prioridad fuera de la pila */
-
-  NodoOperador *Sig;		/* el siguiente, para una lista */
-  AlcanceOperador Alcance;	/* unitario, binario, etc. */
-
-public:
-
-  NodoOperador (char *Nombre, int UnPdp, int UnPfp,
-	AlcanceOperador UnAlcance);
-
-  ~NodoOperador (){}
-
-  NodoOperador *GetSig ()
-  {
-    return Sig;
-  }
-
-  void SetSig (NodoOperador * UnSig)
-  {
-    Sig = UnSig;
-  }
-
-  void SetAlcance (AlcanceOperador UnAlcance)
-  {
-    Alcance = UnAlcance;
-  }
-
-  AlcanceOperador GetAlcance ()
-  {
-    return Alcance;
-  }
-
-  char *GetDato ()
-  {
-    return Dato;
-  }
-
-  int GetPdp ()
-  {
-    return Pdp;
-  }
-
-  int GetPfp ()
-  {
-    return Pfp;
-  }
-};
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-NodoOperador::NodoOperador (char *Nombre, int UnPdp, int UnPfp,
+NodoOperador::NodoOperador (const char *Nombre, int UnPdp, int UnPfp,
 			    AlcanceOperador UnAlcance)
 {
   Dato = Nombre;
@@ -199,7 +148,7 @@ Operadores::~Operadores ()
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 NodoOperador *
-Operadores::Buscar (char *Operador)
+Operadores::Buscar (const char *Operador)
 {
   NodoOperador *Aux = InicioOperadores;
   for (; Aux; Aux = Aux->GetSig ())
@@ -211,7 +160,7 @@ Operadores::Buscar (char *Operador)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 bool
-Operadores::BuscarFuncion (char *Str)
+Operadores::BuscarFuncion (const char *Str)
 {
   NodoFuncion *Aux = InicioFunciones;
   for (; Aux; Aux = Aux->Sig)
@@ -224,7 +173,7 @@ Operadores::BuscarFuncion (char *Str)
 
 
 void
-Operadores::Insertar (char *Str, int UnPdp, int UnPfp,
+Operadores::Insertar (const char *Str, int UnPdp, int UnPfp,
 		      AlcanceOperador UnAlcance)
 {
   NodoOperador *NuevoNodoOperador =
@@ -237,7 +186,7 @@ Operadores::Insertar (char *Str, int UnPdp, int UnPfp,
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 void
-Operadores::Insertar (char *Str)
+Operadores::Insertar (const char *Str)
 {
   NodoFuncion *Nuevo = new NodoFuncion;
   Nuevo->Dato = Str;
