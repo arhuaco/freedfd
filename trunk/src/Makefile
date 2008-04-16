@@ -21,4 +21,4 @@ dfd-wrappers.o:
 
 .PHONY:clean
 clean:
-	rm -f errores.o dfd-wrappers.o campos.o operador.o
+	rm -f errores.o dfd-wrappers.o campos.o operador.o tokeniza.o
