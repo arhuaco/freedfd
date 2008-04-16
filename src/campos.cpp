@@ -5,10 +5,10 @@
 
 #include <string.h> // strcasecmp
 
- // TODO:
  // Estos contadores y datos similares deben ser únicos para
  // cada hilo de ejecución.
- // ¡¡¡Quitar der acá!!! Manejar el concepto de "entorno de ejecución".
+ // Es necesario manejar el concepto de "entorno de ejecución",
+ // y no hacerlo global.
 
  int ContadorToken = 0;
  int ContadorCajita = 0;
@@ -24,7 +24,7 @@
 
    // TODO: ¿Qué es 'STRING'? ¡Eso es confuso! ¡Arreglar!
    // TODO: Ya no me parece tan confuso. Tal vez aclarar que es un tipo de dato.
-     
+
    if (TipoD == STRING && DatoStr) delete[] DatoStr;
  }
 
