@@ -507,8 +507,7 @@
 	  Estado.Accion= EDICION;
 	  Estado.ObjetoHasta= 0;
 	  if( !HuboError ){
-		 VentanaPrincipal->MessageBox("La ejecución ha terminado con normalidad."
-												,NOMBREPROGRAMA, MB_ICONINFORMATION );
+		 VentanaPrincipal->MessageBox(TXT_DIALOG_EXECUTION_OK, NOMBREPROGRAMA, MB_ICONINFORMATION );
 	  }
 	  if( Estado.DepuradorVisible )
 		 Depurador->Actualizar();
@@ -980,7 +979,6 @@
   if (Estado.EsNuevo)
 	 FileSaveAsAux();
   else{
-	 // MessageBox("Opción no disponible en versión shareware",NOMBREPROGRAMA);
 		 GuardarArchivo();
   }
  }
@@ -1002,8 +1000,6 @@
 
 
 	if ((TFileSaveDialog(this, *Archivo)).Execute() == IDOK){
-	  //MessageBox("Opción no disponible en versión shareware", NOMBREPROGRAMA );
-	  //desde aqui
 	  GuardarArchivo();
 	  Estado.EsNuevo= false;
 
@@ -1019,7 +1015,6 @@
  }
 
  void TDrawWindow::CmArchivoImprimir(){
-	//MessageBox("Opción no disponible en versión shareware",NOMBREPROGRAMA);
 
 	if (Printer) {
 	  char Nombre[1024];
@@ -1208,28 +1203,28 @@
 	char Cad[64];
 	sprintf( Cad, "Tokens en memoria: %d", ContadorToken );
 	if(ContadorToken)
-	  VentanaPrincipal->MessageBox( Cad, "Favor informar al fabricante" );
+	  VentanaPrincipal->MessageBox( Cad, TXT_DIALOG_REPORT_BUG);
 	sprintf( Cad, "Tablas en memoria: %d", ContadorTabla);
 	if(ContadorTabla)
-	  VentanaPrincipal->MessageBox( Cad, "Favor informar al fabricante" );
+	  VentanaPrincipal->MessageBox( Cad, TXT_DIALOG_REPORT_BUG);
 	sprintf( Cad, "Variables en memoria: %d", ContadorVariable);
 	if( ContadorVariable )
-	  VentanaPrincipal->MessageBox( Cad, "Favor informar al fabricante" );
+	  VentanaPrincipal->MessageBox( Cad, TXT_DIALOG_REPORT_BUG );
 	sprintf( Cad, "Campos variable en memoria: %d", ContadorCampoVariable );
 	if(ContadorCampoVariable)
-	  VentanaPrincipal->MessageBox( Cad, "Favor informar al fabricante" );
+	  VentanaPrincipal->MessageBox( Cad, TXT_DIALOG_REPORT_BUG);
 	sprintf( Cad, "Cajitas: %d", ContadorCajita);
 	if(ContadorCajita)
-	  VentanaPrincipal->MessageBox( Cad, "Favor informar al fabricante" );
+	  VentanaPrincipal->MessageBox( Cad, TXT_DIALOG_REPORT_BUG);
 	sprintf( Cad, "Vainas del for: %d", ContadorFor);
 	if(ContadorFor)
-	  VentanaPrincipal->MessageBox( Cad, "Favor informar al fabricante" );
+	  VentanaPrincipal->MessageBox( Cad, TXT_DIALOG_REPORT_BUG );
 	sprintf( Cad, "Nodo lista vectores: %d", ContadorNodoListaVectores);
 	if(ContadorNodoListaVectores)
-	  VentanaPrincipal->MessageBox( Cad, "Favor informar al fabricante" );
+	  VentanaPrincipal->MessageBox( Cad, TXT_DIALOG_REPORT_BUG );
 	sprintf( Cad, "Nodo lista expresiones: %d", ContadorNodoListaExpresiones);
 	if(ContadorNodoListaExpresiones)
-	 VentanaPrincipal->MessageBox( Cad, "Favor informar al fabricante" );
+	 VentanaPrincipal->MessageBox( Cad, TXT_DIALOG_REPORT_BUG );
 
   /*
 	ContadorNodoListaExpresiones=0;
@@ -1344,7 +1339,7 @@
   if( t==INICIO || t==CIERREPARA || t==CIERREMIENTRAS || t==PUNTO )
 	 return;
   if( ObjetoABorrar->GetTipo()==SUBPROGRAMA ){
-	 int Respuesta= MessageBox("Si elimina este objeto eliminará el subprograma completo.\n¿Eliminar?",NOMBREPROGRAMA,
+	 int Respuesta= MessageBox(TXT_DIALOG_CONFIRM_DELETE_SUBPROGRAM1, NOMBREPROGRAMA,
 					 MB_YESNO|MB_ICONQUESTION);
 	 if( Respuesta==IDNO )
 		  return;
@@ -1378,7 +1373,7 @@
 		 ((OE_Decision*)ObjetoABorrar)->GetNo() !=
 		 ((OE_Decision*)ObjetoABorrar)->GetPunto() )
 	 {
-		int Respuesta= MessageBox("Si elimina este objeto eliminará también su brazo izquierdo y su brazo derecho.\n¿Eliminar? ",NOMBREPROGRAMA,
+		int Respuesta= MessageBox(TXT_DIALOG_CONFIRM_DELETE_BOTH_BRANCHES, NOMBREPROGRAMA,
 							MB_YESNO|MB_ICONQUESTION);
 		if(Respuesta==IDNO ){
 		  ListaHojas.SetSeleccionado( ObjetoABorrar );
@@ -1391,7 +1386,7 @@
 	 if( ObjetoABorrar->GetSiguienteParaAcomoda() !=
 		 ((OE_CicloPara*)ObjetoABorrar)->GetCierre() )
 	 {
-		int Respuesta= MessageBox("Si elimina este objeto eliminará también el cuerpo del ciclo.\n¿Eliminar?",NOMBREPROGRAMA,
+		int Respuesta= MessageBox(TXT_DIALOG_CONFIRM_DELETE_LOOP, NOMBREPROGRAMA,
 						  MB_YESNO|MB_ICONQUESTION);
 		if(Respuesta==IDNO ){
 		  ListaHojas.SetSeleccionado( ObjetoABorrar );
@@ -1404,8 +1399,8 @@
 	 if( ObjetoABorrar->GetSiguienteParaAcomoda() !=
 		 ((OE_CicloMientras*)ObjetoABorrar)->GetCierre() )
 	 {
-		int Respuesta= MessageBox("Si elimina este objeto eliminará también el cuerpo del ciclo.\n¿Eliminar?",NOMBREPROGRAMA,
-						  MB_YESNO|MB_ICONQUESTION);
+		int Respuesta= MessageBox(TXT_DIALOG_CONFIRM_DELETE_LOOP, NOMBREPROGRAMA,
+					  MB_YESNO|MB_ICONQUESTION);
 		if(Respuesta==IDNO ){
 		 ListaHojas.SetSeleccionado( ObjetoABorrar );
 		 return;
@@ -1607,7 +1602,7 @@
 
 	if(ListaHojas.GetActualSubprograma()->GetTipo()==INICIO)
 	  return;
-	int Respuesta= MessageBox("¿Eliminar el subprograma?",NOMBREPROGRAMA,
+	int Respuesta= MessageBox(TXT_DIALOG_CONFIRM_DELETE_SUBPROGRAM2,NOMBREPROGRAMA,
 					 MB_YESNO|MB_ICONQUESTION);
 	if(Respuesta==IDNO )
 	  return;

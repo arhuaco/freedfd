@@ -318,11 +318,9 @@ BuzonDeErrores::Error (TipoError UnError)
 	//Mensaje *Aux;
 	//while( Inicio ){
 	  if( Estado.Accion==EDICION )
-		 VentanaPrincipal->MessageBox( Inicio->Info,
-						"Error de revisión" , MB_ICONSTOP );
+		 VentanaPrincipal->MessageBox(Inicio->Info, TXT_DIALOG_PROGRAM_CHECK_ERROR , MB_ICONSTOP);
 	  else
-		 VentanaPrincipal->MessageBox( Inicio->Info,
-						"Error en ejecución", MB_ICONSTOP );
+		 VentanaPrincipal->MessageBox(Inicio->Info, TXT_DIALOG_PROGRAM_RUN_ERROR, MB_ICONSTOP);
 
 	  Vacear();
 	/*

@@ -419,7 +419,7 @@
   void ListaHojas::Guardar( char *A ){
 	 ofstream ArchivoG( A );
 	 if( !ArchivoG ){
-  		VentanaPrincipal->MessageBox("No fue posible guardar el archivo.",NOMBREPROGRAMA ,
+ 		VentanaPrincipal->MessageBox(TXT_DIALOG_UNABLE_SAVE_FILE, NOMBREPROGRAMA ,
 					  MB_OK | MB_ICONEXCLAMATION);
 		return;
 	 }
@@ -442,7 +442,7 @@
 
 	 ifstream ArchivoA( A );
 	 if( !ArchivoA ){
-		VentanaPrincipal->MessageBox("No fue posible abrir el archivo", NOMBREPROGRAMA,
+		VentanaPrincipal->MessageBox(TXT_DIALOG_UNABLE_OPEN_FILE, NOMBREPROGRAMA,
 					  MB_OK | MB_ICONEXCLAMATION);
 		return false;
 	 }
@@ -455,7 +455,7 @@
        char Caracter;
    	 ArchivoA >> Caracter;
        if(CadenaClave[i]!=Caracter){
-		   VentanaPrincipal->MessageBox("Archivo de Dfd no válido.", NOMBREPROGRAMA,
+		   VentanaPrincipal->MessageBox(TXT_DIALOG_INVALID_FILE_FORMAT, NOMBREPROGRAMA,
 					  MB_OK | MB_ICONEXCLAMATION);
          return false;
        }

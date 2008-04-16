@@ -681,16 +681,14 @@
 
 
 	  if( !Entrada ){
-		 VentanaPrincipal->MessageBox(
-		 "Debe ingresar un valor constante.", NOMBREPROGRAMA,MB_ICONEXCLAMATION|MB_OK );
+		 VentanaPrincipal->MessageBox(TXT_DIALOG_ADD_CONSTANT, NOMBREPROGRAMA,MB_ICONEXCLAMATION|MB_OK );
 		 continue;
 	  }
 
 	  Token *t= GetPostfijo( Entrada );
 
 	  if( !t || Buzon.GetHuboError() ){
-		 VentanaPrincipal->MessageBox(
-		 "Debe ingresar un valor constante.",NOMBREPROGRAMA,MB_ICONEXCLAMATION|MB_OK);
+		 VentanaPrincipal->MessageBox(TXT_DIALOG_ADD_CONSTANT, NOMBREPROGRAMA,MB_ICONEXCLAMATION|MB_OK);
 		 Buzon.Vacear();
 		 continue;
 	  }
@@ -699,7 +697,7 @@
 		 //Solo se leen expresiones constantes de teclado.
 		 //leer nuevamente
 		 delete t;
-		 VentanaPrincipal->MessageBox("Debe ingresar un valor constante.",NOMBREPROGRAMA,MB_ICONEXCLAMATION|MB_OK);
+		 VentanaPrincipal->MessageBox(TXT_DIALOG_ADD_CONSTANT, NOMBREPROGRAMA,MB_ICONEXCLAMATION|MB_OK);
 		 continue;
 	  }
 
@@ -708,13 +706,13 @@
 		 if( (Aux->GetTipoToken()==OPERANDO) ||
 			  ( (Aux->GetDatoStr()[0]!='-')  && (Aux->GetDatoStr()[0]!='+') ) )
 		 {
-			VentanaPrincipal->MessageBox("Debe ingresar un valor constante.",NOMBREPROGRAMA,MB_ICONEXCLAMATION|MB_OK);
+			VentanaPrincipal->MessageBox(TXT_DIALOG_ADD_CONSTANT,NOMBREPROGRAMA,MB_ICONEXCLAMATION|MB_OK);
 			LiberarListaToken( t );
 			continue;
 		 }
 		 Aux= Aux->GetSig();
 		 if( Aux ){
-			VentanaPrincipal->MessageBox("Debe ingresar un valor constante.",NOMBREPROGRAMA,MB_ICONEXCLAMATION|MB_OK);
+			VentanaPrincipal->MessageBox(TXT_DIALOG_ADD_CONSTANT,NOMBREPROGRAMA,MB_ICONEXCLAMATION|MB_OK);
 			LiberarListaToken( t );
 			continue;
 		 }
@@ -725,7 +723,7 @@
 	  t= EvaluaPostfijo( t );
 	  LiberarListaToken( Aux2 );
 	  if( Buzon.GetHuboError() ){
-		 VentanaPrincipal->MessageBox("Error de evaluación",NOMBREPROGRAMA);
+		 VentanaPrincipal->MessageBox(TXT_DIALOG_EVALUATION_ERROR, NOMBREPROGRAMA);
 		 Buzon.Vacear();
 		 continue;
 	  }
