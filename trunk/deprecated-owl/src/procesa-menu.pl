@@ -6,7 +6,7 @@ open MSG, '<messages.h';
 
 my %S;
 
-my $lang = '__SPANISH__';
+my $lang = shift || '__SPANISH__';
 my $is_in = 0;
 
 while(<MSG>)
