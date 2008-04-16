@@ -1,3 +1,15 @@
+
+/*
+ * Esto debería ser un archivo de texto leido. Y no un
+ * archivo compilado :-)
+ *
+ * En el mejor caso, debería ser una opción del menú
+ * que tenga en cuenta el LOCALE.
+ *
+ * TODO: Usar gettext.
+ *
+ */
+
 #if 1 /* Español */
   #warning Compilando en idioma Español
   #define TXT_DESBORDAMIENTO "Desbordamiento en la operación"
