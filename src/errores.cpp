@@ -23,6 +23,7 @@
 #include <dfd-wrappers.h>
 #include <errores.h>
 #include <messages.h>
+#include <operador.h>
 
 #include <stdio.h>
 #include <string.h>
@@ -154,7 +155,7 @@ BuzonDeErrores::GetIdentificadorAsociado ()
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 void
-BuzonDeErrores::SetIdentificadorAsociado (char *str)
+BuzonDeErrores::SetIdentificadorAsociado (const char *str)
 {
   SingletonError *datos = SingletonError::getInstance();
 
