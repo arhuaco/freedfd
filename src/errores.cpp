@@ -22,6 +22,7 @@
 #include <dfd.h>
 #include <dfd-wrappers.h>
 #include <errores.h>
+#include <messages.h>
 
 #include <stdio.h>
 #include <string.h>
@@ -107,11 +108,11 @@ BuzonDeErrores::GetError ()
   ASSERT(0);
 
   if (!Inicio)
-     IntroducirError ("Error no definido en BuzonDeErrores::GetError", ERROR_INDEFINIDO, 0);
+     IntroducirError (TXT_ERROR_INDEFINIDO " en BuzonDeErrores::GetError", ERROR_INDEFINIDO, 0);
 
   // TODO: ¿Quén usa este valor retornado? 
   // ¿Por qué se le da una nueva cadena? ¿Causa esto un memory leak?
-  
+
   char *Retorno = dfd_strdup(Inicio->Info);
 
   Vacear ();
@@ -166,211 +167,159 @@ BuzonDeErrores::Error (TipoError UnError)
     {
 
     case DESBORDAMIENTO:
-      IntroducirError ("Desbordamiento en la operación", DESBORDAMIENTO);
+      IntroducirError (TXT_DESBORDAMIENTO, DESBORDAMIENTO);
       break;
 
     case DESBORDAMIENTO_NEGATIVO:
-      IntroducirError ("Desbordamiento negativo en la operació",
-		       DESBORDAMIENTO_NEGATIVO);
+      IntroducirError (TXT_DESBORDAMIENTO_NEGATIVO,  DESBORDAMIENTO_NEGATIVO);
       break;
 
     case LOS_TIPOS_NO_COINCIDEN:
-      IntroducirError ("Los tipos no coinciden", LOS_TIPOS_NO_COINCIDEN);
+      IntroducirError (TXT_LOS_TIPOS_NO_COINCIDEN, LOS_TIPOS_NO_COINCIDEN);
       break;
 
     case ID_NO_ES_ARREGLO:
-      IntroducirError ("El identificador no es es un arreglo",
-		       ID_NO_ES_ARREGLO);
+      IntroducirError (TXT_ID_NO_ES_ARREGLO, ID_NO_ES_ARREGLO);
       break;
 
     case DIMENSION_NO_VALIDA:
-      IntroducirError ("Dimensión no válida", DIMENSION_NO_VALIDA);
+      IntroducirError (TXT_DIMENSION_NO_VALIDA, DIMENSION_NO_VALIDA);
       break;
 
     case CONSTANTE_NUMERICA_ILEGAL:
-      IntroducirError ("Constante numérica ilegal",
-		       CONSTANTE_NUMERICA_ILEGAL);
+      IntroducirError (TXT_CONSTANTE_NUMERICA_ILEGAL, CONSTANTE_NUMERICA_ILEGAL);
       break;
 
     case NOMBRE_VARIABLE_INCORRECTO:
-      IntroducirError ("Nombre de variable incorrecto",
-		       NOMBRE_VARIABLE_INCORRECTO);
+      IntroducirError (TXT_NOMBRE_VARIABLE_INCORRECTO, NOMBRE_VARIABLE_INCORRECTO);
       break;
 
     case FUNCION_REQUIERE_PARAMETRO:
-      IntroducirError ("La función requiere argumentos",
-		       FUNCION_REQUIERE_PARAMETRO);
+      IntroducirError (TXT_FUNCION_REQUIERE_PARAMETRO, FUNCION_REQUIERE_PARAMETRO);
       break;
 
     case FALTA_OPERADOR:
-      IntroducirError ("Se esperaun operador", FALTA_OPERADOR);
+      IntroducirError (TXT_FALTA_OPERADOR, FALTA_OPERADOR);
       break;
 
     case CADENA_INDETERMINADA:
-      IntroducirError ("Se espera ' para delimitar el fin de la cadena",
-		       CADENA_INDETERMINADA);
+      IntroducirError (TXT_CADENA_INDETERMINADA,  CADENA_INDETERMINADA);
       break;
 
-/*	  case OPERADOR_ILEGAL_DE_CADENA:
-		 IntroducirError( "No es un operador vßlido para una cadena",
-								OPERADOR_ILEGAL_DE_CADENA );
-		 break;
-*/
-
     case CONSTANTE_LOGICA_ILEGAL:
-      IntroducirError ("Se esperaba una constante lógica( .V. o .F. )",
-		       CONSTANTE_LOGICA_ILEGAL);
+      IntroducirError (TXT_CONSTANTE_LOGICA_ILEGAL, CONSTANTE_LOGICA_ILEGAL);
       break;
 
     case OPERADOR_LOGICO_ILEGAL:
-      IntroducirError ("Operador lógico ilegal", OPERADOR_LOGICO_ILEGAL);
+      IntroducirError (TXT_OPERADOR_LOGICO_ILEGAL, OPERADOR_LOGICO_ILEGAL);
       break;
 
     case FALTA_OPERANDO:
-      IntroducirError ("Se esperaba un operando", FALTA_OPERANDO);
+      IntroducirError (TXT_FALTA_OPERANDO, FALTA_OPERANDO);
       break;
 
-      /* case OPERANDO_ILEGAL:
-         IntroducirError( ": El operador recibió un operando ilegal",
-         OPERANDO_ILEGAL );
-         break;
-       */
-
     case OPERADOR_ILEGAL:
-      IntroducirError ("Operador no válido", OPERADOR_ILEGAL);
+      IntroducirError (TXT_OPERADOR_ILEGAL, OPERADOR_ILEGAL);
       break;
 
     case CARACTER_ILEGAL:
-      IntroducirError ("Caracter no válido", CARACTER_ILEGAL);
+      IntroducirError (TXT_CARACTER_ILEGAL, CARACTER_ILEGAL);
       break;
 
     case CERRADO_PARENTESIS_NO_ABIERTO:
-      IntroducirError ("Cerrado paréntesis no abierto",
-		       CERRADO_PARENTESIS_NO_ABIERTO);
+      IntroducirError (TXT_CERRADO_PARENTESIS_NO_ABIERTO, CERRADO_PARENTESIS_NO_ABIERTO);
       break;
 
     case ABIERTO_PARENTESIS_NO_CERRADO:
-      IntroducirError ("Abierto paréntesis no cerrado",
-		       ABIERTO_PARENTESIS_NO_CERRADO);
+      IntroducirError (TXT_ABIERTO_PARENTESIS_NO_CERRADO, ABIERTO_PARENTESIS_NO_CERRADO);
       break;
 
-      /* case COMA_ILEGAL:
-         IntroducirError( "Uso ilegal del operador", COMA_ILEGAL );
-         break; */
-
-/*	  case ERROR_MATEMATICO:
-		 IntroducirError( "Error Matemßtico", ERROR_MATEMATICO );
-		 break;*/
-
     case LLAMADO_DE_FUNCION_NO_VALIDO:
-      IntroducirError ("Llamado de función no válido",
-		       LLAMADO_DE_FUNCION_NO_VALIDO);
+      IntroducirError (TXT_LLAMADO_DE_FUNCION_NO_VALIDO,   LLAMADO_DE_FUNCION_NO_VALIDO);
       break;
 
     case VARIABLE_NO_INICIALIZADA:
-      IntroducirError ("Variable no inicializada",
-		       VARIABLE_NO_INICIALIZADA);
+      IntroducirError (TXT_VARIABLE_NO_INICIALIZADA, VARIABLE_NO_INICIALIZADA);
       break;
 
     case VARIABLE_NO_EXISTE:
-      IntroducirError ("Variable no existe", VARIABLE_NO_EXISTE);
+      IntroducirError (TXT_VARIABLE_NO_EXISTE, VARIABLE_NO_EXISTE);
       break;
 
     case DIVISION_POR_CERO:
-      IntroducirError ("División por cero", DIVISION_POR_CERO);
+      IntroducirError (TXT_DIVISION_POR_CERO, DIVISION_POR_CERO);
       break;
 
-/*	  case SUBINDICE_NO_VALIDO:
-		 IntroducirError( ": Indice no vßlido", SUBINDICE_NO_VALIDO );
-		 break;*/
-
     case INDICES:
-      IntroducirError
-	("Los índices deben ser enteros no negativos menores o iguales a 65535.",
-	 INDICES, 0);
+      IntroducirError (TXT_INDICES, INDICES, 0);
       break;
 
     case ILEGAL_COMA_O_CADENA_VACIA:
-      IntroducirError ("Uso ilegal de la coma ó falta expresión",
-		       ILEGAL_COMA_O_CADENA_VACIA, 0);
+      IntroducirError (TXT_ILEGAL_COMA_O_CADENA_VACIA, ILEGAL_COMA_O_CADENA_VACIA, 0);
       break;
 
     case SOLO_VARIABLES:
-      IntroducirError
-	("La asignación de valores solo se realiza en campos variables",
-	 SOLO_VARIABLES, 0);
+      IntroducirError (TXT_SOLO_VARIABLES, SOLO_VARIABLES, 0);
       break;
 
 
     case NO_INDICES:
-      IntroducirError ("No hay índices entre los paréntesis."
-                       "Los paréntesis se usan para acceder a elementos de un arreglo.",
-		       NO_INDICES, 0);
+      IntroducirError (TXT_NO_INDICES, NO_INDICES, 0);
       break;
 
     case TIPO_DEBE_SER_LOGICO:
-      IntroducirError ("La condición debe ser de tipo lógico.",
-		       TIPO_DEBE_SER_LOGICO, 0);
+      IntroducirError (TXT_TIPO_DEBE_SER_LOGICO, TIPO_DEBE_SER_LOGICO, 0);
       break;
 
     case VINICIAL_CONTADOR:
-      IntroducirError ("Se necesita un valor inicial para el contador.",
-		       VINICIAL_CONTADOR, 0);
+      IntroducirError (TXT_VINICIAL_CONTADOR,  VINICIAL_CONTADOR, 0);
       break;
 
     case VFINAL_CONTADOR:
-      IntroducirError ("Se necesita un valor final para el contador.",
-		       VFINAL_CONTADOR, 0);
+      IntroducirError (TXT_VFINAL_CONTADOR,  VFINAL_CONTADOR, 0);
       break;
 
     case INCREMENTO_CONSTANTE:
-      IntroducirError ("El incremento debe ser una constante real.",
-		       INCREMENTO_CONSTANTE, 0);
+      IntroducirError (TXT_INCREMENTO_CONSTANTE,  INCREMENTO_CONSTANTE, 0);
       break;
 
     case CONTADOR_REAL:
-      IntroducirError ("El valor del contador debe ser de tipo real.",
-		       CONTADOR_REAL, 0);
+      IntroducirError (TXT_CONTADOR_REAL, CONTADOR_REAL, 0);
       break;
 
     case LIMITE_REAL:
-      IntroducirError
-	("El valor del límite para el contador debe ser de tipo real.",
-	 LIMITE_REAL, 0);
+      IntroducirError (TXT_LIMITE_REAL, LIMITE_REAL, 0);
       break;
 
-    case PARAMETRO_ILEGAL:
-      IntroducirError ("Los parámetros deben ser campos variables.",
-		       PARAMETRO_ILEGAL, 0);
+    case PARAMETRO_NO_VARIABLE:
+      IntroducirError (TXT_PARAMETRO_NO_VARIABLE,  PARAMETRO_NO_VARIABLE, 0);
       break;
 
     case ILEGAL_NOMBRE_SUBPROGRAMA:
-      IntroducirError ("Nombre no válido para un subprograma.",
-		       ILEGAL_NOMBRE_SUBPROGRAMA, 0);
+      IntroducirError (TXT_ILEGAL_NOMBRE_SUBPROGRAMA, ILEGAL_NOMBRE_SUBPROGRAMA, 0);
       break;
 
     case PARAMETRO_REPETIDO:
-      IntroducirError ("Parámetro Repetido.", PARAMETRO_ILEGAL);
+      IntroducirError (TXT_PARAMETRO_REPETIDO, PARAMETRO_REPETIDO);
       break;
 
     case SUBPROGRAMA_NO_EXISTE:
-      IntroducirError (": No se encontró el Subprograma.",
-		       SUBPROGRAMA_NO_EXISTE);
+      IntroducirError (TXT_SUBPROGRAMA_NO_EXISTE, SUBPROGRAMA_NO_EXISTE);
       break;
     case SUBPROGRAMA_REPETIDO:
-      IntroducirError (": Subprograma repetido.", SUBPROGRAMA_REPETIDO);
+      IntroducirError (TXT_SUBPROGRAMA_REPETIDO, SUBPROGRAMA_REPETIDO);
       break;
 
     case MUCHOS_ARGUMENTOS:
-      IntroducirError (": Demasiados argumentos.", MUCHOS_ARGUMENTOS);
+      IntroducirError (TXT_MUCHOS_ARGUMENTOS, MUCHOS_ARGUMENTOS);
       break;
 
     case POCOS_ARGUMENTOS:
-      IntroducirError (": Muy pocos argumentos.", POCOS_ARGUMENTOS);
+      IntroducirError (TXT_POCOS_ARGUMENTOS, POCOS_ARGUMENTOS);
       break;
 
     default:
-      IntroducirError (": ERROR NO DEFINIDO", ERROR_INDEFINIDO);
+      IntroducirError (TXT_ERROR_INDEFINIDO, ERROR_INDEFINIDO);
       break;
     }
 }
