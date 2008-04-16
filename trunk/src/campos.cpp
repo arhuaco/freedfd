@@ -62,7 +62,7 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
- Token::Token ( char *ValorStr, TipoToken UnTipoToken,
+ Token::Token ( const char *ValorStr, TipoToken UnTipoToken,
 				 TipoAlmacenamiento UnTipoAlmacenamiento, int UnPdp, int UnPfp,
 				 AlcanceOperador UnAlcance){
 

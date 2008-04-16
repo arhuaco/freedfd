@@ -32,7 +32,7 @@
 				 TipoAlmacenamiento UnTipoAlmacenamiento );
 		 Token ( long double ValorReal, TipoToken UnTipoToken,
 				 TipoAlmacenamiento UnTipoAlmacenamiento );
-		 Token ( char *ValorStr, TipoToken UnTipoToken,
+		 Token (const char *ValorStr, TipoToken UnTipoToken,
 				 TipoAlmacenamiento UnTipoAlmacenamiento, int Pdp=0, int Pfp=0,
 				 AlcanceOperador UnAlcance=UNITARIO );
 		 Token (const Token &UnToken );
