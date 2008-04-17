@@ -1,16 +1,13 @@
-#ifndef __CAMPOS__H__
-#define __CAMPOS__H__
+#ifndef __TOKEN__H__
+#define __TOKEN__H__
 
 #include <dfd.h>
 #include <operador.h>
 
-  // TODO: Usar esto en depuración. Para evitar memoria usada y no devuelta
-  // TODO: Cambiar por una clase o algo. Ahora mismo es una variable global.
-  // extern int ContadorToken;
+extern int ContadorToken;
 
 class Token
 {
-
   TipoDato TipoD;
   TipoToken TipoT;
 
@@ -18,6 +15,7 @@ class Token
   TipoAlmacenamiento Almacenamiento;
 
   // Con estas prioridades se define la precedencia de los operadores
+
   int Pdp;                      // Prioridad dentro de la pila
   int Pfp;                      // Prioridad fuera de la pila
 

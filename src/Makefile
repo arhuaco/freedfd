@@ -4,13 +4,13 @@
 CFLAGS=-Wall -I.
 
 all: main
-	g++ main.cpp campos.o errores.o operador.o tokeniza.o dfd-wrappers.o ${CFLAGS} -g -lreadline
+	g++ main.cpp token.o errores.o operador.o tokeniza.o dfd-wrappers.o ${CFLAGS} -g -lreadline
 
-main: campos.o errores.o operador.o tokeniza.o
+main: token.o errores.o operador.o tokeniza.o
 	echo Done
 
-campos.o: campos.cpp errores.o 
-	g++ -c campos.cpp -I. 
+token.o: token.cpp errores.o 
+	g++ -c token.cpp -I. 
 
 errores.o: errores.cpp dfd-wrappers.o
 	g++ -c errores.cpp -I.
@@ -26,4 +26,4 @@ dfd-wrappers.o:
 
 .PHONY:clean
 clean:
-	rm -f errores.o dfd-wrappers.o campos.o operador.o tokeniza.o 
+	rm -f *.o a.out

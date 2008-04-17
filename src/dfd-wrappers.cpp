@@ -1,5 +1,5 @@
 #include <string.h>
-#include <campos.h>
+#include <token.h>
 #include <dfd-wrappers.h>
 
 // Esto lo hicimos para no usar malloc, supongo.

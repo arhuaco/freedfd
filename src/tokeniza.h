@@ -1,7 +1,7 @@
 #ifndef __TOKENIZA__H__
 #define __TOKENIZA__H__
 
-#include <campos.h>
+#include <token.h>
 
 Token * GetPostfijo (const char *Expresion);
 
