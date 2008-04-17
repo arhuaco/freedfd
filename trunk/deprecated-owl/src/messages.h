@@ -278,7 +278,7 @@
   #define TXT_CM_DEPURAREVALUAR "&Avaliar\tF5"
   #define TXT_CM_ANGULOSENGRADOS "Ângulos em &graus"
   #define TXT_CM_ANGULOSENRADIANES "Ângulos em &radianos"
-  #define TXT_CM_AYUDACONTENIDO "&Conteúdo...\tF1"
+  #define TXT_CM_AYUDACONTENIDO "&Conteúdo (em espanhol)\tF1"
   #define TXT_CM_AYUDAACERCADE "&Sobre...     "
 
   /* ayuda contextual */
@@ -357,7 +357,7 @@
   #define TXT_RUNNING_OBJECT_FOR "Para"
   #define TXT_RUNNING_OBJECT_WHILE "Enquanto"
   #define TXT_RUNNING_OBJECT_BEGIN "Começar"
-  #define TXT_RUNNING_OBJECT_END "Fin"
+  #define TXT_RUNNING_OBJECT_END "Fim"
   #define TXT_RUNNING_OBJECT_BLOCK_END "Fechar"
   #define TXT_RUNNING_OBJECT_RETURN "Voltar"
 
