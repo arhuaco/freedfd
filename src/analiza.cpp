@@ -16,7 +16,7 @@
 #ifndef __ANALIZA_CPP
 #define __ANALIZA_CPP
 
-/* Evaluación de expresiones */
+/* Evaluación de expresiones  / NO USADO TODAVIA */
 
 Token *
 EvaluaPostfijo (Token * Expresion)

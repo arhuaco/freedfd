@@ -20,6 +20,23 @@ logicas, reales y de cadena entre datos en un DFD, y algunas funciones
 auxiliares.
 */
 
+
+
+
+
+
+
+
+
+// NO USADO TODAVIA!!!!
+
+
+
+
+
+
+
+
 #include <dfd.h>
 #include <campos.h>
 #include <dfd-wrappers.h>
