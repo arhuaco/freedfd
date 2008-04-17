@@ -5,7 +5,7 @@
     Nelson Castillo Izquierdo <arhuaco@freaks-unidos.net>
     Eduardo Daza Castillo <eduardodazacastillo@gmail.com>
     Fabián Cárdenas Varela <f_cardenas@yahoo.com>
-                                    
+               
     **********
 
     Necesitamos ayuda para terminar la nueva versión, que funcionará dentro
@@ -71,7 +71,7 @@
  inline int EsLetra (char Caracter){
 	Caracter=(char)toupper(Caracter);
 	return (Caracter>='A' && Caracter<='Z')
-			  ||EstaEn(Caracter,"çÇãâêõôÃÂÊÕÔñÑüáéíóúÁÉÍÓÚàÀ"); antiguamente
+			  ||EstaEn(Caracter,"çÇãâêõôÃÂÊÕÔñÑüáéíóúÁÉÍÓÚàÀ");
  }
  inline int EsDigito(char Caracter){
 	return (Caracter>='0')&&(Caracter<='9');
