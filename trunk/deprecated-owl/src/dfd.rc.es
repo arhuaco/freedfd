@@ -1742,13 +1742,12 @@ FONT 8, "MS Sans Serif"
 
 MENUDEPURADOR MENU 
 {
- POPUP "&Edición"
+ POPUP "&Edición de expresiones a observar"
  {
-  MENUITEM "&Nuevo\tIns", CM_EDICIONNUEVO
+  MENUITEM "&Nueva\tIns", CM_EDICIONNUEVO
   MENUITEM "E&ditar\tEnter", CM_EDICIONEDITARDEPURADOR
   MENUITEM "Eli&minar\tSupr", CM_EDICIONELIMINARDEPURADOR
  }
-
 }
 
 
