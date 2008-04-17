@@ -4,7 +4,7 @@
 CFLAGS=-Wall -I.
 
 all: main
-	g++ main.cpp campos.o errores.o operador.o tokeniza.o ${CFLAGS}
+	#g++ main.cpp campos.o errores.o operador.o tokeniza.o ${CFLAGS}
 
 main: campos.o errores.o operador.o tokeniza.o
 	echo Done
