@@ -34,7 +34,12 @@
 #define __ARREGLOS_CPP
 
 #include <token.h>
+#include <errores.h>
+
+
 #include <math.h>
+
+extern BuzonDeErrores Buzon;
 
 void
 AccesoArreglo (Token ** Pila, int Dim)

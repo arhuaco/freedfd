@@ -22,13 +22,13 @@
 
 #include <token.h>
 #include <errores.h>
-
-#include <cmath>
-#include <cstring>
-#include <cstdlib>
-
+#include <funcion.h>
 
 extern BuzonDeErrores Buzon;
+
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
 
 static bool
 FueraDeRango (Token * UnToken)
