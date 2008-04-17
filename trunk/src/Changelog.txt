@@ -1,0 +1,9 @@
+FreeDfd 1.5.1:
+
+  Now we can compile this code using GCC. The Infix->postfix translation is working.
+ -- Nelson Castillo <arhuaco@freaks-unidos.net>, Thu Apr 17 2008
+
+FreeDFD (1.1-RC4)
+
+  * Initial GPL release.
+ -- Nelson Castillo <arhuaco@freaks-unidos.net>, Eduardo Daza <edazc@hotmail.com>, Fabián Cárdenas <f_cardenas@yahoo.com>
