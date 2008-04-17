@@ -3,11 +3,6 @@
 #include <errores.h>
 #include <dfd-wrappers.h>
 
-/* TODO: mejorar el tiempo de acceso a los arreglos. Ahora se hacen
- * búsquedas lineales. Esto porque se soporta asignación a cualquier casilla
- * del arreglo. En otras palabras, es una implementación poco eficiente
- * de un arreglo multidimensional disperso */
-
 #include <string.h>             // strcasecmp
 
  // Estos contadores y datos similares deben ser únicos para
