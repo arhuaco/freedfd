@@ -23,6 +23,7 @@
 
 #include <dfd.h>
 #include <campos.h>
+#include <dfd-wrappers.h>
 #include <operador.h>
 #include <errores.h>
 #include <tokeniza.h>
@@ -31,7 +32,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-extern BuzonDeErrores Buzon; /* singleton */
+extern BuzonDeErrores Buzon;
 
 // En la primera pasada del analizador de expresiones de obtiene una lista de Tokens
 // en Infijo a partir de una cadena de caracteres.
@@ -925,25 +926,6 @@ InsertarDeUltimo (Token * Nuevo, Token ** Inicio, Token ** Ultimo)
   Nuevo->SetSig (0);
 }
 
-
-// Apila,Desapila : Estas funciones se utilizan en la evaluación de
-// expresiones para manejar una pila como lista ligada.
-
-void
-Apila (Token ** Inicio, Token * Nuevo)
-{
-  Nuevo->SetSig (*Inicio);
-  *Inicio = Nuevo;
-  return;
-}
-
-inline Token *
-Desapila (Token ** Inicio)
-{
-  Token *Ret = *Inicio;
-  (*Inicio) = (*Inicio)->GetSig ();
-  return Ret;
-}
 
 
 // InfijoAPostfijo : Esta función convierte una lista de Token's
