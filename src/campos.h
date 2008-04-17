@@ -1,6 +1,7 @@
 #ifndef __CAMPOS__H__
 #define __CAMPOS__H__
 
+#include <dfd.h>
 #include <operador.h>
 
   // TODO: Usar esto en depuración. Para evitar memoria usada y no devuelta

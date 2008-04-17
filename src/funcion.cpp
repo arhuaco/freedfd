@@ -13,11 +13,22 @@
     with this program; if not, write to the Free Software Foundation, Inc.,
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
+
 /*
 Las siguientes son las funciones que llevan a cabo las operaciones
 logicas, reales y de cadena entre datos en un DFD, y algunas funciones
 auxiliares.
 */
+
+#include <dfd.h>
+#include <campos.h>
+#include <dfd-wrappers.h>
+#include <errores.h>
+#include <math.h>
+#include <string.h>
+#include <stdlib.h>
+
+extern BuzonDeErrores Buzon;
 
 static bool
 FueraDeRango (Token * UnToken)
