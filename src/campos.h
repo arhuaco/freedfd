@@ -118,7 +118,7 @@ public:
   }
 
   /* return the string resepretation of the token */
-  void asString(char *buff, int buff_size);
+  const char * AsString(char *buff, int buff_size);
 };
 
 #endif
