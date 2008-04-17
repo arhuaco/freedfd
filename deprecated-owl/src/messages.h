@@ -103,6 +103,13 @@
   #define TXT_CM_AYUDACONTENIDO "&Contenido...\tF1"
   #define TXT_CM_AYUDAACERCADE "&Acerca de...     "
 
+  /* menú para depurar expresiones */
+
+  #define TXT_CM_DEBUG_MENUTITLE "&Edición de expresiones a observar"
+  #define TXT_CM_EDICIONNUEVO  "&Nueva\tIns"
+  #define TXT_CM_EDICIONEDITARDEPURADOR "E&ditar\tEnter"
+  #define TXT_CM_EDICIONELIMINARDEPURADOR "Eli&minar\tSupr"
+
   /* Ayuda contextual */
 
   #define HELP_CM_ARCHIVONUEVO "Inicia la sesión de trabajo con un nuevo diagrama"
@@ -280,6 +287,13 @@
   #define TXT_CM_ANGULOSENRADIANES "Ângulos em &radianos"
   #define TXT_CM_AYUDACONTENIDO "&Conteúdo (em espanhol)\tF1"
   #define TXT_CM_AYUDAACERCADE "&Sobre...     "
+
+  /* menú para depurar expresiones */
+
+  #define TXT_CM_DEBUG_MENUTITLE "&Editar"
+  #define TXT_CM_EDICIONNUEVO  "&Novo\tIns"
+  #define TXT_CM_EDICIONEDITARDEPURADOR "E&ditar\tEnter"
+  #define TXT_CM_EDICIONELIMINARDEPURADOR "&Excluir\tDelete"
 
   /* ayuda contextual */
 
