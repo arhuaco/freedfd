@@ -37,11 +37,9 @@ public:
 
   char *GetIdentificadorAsociado ();
 
-  char *GetError ();
+  const char *GetErrorInfo ();
 
   void SetIdentificadorAsociado (const char *Id);
-
-  void Mostrar ();
 
   void Vacear ();
 
