@@ -3,6 +3,10 @@ http://freedfd.freaks-unidos.net
 
 Contenido de los fuentes:
 
+Para compilar, debe usar make.
+He compilado con GCC, se debe poder compilar con otro
+compilador.
+
 TODO:
   Lista de cosas por hacer.
 HACKING.txt:
