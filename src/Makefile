@@ -10,19 +10,19 @@ main: token.o errores.o operador.o tokeniza.o
 	echo Done
 
 token.o: token.cpp errores.o 
-	g++ -c token.cpp -I. 
+	g++ -c token.cpp  ${CFLAGS}
 
 errores.o: errores.cpp dfd-wrappers.o
-	g++ -c errores.cpp -I.
+	g++ -c errores.cpp  ${CFLAGS}
 
 operador.o : operador.cpp operador.h
-	g++ -c operador.cpp -I.
+	g++ -c operador.cpp  ${CFLAGS}
 
 tokeniza.o:
-	g++ -c tokeniza.cpp -I.
+	g++ -c tokeniza.cpp  ${CFLAGS}
 
 dfd-wrappers.o:
-	g++ -c dfd-wrappers.cpp -I.
+	g++ -c dfd-wrappers.cpp  ${CFLAGS}
 
 .PHONY:clean
 clean:
