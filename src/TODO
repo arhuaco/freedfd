@@ -5,6 +5,9 @@ analiza.cpp
 
 TODO:
 
+* Dividir campos.cpp en varios arhivos
+* Introducir el objeto EntornoEjecución, para que se pueda
+  correr más de un hilo de FreeDfd
 * Usar autoconf
 * Borrar todos los TABs.
 * Necesitamos un ícono. Diseñarlo.
