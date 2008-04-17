@@ -5,6 +5,7 @@
     Eduardo Daza Castillo <eduardodazacastillo@gmail.com>
     Fabián Cárdenas Varela <f_cardenas@yahoo.com>
 
+    Veja a lista completa de autores e colaboradores na página web.
 
     Precisamos de ajuda para terminar a nova versão, que funcionará em 
     GNU/Linux e Windows, e que incluirá muitas melhorias.
