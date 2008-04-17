@@ -31,7 +31,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-BuzonDeErrores Buzon; /* singleton */
+extern BuzonDeErrores Buzon; /* singleton */
 
 // En la primera pasada del analizador de expresiones de obtiene una lista de Tokens
 // en Infijo a partir de una cadena de caracteres.
@@ -58,7 +58,7 @@ EsLetra (char Caracter)
 {
   Caracter = (char) toupper (Caracter);
   return (Caracter >= 'A' && Caracter <= 'Z')
-    || EstaEn (Caracter, "ñÑüáéíóúÁÉÍÓÚ");
+    || EstaEn (Caracter, "çÇãâêõôÃÂÊÕÔñÑüáéíóúÁÉÍÓÚàÀ");
 }
 
 /* Aca podemos usar isdigit de ctype */
