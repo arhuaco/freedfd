@@ -3,7 +3,9 @@
 #include <errores.h>
 #include <dfd-wrappers.h>
 
-#include <string.h>             // strcasecmp
+#include <assert.h>
+#include <stdio.h>   // sprintf
+#include <string.h>  // strcasecmp
 
  // Estos contadores y datos similares deben ser únicos para
  // cada hilo de ejecución.
@@ -93,6 +95,26 @@ Token::Token (const char *ValorStr, TipoToken UnTipoToken,
   DatoStr = dfd_strdup (ValorStr);
 }
 
+void
+Token::asString(char *buff, int buff_size)
+{
+  switch(TipoD)
+  {
+    const char *tmp;
+    case REAL:
+      snprintf(buff, buff_size, "%Lg", DatoReal);
+      break;
+    case STRING:
+    case LOGICO:
+      tmp = TipoD == STRING ? DatoStr :
+            (DatoLogico ? ".f." : ".v.");
+      snprintf(buff, buff_size, "%s", tmp);
+      break;
+    default:
+      assert(0);
+  }
+}
+
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -130,7 +152,12 @@ public:
     return Tipo;
   }
 
+
 };
+
+
+
+
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -744,3 +771,4 @@ ActualizarVariables (Variable * Muestra)
 {
   PilaDeTablas.ActualizarVariables (Muestra);
 }
+
