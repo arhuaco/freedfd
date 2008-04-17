@@ -28,92 +28,25 @@
 #include <stdio.h>
 #include <string.h>
 
-struct Mensaje
-{
-  char *Info;
-  TipoError Tipo;
-  Mensaje *Sig;
-};
-
-
-/*
- *
- * Todavía no sé si es mejor tener singleton o una clase global.
- * El singleton es misterioso, a menos que la clase tenga el nombre
- * singleton metido.
- *
- */
-
-class SingletonError
-{
-private:
-
-  // Para que cada instancia de la clase sea igual. Antes era un objeto
-  // global, definido una vez.
-
-  static bool instanceFlag;
-  static SingletonError *single;
-
-  SingletonError()
-  {
-    Inicio = NULL;
-    IdentificadorAsociado = NULL;
-    HuboError = false;
-  }
-public:
-    static SingletonError* getInstance();
-    void method();
-    ~SingletonError()
-    {
-        instanceFlag = false;
-    }
-
-    /* TODO: Hacer que la clase de errores sea amiga, para no
-     * definir esto publicamente */
-
-    char *IdentificadorAsociado;
-    Mensaje *Inicio;
-    bool  HuboError;
-};
-
-bool SingletonError::instanceFlag = false;
-SingletonError* SingletonError::single = NULL;
-
-SingletonError* SingletonError::getInstance()
-{
-  if(! instanceFlag)
-  {
-    single = new SingletonError();
-    instanceFlag = true;
-    return single;
-  }
-  else
-  {
-     return single;
-  }
-}
-
 void BuzonDeErrores::Vacear ()
 {
   Mensaje *Aux;
 
-  SingletonError *datos = SingletonError::getInstance();
-
-  while (datos->Inicio)
+  while (Inicio)
     {
-      Aux    = datos->Inicio;
-      datos->Inicio = datos->Inicio->Sig;
+      Aux    = Inicio;
+      Inicio = Inicio->Sig;
 
       delete[]  Aux->Info;
       delete    Aux;
     }
 
-  datos->HuboError = false;
+  HuboError = false;
 
-  if (datos->IdentificadorAsociado)
-    delete []datos->IdentificadorAsociado;
+  if (IdentificadorAsociado)
+    delete []IdentificadorAsociado;
 
-  datos->IdentificadorAsociado = NULL;
+  IdentificadorAsociado = NULL;
 }
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -127,38 +60,34 @@ BuzonDeErrores::IntroducirError (const char *msg, TipoError UnError)
 
   NuevoError->Tipo = UnError;
 
-  SingletonError *datos = SingletonError::getInstance();
-
   int len;
 
-  if (datos->IdentificadorAsociado)
-    len = strlen (msg) + strlen(datos->IdentificadorAsociado) + 3;
+  if (IdentificadorAsociado)
+    len = strlen (msg) + strlen(IdentificadorAsociado) + 3;
   else
     len = strlen (msg) + 3;
 
   NuevoError->Info = new char[len];
-  strcpy(NuevoError->Info, datos->IdentificadorAsociado);
+  strcpy(NuevoError->Info, IdentificadorAsociado);
   strcat(NuevoError->Info, ": ");
   strcat(NuevoError->Info, msg);
 
-  NuevoError->Sig = datos->Inicio;
-  datos->Inicio = NuevoError;
+  NuevoError->Sig = Inicio;
+  Inicio = NuevoError;
 
-  datos->HuboError = true;
+  HuboError = true;
 }
 
 bool
 BuzonDeErrores::GetHuboError ()
 {
-  SingletonError *datos = SingletonError::getInstance();
-  return datos->HuboError;
+  return HuboError;
 }
 
 char *
 BuzonDeErrores::GetIdentificadorAsociado ()
 {
-  SingletonError *datos = SingletonError::getInstance();
-  return datos->IdentificadorAsociado;
+  return IdentificadorAsociado;
 }
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -166,12 +95,10 @@ BuzonDeErrores::GetIdentificadorAsociado ()
 void
 BuzonDeErrores::SetIdentificadorAsociado (const char *str)
 {
-  SingletonError *datos = SingletonError::getInstance();
+  if (IdentificadorAsociado)
+    delete []IdentificadorAsociado;
 
-  if (datos->IdentificadorAsociado)
-    delete []datos->IdentificadorAsociado;
-
-  datos->IdentificadorAsociado = dfd_strdup(str);
+  IdentificadorAsociado = dfd_strdup(str);
 }
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -179,19 +106,18 @@ BuzonDeErrores::SetIdentificadorAsociado (const char *str)
 BuzonDeErrores::~BuzonDeErrores ()
 {
   Mensaje *Aux;
-  SingletonError *datos = SingletonError::getInstance();
 
-  while (datos->Inicio)
+  while (Inicio)
     {
-      Aux = datos->Inicio;
-      datos->Inicio = datos->Inicio->Sig;
+      Aux = Inicio;
+      Inicio = Inicio->Sig;
 
       delete[] Aux->Info;
       delete   Aux;
     }
 
-  if (datos->IdentificadorAsociado)
-    delete[] datos->IdentificadorAsociado;
+  if (IdentificadorAsociado)
+    delete[] IdentificadorAsociado;
 }
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -201,9 +127,7 @@ BuzonDeErrores::GetError ()
 {
   ASSERT(0); // ¿Por qué está este assert aca?
 
-  SingletonError *datos = SingletonError::getInstance();
-
-  if (!datos->Inicio)
+  if (!Inicio)
      IntroducirError (TXT_ERROR_INDEFINIDO " en BuzonDeErrores::GetError", ERROR_INDEFINIDO);
 
   // TODO: ¿Quén usa este valor retornado?
@@ -211,7 +135,7 @@ BuzonDeErrores::GetError ()
   // Creo que es mejor usar la clase string aca y no hacer esta
   // copia de memoria.
 
-  char *Retorno = dfd_strdup(datos->Inicio->Info);
+  char *Retorno = dfd_strdup(Inicio->Info);
 
   Vacear ();
 
@@ -230,16 +154,14 @@ BuzonDeErrores::Mostrar ()
  * modo en el que no se necesiten los gráficos.
  */
 
-  SingletonError *datos = SingletonError::getInstance();
-
-  if (!datos->Inicio)
+  if (!Inicio)
     return;
 
-  fprintf(stderr, "%s error: %s\n", program_name, datos->Inicio->Info);
+  fprintf(stderr, "%s error: %s\n", program_name, Inicio->Info);
 
   Vacear ();
 
-  datos->HuboError = false;
+  HuboError = false;
 
 #if 0
   Note que se diferencia entre Edición y Ejecución para mostrar el error.

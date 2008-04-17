@@ -6,14 +6,29 @@
 
 #include <stdio.h>
 
+struct Mensaje
+{
+  char *Info;
+  TipoError Tipo;
+  Mensaje *Sig;
+};
+
+
 class BuzonDeErrores
 {
+    char *IdentificadorAsociado;
+    Mensaje *Inicio;
+    bool  HuboError;
+
   void  IntroducirError (const char *msg, TipoError UnError);
 
 public:
 
     BuzonDeErrores ()
   {
+    Inicio = NULL;
+    IdentificadorAsociado = NULL;
+    HuboError = false;
   }
 
   void Error (TipoError UnError);
