@@ -22,7 +22,7 @@
 */
 
 #include <dfd.h>
-#include <campos.h>
+#include <token.h>
 #include <dfd-wrappers.h>
 #include <operador.h>
 #include <errores.h>

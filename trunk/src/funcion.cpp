@@ -38,7 +38,7 @@ auxiliares.
 
 
 #include <dfd.h>
-#include <campos.h>
+#include <token.h>
 #include <dfd-wrappers.h>
 #include <errores.h>
 #include <math.h>
