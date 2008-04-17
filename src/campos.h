@@ -111,10 +111,14 @@ public:
   {
     Alcance = UnAlcance;
   }
+
   void SetSig (Token * UnSig)
   {
     Sig = UnSig;
   }
+
+  /* return the string resepretation of the token */
+  void asString(char *buff, int buff_size);
 };
 
 #endif
