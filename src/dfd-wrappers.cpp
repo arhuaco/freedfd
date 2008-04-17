@@ -8,7 +8,7 @@ dfd_strdup (const char *example)
 {
   char *new_string;
 
-  new_string = new char [strlen(new_string) + 1];
+  new_string = new char [strlen(example) + 1];
 
   strcpy(new_string, example);
 
