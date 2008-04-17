@@ -71,7 +71,7 @@
  inline int EsLetra (char Caracter){
 	Caracter=(char)toupper(Caracter);
 	return (Caracter>='A' && Caracter<='Z')
-			  ||EstaEn(Caracter,"çÇãâêõôÃÂÊÕÔñÑüáéíóúÁÉÍÓÚ"); //"ñÑüáéíóú" antiguamente
+			  ||EstaEn(Caracter,"çÇãâêõôÃÂÊÕÔñÑüáéíóúÁÉÍÓÚàÀ"); antiguamente
  }
  inline int EsDigito(char Caracter){
 	return (Caracter>='0')&&(Caracter<='9');
