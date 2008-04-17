@@ -122,57 +122,13 @@ BuzonDeErrores::~BuzonDeErrores ()
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-char *
-BuzonDeErrores::GetError ()
+const char *
+BuzonDeErrores::GetErrorInfo ()
 {
-  ASSERT(0); // ¿Por qué está este assert aca?
-
   if (!Inicio)
-     IntroducirError (TXT_ERROR_INDEFINIDO " en BuzonDeErrores::GetError", ERROR_INDEFINIDO);
+     IntroducirError (TXT_ERROR_INDEFINIDO " en BuzonDeErrores::GetErrorInfo", ERROR_INDEFINIDO);
 
-  // TODO: ¿Quén usa este valor retornado?
-  // ¿Por qué se le da una nueva cadena? ¿Causa esto un memory leak?
-  // Creo que es mejor usar la clase string aca y no hacer esta
-  // copia de memoria.
-
-  char *Retorno = dfd_strdup(Inicio->Info);
-
-  Vacear ();
-
-  return Retorno;
-}
-
-void
-BuzonDeErrores::Mostrar ()
-{
-
-/*
- * Originalmente esta rutina llamaba un cuadro de diálogo. Eso
- * es un error. Debe existir un callback para esto, ya que
- * en esta clase tan básica no debería estar la presentación.
- * Tener un callback permite que Dfd corra en un
- * modo en el que no se necesiten los gráficos.
- */
-
-  if (!Inicio)
-    return;
-
-  fprintf(stderr, "%s error: %s\n", program_name, Inicio->Info);
-
-  Vacear ();
-
-  HuboError = false;
-
-#if 0
-  Note que se diferencia entre Edición y Ejecución para mostrar el error.
-  if (Estado.Accion == EDICION)
-    VentanaPrincipal->MessageBox (Inicio->Info,
-				  "Error de revisi›n", MB_ICONSTOP);
-  else
-    VentanaPrincipal->MessageBox (Inicio->Info,
-				  "Error en ejecuci›n", MB_ICONSTOP);
-#endif
-
+  return Inicio->Info;
 }
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
