@@ -1,0 +1,17 @@
+Últimos cambios:
+
+FreeDFD (1.1-RC5)
+
+  * Traducción de la mayoría de los mensajes del programa al portugués.
+  * Traducción de archivos: LEAME.txt al portugués.
+ -- Charles Guimarães Cavalcante <mail@charles.art.br>, Thu Apr 17 2008
+
+  * Script para ayudar con la traducción : (procesa-menu.pl).
+  * Reemplazar cadenas en los fuentes por constantes (#defines).
+  * Nuevo ejemplo : calcular raíces cuadradas.
+ -- Nelson Castillo <arhuaco@freaks-unidos.net>, Thu Apr 17 2008
+
+FreeDFD (1.1-RC4)
+
+  * Liberación inicial con licencia GPL
+ -- Nelson Castillo <arhuaco@freaks-unidos.net>, Eduardo Daza <edazc@hotmail.com>, Fabián Cárdenas <f_cardenas@yahoo.com>
