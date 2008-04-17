@@ -213,7 +213,7 @@ COMMANDS MENU
 
  POPUP "A&juda"
  {
-              MENUITEM "&Conteúdo...\tF1", CM_AYUDACONTENIDO
+              MENUITEM "&Conteúdo (em espanhol)\tF1", CM_AYUDACONTENIDO
               MENUITEM "&Sobre...     ", CM_AYUDAACERCADE
  }
 }

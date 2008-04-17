@@ -15,11 +15,14 @@ while(<MSG>)
   {
     $is_in = 1 - $is_in
   }
-  for my $prefix ('TXT_CM_', 'TXT_MENU_', 'HELP_CM_')
+  if ($is_in)
   {
-    if ($is_in && /define\s+($prefix\w+)\s+(\".*?\")/)
+    for my $prefix ('TXT_CM_', 'TXT_MENU_', 'HELP_CM_')
     {
-      $S{$1} = $2;
+      if ($is_in && /define\s+($prefix\w+)\s+(\".*?\")/)
+      {
+        $S{$1} = $2;
+      }
     }
   }
 }
@@ -31,7 +34,7 @@ open RC, '<dfd.rc.source';
 while (<RC>)
 {
   my $orig = $_;
-  foreach my $key (sort {
+  foreach my $key (sort { # sort by length of the key, in reversed order
                            my $max = length($a);
                            if (length($b) > $max)
                            {
