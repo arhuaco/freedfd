@@ -1,0 +1,74 @@
+ Dfd (c)
+1
+1
+1
+0
+1
+132
+http://es.wikipedia.org/wiki/Formas_de_resolver_la_ra%C3%ADz_cuadrada   En este caso usamos busqueda. In this example we use search.
+4
+1
+77
+'Calculemos la raiz cuadrada. Número?  Let us compute a square root. Number?'
+5
+1
+1
+N
+7
+0
+1
+6
+N >= 0
+4
+1
+114
+'No puede computar la raiz cuadrada de un numero negativo / you cannot compute the square root of negative number'
+13
+6
+3
+4
+raiz
+1
+1
+8
+contador
+1
+0
+9
+error_max
+12
+0.0000000001
+7
+0
+1
+6
+N != 0
+6
+1
+4
+raiz
+1
+0
+13
+9
+1
+32
+ABS(raiz * raiz - N) > error_max
+6
+2
+8
+contador
+12
+contador + 1
+4
+raiz
+24
+(raiz + ( N / raiz)) / 2
+11
+13
+4
+1
+108
+'la raiz es/the square root is  ==> ', raiz, ' , numero de iteraciones/number of iterations  ==> ', contador
+13
+1
