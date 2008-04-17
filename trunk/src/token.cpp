@@ -91,3 +91,19 @@ Token::AsString(char *buff, int buff_size)
   }
   return buff;
 }
+
+void
+Apila (Token ** Inicio, Token * Nuevo)
+{
+  Nuevo->SetSig (*Inicio);
+  *Inicio = Nuevo;
+  return;
+}
+
+Token *
+Desapila (Token ** Inicio)
+{
+  Token *Ret = *Inicio;
+  *Inicio = (*Inicio)->GetSig ();
+  return Ret;
+}

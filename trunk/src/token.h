@@ -119,4 +119,8 @@ public:
   const char * AsString(char *buff, int buff_size);
 };
 
+
+void Apila (Token ** Inicio, Token * Nuevo);
+Token * Desapila (Token ** Inicio);
+
 #endif
