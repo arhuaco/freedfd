@@ -3,6 +3,9 @@
 
 #define ASSERT
 
+#define __DFD__SPANISH__ 1
+#define __DFD__PORTUGUESE__ 0
+
 extern const char *program_name;
 
 enum Accion { EDICION = 0, EJECUCION, DEPURACION };

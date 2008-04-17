@@ -21,7 +21,6 @@ int ContadorVariable = 0;
 
 extern BuzonDeErrores Buzon;
 
-
 Token::~Token ()
 {
   --ContadorToken;
@@ -95,8 +94,8 @@ Token::Token (const char *ValorStr, TipoToken UnTipoToken,
   DatoStr = dfd_strdup (ValorStr);
 }
 
-void
-Token::asString(char *buff, int buff_size)
+const char *
+Token::AsString(char *buff, int buff_size)
 {
   switch(TipoD)
   {
@@ -113,6 +112,7 @@ Token::asString(char *buff, int buff_size)
     default:
       assert(0);
   }
+  return buff;
 }
 
 
