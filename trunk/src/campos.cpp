@@ -3,6 +3,11 @@
 #include <errores.h>
 #include <dfd-wrappers.h>
 
+/* TODO: mejorar el tiempo de acceso a los arreglos. Ahora se hacen
+ * búsquedas lineales. Esto porque se soporta asignación a cualquier casilla
+ * del arreglo. En otras palabras, es una implementación poco eficiente
+ * de un arreglo multidimensional disperso */
+
 #include <string.h>             // strcasecmp
 
  // Estos contadores y datos similares deben ser únicos para
@@ -15,7 +20,9 @@ int ContadorCajita = 0;
 int ContadorCampoVariable = 0;
 int ContadorTabla = 0;
 int ContadorVariable = 0;
-BuzonDeErrores Buzon;
+
+
+extern BuzonDeErrores Buzon;
 
 
 Token::~Token ()
@@ -51,7 +58,16 @@ Token::Token (const Token & UnToken)
     DatoReal = UnToken.DatoReal;
 };;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-// TODO: ¿Ubicar en otro lado?  void Token::setdato ( char *valorstr ){ if (datostr) delete[] datostr; datostr = dfd_strdup(valorstr); } ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; Token::Token ( bool ValorLogico, TipoToken UnTipoToken, TipoAlmacenamiento UnTipoAlmacenamiento ){ ++ContadorToken; //Depuraci›n DatoLogico= ValorLogico; TipoT= UnTipoToken; Almacenamiento= UnTipoAlmacenamiento; TipoD= LOGICO; }
+// TODO: ¿Ubicar en otro lado?  void Token::setdato ( char *valorstr ){ if (datostr) delete[] datostr; datostr = dfd_strdup(valorstr); } ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+Token::Token (bool ValorLogico, TipoToken UnTipoToken,
+              TipoAlmacenamiento UnTipoAlmacenamiento ){
+  //Depuración
+  ++ContadorToken;
+  DatoLogico= ValorLogico;
+  TipoT= UnTipoToken;
+  Almacenamiento= UnTipoAlmacenamiento;
+  TipoD= LOGICO; }
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
