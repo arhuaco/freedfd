@@ -369,7 +369,7 @@
   #define TXT_RUNNING_OBJECT_YES "Sim"
   #define TXT_RUNNING_OBJECT_NO "Não"
   #define TXT_RUNNING_OBJECT_FOR "Para"
-  #define TXT_RUNNING_OBJECT_WHILE "Enquanto"
+  #define TXT_RUNNING_OBJECT_WHILE "En"
   #define TXT_RUNNING_OBJECT_BEGIN "Começar"
   #define TXT_RUNNING_OBJECT_END "Fim"
   #define TXT_RUNNING_OBJECT_BLOCK_END "Fechar"
