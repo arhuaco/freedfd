@@ -1,8 +1,13 @@
-* No usemos la Standard Template Library
+* No usemos la Standard Template Library (¿Qué opinan?
 
   Es muy buena idea el estándar, pero cambia mucho. Tratemos de escribir
   código muy simple que no dependa de librerías que cambian con el
   tiempo.
+
+  TODO: ¿Qué opinan? Creo que usar la STL puede ser bueno para
+  hacer el código más pequeño, y ganar funcionalidades como la de
+  implementar las matrices dispersas en función de <map>.
+  (Se podría pensar en tener otro código para las matrices dispersas).
 
 * No use TABs dentro del código. Esta es una guerra religiosa, y la gente
   nunca se podrá de acuerdo al respecto.
@@ -20,6 +25,7 @@
 
 * Encontratá código como "Imprime("No Entiendoooo 124332");
   La idea es usar assert.h para que el programa se muera si
-  ocurre una excepción.
+  ocurre una excepción. Este código deberia ser reemplazado con
+  llamadas a assert(0); (assert se define en assert.h).
 
-Se reciben sugerencias y comentarios en los siguientes puntos.
+Se reciben sugerencias y comentarios.
