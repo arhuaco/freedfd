@@ -122,6 +122,6 @@ public:
 void Apila (Token ** Inicio, Token * Nuevo);
 Token * Desapila (Token ** Inicio);
 void LiberarListaToken (Token * Inicio);
-void BorrarToken (Token * UnToken);
+void BorrarTokenSiEsVariable  (Token * UnToken);
 
 #endif
