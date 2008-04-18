@@ -7,15 +7,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-/* set to 1 if you have GNU readline
+/* Define HAVE_READLINE if you have GNU readline
  *   (libreadline5-dev in Debian or Ubuntu).
  * http://en.wikipedia.org/wiki/Readline
+ * #define HAVE_READLINE
  */
-#define HAVE_READLINE 0
 
 #define BUF_SIZE 256
 
-#if HAVE_READLINE
+#ifdef HAVE_READLINE
   #include <readline/readline.h>
 #else
   #include <iostream>
@@ -98,7 +98,7 @@ main(int argc, char *argv[])
 
   PilaDeTablas.Apilar(new Tabla); /* new symbol table */
 
-#if HAVE_READLINE
+#ifdef HAVE_READLINE
   while(1)
   {
     char *line;
