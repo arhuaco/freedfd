@@ -1,4 +1,5 @@
 #include <dfd.h>
+#include <objetos-ejecucion.h>
 #include <lista-expresiones.h>
 #include <lista-vectores.h>
 #include <errores.h>
@@ -6,148 +7,10 @@
 #include <tokeniza.h>
 #include <evaluacion.h>
 #include <entorno-ejecucion.h>
+#include <lista-cadenas.h> // Usamos STL?
 
 #include <string.h>
 
-
-/* Parece que esta clase se podría evitar usando STL. La usamos? */
-
-class ListaCadenas
-{
-
-  struct Nodo
-  {
-    char *Dato;
-    Nodo *Sig;
-  } *Inicio, *Iterador, *Ultimo;
-
-  int NItems;
-
-public:
-
-    ListaCadenas ()
-  {
-    Inicio = 0;
-    NItems = 0;
-  }
-  int GetNItems ()
-  {
-    return NItems;
-  }
-  void Reset ()
-  {
-    Iterador = Inicio;
-  }
-  char *Itera ();
-  void Insertar (char *);
-  void InsertarEn (int, char *);
-  void Eliminar (int);
-  void Vacear ();
-};
-
-void
-ListaCadenas::InsertarEn (int Pos, char *Str)
-{
-  Nodo *Nuevo = new Nodo;
-  Nuevo->Dato = Str;
-  if (Pos == 0)
-    {
-
-      Nuevo->Sig = Inicio;
-      Inicio = Nuevo;
-      if (NItems == 0)
-        Ultimo = Nuevo;
-    }
-  else
-    {
-      Nodo *Ant = Inicio;
-      for (int i = 1; i < Pos; ++i)
-        Ant = Ant->Sig;
-      Nuevo->Sig = Ant->Sig;
-      Ant->Sig = Nuevo;
-      if (Ultimo == Ant)
-        Ultimo = Nuevo;
-    }
-  ++NItems;
-}
-
-char *
-ListaCadenas::Itera ()
-{
-  char *Retorno = Iterador->Dato;
-  Iterador = Iterador->Sig;
-  return Retorno;
-}
-
-void
-ListaCadenas::Eliminar (int Pos)
-{
-  Nodo *Ant = 0, *Actual = Inicio;
-  for (int i = 0; i < Pos; ++i)
-    {
-      Ant = Actual;
-      Actual = Actual->Sig;
-    }
-  if (Ant == 0)
-    Inicio = Actual->Sig;
-  else
-    Ant->Sig = Actual->Sig;
-  if (Ultimo == Actual)
-    Ultimo = Ant;
-  delete[]Actual->Dato;
-  delete Actual;
-  --NItems;
-}
-
-
-void
-ListaCadenas::Insertar (char *Str)
-{
-  Nodo *Nuevo = new Nodo;
-  Nuevo->Dato = Str;
-  Nuevo->Sig = 0;
-  if (!Inicio)
-    Inicio = Nuevo;
-  else
-    Ultimo->Sig = Nuevo;
-  Ultimo = Nuevo;
-  Iterador = Inicio;
-  ++NItems;
-}
-
-void
-ListaCadenas::Vacear ()
-{
-  while (Inicio)
-    {
-      Nodo *Aux = Inicio;
-      Inicio = Inicio->Sig;
-      delete[]Aux->Dato;
-      delete Aux;
-    }
-  NItems = 0;
-}
-
-class OE_Asignacion
-{
-  ListaVectores Destinos;
-  ListaExpresiones Fuentes;
-  ListaCadenas CadenasDestino, CadenasFuente;
-public:
-  OE_Asignacion ();
-  void Preprocesar ();
-  void Despreprocesar ();
-  void Ejecutar();
-
-  ListaCadenas & GetCadenasDestino ()
-  {
-    return CadenasDestino;
-  }
-  ListaCadenas & GetCadenasFuente ()
-  {
-    return CadenasFuente;
-  }
-};
 
 OE_Asignacion::OE_Asignacion ()
 {
