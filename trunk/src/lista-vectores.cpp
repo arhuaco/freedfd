@@ -12,9 +12,7 @@
 
 
 /* Este código no parece tan necesario. Uno debería meter la
- * asignación en la evaluación de expresiones, con un operador de
- * baja prioridad, que se evalue de derecha a izquierda.
- *(let ((a 1) (b 2)))
+ * asignación en la evaluación de expresiones.
  */
 
 void

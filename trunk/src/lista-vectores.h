@@ -1,9 +1,8 @@
 #ifndef __LISTA__VECTORES__
 #define __LISTA__VECTORES__
 
-/* ListaVectores ha sido diseñada para manejar un conjunto de vectores
- * (Nombre, dimension e indices por separado) en una lista ligada.
- */
+/* Esto se puede mejorar, no creo que uno necesite
+ * hacer listas */
 
 #include <lista-expresiones.h>
 
