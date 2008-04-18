@@ -1,6 +1,7 @@
 #ifndef __VARIABLE__H__
 #define __VARIABLE__H__
 
+class CampoVariable;
 class Variable
 {
 
@@ -19,6 +20,7 @@ public:
     Variable (char *Id, Variable * Vengo);
   void AsignarValor (Token * UnToken, unsigned *Indices, int Dim);
   Token *Leer (unsigned *Indices, int Dim);
+
   TipoDato GetTipo ()
   {
     return Tipo;
@@ -43,10 +45,16 @@ public:
   {
     return PrimerPadre;
   }
+#if 0
   CampoVariable *GetCampo ()
   {
     return Campo;
   }
+  void SetCampo (CampoVariable * UnCampo)
+  {
+    Campo = UnCampo;
+  }
+#endif
   char *GetIdentificador ()
   {
     return Identificador;
@@ -54,10 +62,6 @@ public:
   void SetSig (Variable * UnSig)
   {
     Sig = UnSig;
-  }
-  void SetCampo (CampoVariable * UnCampo)
-  {
-    Campo = UnCampo;
   }
   void SetFP (bool UnFP)
   {
@@ -71,10 +75,10 @@ public:
   {
     Tipo = UnTipo;
   }
-  ~Variable ()
-  {                             /* ojo */
-    ContadorVariable--;
-    delete[]Identificador;
+  ~Variable ();
+  CampoVariable *GetCampo ()
+  {
+    return Campo;
   }
 
 };
