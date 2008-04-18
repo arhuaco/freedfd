@@ -36,6 +36,7 @@
 #include <token.h>
 #include <errores.h>
 #include <arreglos.h>
+#include <entorno-ejecucion.h>
 
 #include <math.h>
 
@@ -50,7 +51,7 @@ AccesoArreglo (Token ** Pila, int Dim)
   // el vector de apuntadores TokenIndice
   for (int i = 0; i < Dim; ++i)
     {
-      TokenIndice[i] = ObtieneTokenPila (YoRecorro);
+      TokenIndice[i] = EntornoEjecucion_BuscaSimbolo(YoRecorro);
       if (Buzon.GetHuboError ())
         {
           for (int j = 0; j < i; ++j)

@@ -88,6 +88,7 @@ NoEsString (Token * UnToken)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+/* TODO: y que pasa si es constante?  También lo debe borrar, no? */
 void
 BorrarToken (Token * UnToken)
 {

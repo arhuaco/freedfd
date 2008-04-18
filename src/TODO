@@ -25,6 +25,8 @@ TODO:
   acentos en los identificadores.
 * Reemplazar  Buzon.SetIdentificadorAsociado ("2X") y las que se
   parezcan
+* Revisar los objetos que incluyan a entorno-ejecucion.h, para eliminar
+  esta dependencia circular: void ActualizarVariables (Variable *);
 
 TODO (tal vez):
 
