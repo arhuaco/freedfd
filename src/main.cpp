@@ -3,6 +3,7 @@
 #include <errores.h>
 #include <entorno-ejecucion.h>
 #include <evaluacion.h>
+#include <objetos-ejecucion.h>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -45,12 +46,6 @@ BuzonDeErrores Buzon;
 void
 print_counters_if_needed()
 {
-  if (ContadorCajita)
-    fprintf(stderr, "Ops. ContadorCajita == %d\n", ContadorCajita);
-  if (ContadorCampoVariable)
-    fprintf(stderr, "Ops. ContadorCampoVariable == %d\n", ContadorCampoVariable);
-  if (ContadorVariable)
-    fprintf(stderr, "Ops. ContadorVariable == %d\n", ContadorVariable);
   if (ContadorToken)
     fprintf(stderr, "Ops. ContadorToken == %d\n", ContadorToken);
   if (ContadorTabla != 1)
@@ -59,6 +54,13 @@ print_counters_if_needed()
     fprintf(stderr, "Ops. ContadorNodoListaExpresiones == %d\n", ContadorTabla);
   if (ContadorNodoListaVectores)
     fprintf(stderr, "Ops. ContadorNodoListaVectores == %d\n", ContadorNodoListaVectores);
+#if 0
+  if (ContadorCajita || ContadorCampoVariable || ContadorVariable)
+  {
+    fprintf(stderr, "Memoria ocupada => ");
+    fprintf(stderr, "cajas:%d campo_variable:%d variable:%d\n", ContadorCajita, ContadorCampoVariable, ContadorVariable);
+  }
+#endif
 }
 
 void
@@ -89,7 +91,7 @@ postfix_print(const char *line)
 
       if (Buzon.GetHuboError())
       {
-        fprintf(stderr, "Error en ejecuciÃ³n: %s\n", Buzon.GetErrorInfo());
+        fprintf(stderr, "Error en ejecución: %s\n", Buzon.GetErrorInfo());
         Buzon.Vacear();
       }
       else if (Res)
@@ -110,10 +112,19 @@ main(int argc, char *argv[])
 {
   const char *prompt = ">>> ";
 
+
   fprintf(stderr, "%s %s " __DATE__ "\n\n", program_name, program_version);
   fflush(stderr);
 
+  /* Una asignación, esto se va a dejar de usar así como
+   * se hace acá. Creo */
   PilaDeTablas.Apilar(new Tabla); /* new symbol table */
+  OE_Asignacion x;
+  x.NuevaAsignacion("y", "1"); /* No funciona con vectores */
+  x.Preprocesar();
+  x.Ejecutar();
+  x.Despreprocesar();
+
 
 #ifdef HAVE_READLINE
   while(1)

@@ -11,13 +11,17 @@
 
 #include <string.h>
 
+/* Esto está complicado. Creo que se puede simplificar, y separar
+ * completamente de la parte gráfica. */
+
 
 OE_Asignacion::OE_Asignacion ()
 {
   CadenasDestino.Reset ();
   CadenasFuente.Reset ();
   int Items = CadenasDestino.GetNItems ();
-  char *AuxCd1, *AuxCf1, *AuxCd2, *AuxCf2;
+  const char *AuxCd1, *AuxCf1;
+  char *AuxCd2, *AuxCf2;
   for (int i = 0; i < Items; ++i)
     {
       AuxCd1 = CadenasDestino.Itera ();

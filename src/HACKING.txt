@@ -31,4 +31,8 @@ El archivo TODO tiene un listado de cosas pendientes por hacer.
   ocurre una excepción. Este código deberia ser reemplazado con
   llamadas a assert(0); (assert se define en assert.h).
 
+* La parte del objeto asignación hay que pensarla de nuevo. Está
+  muy enredada. Tal vez la asignación debería ser parte del evaluador
+  de expresiones.
+
 Se reciben sugerencias y comentarios.

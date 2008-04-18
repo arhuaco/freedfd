@@ -1,6 +1,6 @@
-/* Parece que esta clase se podría evitar usando STL. La usamos? */
-
 #include <lista-cadenas.h>
+
+/* Creo que esta clase va a desaparecer */
 
 void
 ListaCadenas::InsertarEn (int Pos, char *Str)
@@ -28,10 +28,10 @@ ListaCadenas::InsertarEn (int Pos, char *Str)
   ++NItems;
 }
 
-char *
+const char *
 ListaCadenas::Itera ()
 {
-  char *Retorno = Iterador->Dato;
+  const char *Retorno = Iterador->Dato;
   Iterador = Iterador->Sig;
   return Retorno;
 }
@@ -58,7 +58,7 @@ ListaCadenas::Eliminar (int Pos)
 
 
 void
-ListaCadenas::Insertar (char *Str)
+ListaCadenas::Insertar (const char *Str)
 {
   Nodo *Nuevo = new Nodo;
   Nuevo->Dato = Str;

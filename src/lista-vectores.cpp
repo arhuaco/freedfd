@@ -5,10 +5,17 @@
 #include <errores.h>
 #include <lista-expresiones.h>
 #include <evaluacion.h>
+#include <dfd-wrappers.h>
 
 #include <string.h>
 #include <math.h>
 
+
+/* Este código no parece tan necesario. Uno debería meter la
+ * asignación en la evaluación de expresiones, con un operador de
+ * baja prioridad, que se evalue de derecha a izquierda.
+ *(let ((a 1) (b 2)))
+ */
 
 void
 ListaVectores::Insertar ()
@@ -80,24 +87,25 @@ ListaVectores::EvaluaActualesIndices ()
 
 
 void
-ListaVectores::AlmacenaVector (char *Cadena)
+ListaVectores::AlmacenaVector (const char *orig)
 {
 
-  if (!Cadena)
+  if (!orig)
     {
       Buzon.Error (ILEGAL_COMA_O_CADENA_VACIA);
       return;
     }
 
+  char * Cadena = dfd_strdup(orig);
   int Largo = strlen (Cadena);
   Insertar ();
 
   int ActualChar = 0;
   for (; ActualChar < Largo && (Cadena[ActualChar] != '('); ++ActualChar);
-  char Temp = Cadena[ActualChar];
   Cadena[ActualChar] = 0;
   Token *t = GetPostfijo (Cadena);
-  Cadena[ActualChar] = Temp;
+  delete []Cadena;
+
   if (Buzon.GetHuboError ())
     return;
   if (!t)
@@ -135,7 +143,7 @@ ListaVectores::AlmacenaVector (char *Cadena)
       if (!EsCadena && (((Casilla == ',') && (Parent == 1))
                         || ((Casilla == ')') && (!Parent))))
         {
-          Temp = Casilla;
+          char Temp = Casilla;
           Casilla = 0;
           t = GetPostfijo (Cadena + IniChar);
           Casilla = Temp;

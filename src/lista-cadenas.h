@@ -1,14 +1,14 @@
 #ifndef __LISTA__CADENAS__
 #define __LISTA__CADENAS__
 
-/* Esto se podría reemplazar usando la STL */
+/* Creo que esta clase va a desaparecer */
 
 class ListaCadenas
 {
 
   struct Nodo
   {
-    char *Dato;
+    const char *Dato;
     Nodo *Sig;
   } *Inicio, *Iterador, *Ultimo;
 
@@ -29,8 +29,8 @@ public:
   {
     Iterador = Inicio;
   }
-  char *Itera ();
-  void Insertar (char *);
+  const char *Itera ();
+  void Insertar (const char *);
   void InsertarEn (int, char *);
   void Eliminar (int);
   void Vacear ();
