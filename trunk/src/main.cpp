@@ -20,10 +20,15 @@
   char buffer[BUF_SIZE];
 #endif
 
+/* Counters that help us check we don't have (obvious) memory leaks */
+int ContadorCajita = 0;
+int ContadorCampoVariable = 0;
+int ContadorVariable = 0;
 
 const char *program_name = "FreeDFD";
 
 BuzonDeErrores Buzon;
+
 
 void
 postfix_print(const char *line)

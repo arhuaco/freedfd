@@ -14,6 +14,18 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
+#include <dfd.h>
+#include <token.h>
+#include <errores.h>
+#include <variables.h>
+
+#include <string.h>
+
+extern int ContadorCajita;
+extern int ContadorCampoVariable;
+extern int ContadorVariable;
+extern BuzonDeErrores Buzon;
+
 class CampoVariable
 {
   TipoDato Tipo;
@@ -175,7 +187,7 @@ CampoVariable::Leer (unsigned *Indices, int Dim, char *Id)
   Token *Nuevo;
   if (Tipo == STRING)
     {
-      char *CadenaParaToken = (LeerDe) ? LeerDe->DatoStr : "\x01 BASURA \x01";
+      const char *CadenaParaToken = (LeerDe) ? LeerDe->DatoStr : "\x01 BASURA \x01";
       Nuevo = new Token (CadenaParaToken, OPERANDO, CONSTANTE);
       if (Buzon.GetHuboError () == true)
         {
@@ -266,6 +278,12 @@ Variable::Variable (char *Id, Variable * Vengo)
   else
     PrimerPadre = VengoDe->PrimerPadre;
 
+}
+
+Variable::~Variable()
+{
+  ContadorVariable--;
+  delete[]Identificador;
 }
 
 void
