@@ -49,6 +49,8 @@ extern int ContadorCampoVariable;
 extern int ContadorVariable;
 extern int ContadorToken;
 extern int ContadorTabla;
+extern int ContadorNodoListaExpresiones;
+extern int ContadorNodoListaVectores;
 
 class EstadoPrograma {
 public:

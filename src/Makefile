@@ -4,17 +4,21 @@ CXX = ccache g++
 CXXFLAGS = -Wall -I.  -ggdb3 -DDEBUG
 PROGRAM = freedfd
 
-EXTRA_LIBS= 
+EXTRA_LIBS=  -lm
 
 # Use this to debug malloc and free, install electic-fence in Debian or Ubuntu
-# EXTRA_LIBS += -lefence
+EXTRA_LIBS += -lefence
 
 #Better line edition, define and install libreadline5-dev in Debian or Ubuntu
-# EXTRA_LIBS += -lreadline
-# CXXFLAGS += -DHAVE_READLINE
+EXTRA_LIBS += -lreadline
+CXXFLAGS += -DHAVE_READLINE
 
 
-SOURCES = main.cpp token.cpp errores.cpp operador.cpp tokeniza.cpp variables.cpp tabla-simbolos.cpp evaluacion.cpp funcion.cpp dfd-wrappers.cpp entorno-ejecucion.cpp arreglos.cpp
+SOURCES = main.cpp token.cpp errores.cpp operador.cpp \
+          tokeniza.cpp variables.cpp tabla-simbolos.cpp \
+          evaluacion.cpp funcion.cpp dfd-wrappers.cpp \
+          entorno-ejecucion.cpp arreglos.cpp lista-expresiones.cpp \
+          lista-vectores.cpp
 OBJECTS := $(patsubst %.cpp,%.o,$(SOURCES))
 HEADERS := $(filter-out main.h,$(patsubst %.cpp,%.h,$(SOURCES))) 
 

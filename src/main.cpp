@@ -29,6 +29,10 @@ int ContadorCampoVariable = 0;
 int ContadorVariable = 0;
 int ContadorToken = 0;
 int ContadorTabla = 0;
+int ContadorNodoListaExpresiones = 0;
+int ContadorNodoListaVectores = 0;
+
+
 EstadoPrograma Estado;
 class PilaDeTablas PilaDeTablas; /* entorno de ejecucion, stack, tabla de simbolos */
 
@@ -51,6 +55,10 @@ print_counters_if_needed()
     fprintf(stderr, "Ops. ContadorToken == %d\n", ContadorToken);
   if (ContadorTabla != 1)
     fprintf(stderr, "Ops. ContadorTabla == %d\n", ContadorTabla);
+  if (ContadorNodoListaExpresiones)
+    fprintf(stderr, "Ops. ContadorNodoListaExpresiones == %d\n", ContadorTabla);
+  if (ContadorNodoListaVectores)
+    fprintf(stderr, "Ops. ContadorNodoListaVectores == %d\n", ContadorNodoListaVectores);
 }
 
 void
