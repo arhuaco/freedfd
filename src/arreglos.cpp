@@ -39,8 +39,6 @@
 
 #include <math.h>
 
-extern BuzonDeErrores Buzon;
-
 void
 AccesoArreglo (Token ** Pila, int Dim)
 {

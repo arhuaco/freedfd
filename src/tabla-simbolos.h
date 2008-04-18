@@ -1,5 +1,6 @@
 #ifndef __TABLA__SIMBOLOS__H__
 #define __TABLA__SIMBOLOS__H__
+
 #include <variables.h>
 
 class Tabla

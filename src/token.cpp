@@ -6,8 +6,6 @@
 #include <stdio.h>
 #include <string.h>
 
-int ContadorToken = 0;
-
 Token::~Token ()
 {
   --ContadorToken;

@@ -4,8 +4,6 @@
 #include <dfd.h>
 #include <operador.h>
 
-extern int ContadorToken;
-
 class Token
 {
   TipoDato TipoD;

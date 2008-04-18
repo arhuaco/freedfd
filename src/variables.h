@@ -3,7 +3,7 @@
 
 #include <dfd.h>
 #include <token.h>
-#include <tabla-simbolos.h>
+//#include <tabla-simbolos.h>
 
 class CampoVariable
 {
