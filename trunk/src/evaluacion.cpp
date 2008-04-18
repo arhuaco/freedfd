@@ -18,6 +18,7 @@
 #include <funcion.h>
 #include <errores.h>
 #include <arreglos.h>
+#include <evaluacion.h>
 
 #include <stdlib.h>
 #include <string.h>
