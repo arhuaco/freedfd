@@ -2,8 +2,6 @@
 #include <entorno-ejecucion.h>
 #include <errores.h>
 
-extern BuzonDeErrores Buzon;
-
 void
 PilaDeTablas::Vacear ()
 {
