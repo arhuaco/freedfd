@@ -33,6 +33,7 @@ EstadoPrograma Estado;
 class PilaDeTablas PilaDeTablas; /* entorno de ejecucion, stack, tabla de simbolos */
 
 const char *program_name = "FreeDFD";
+const char *program_version = "1.5.1";
 
 BuzonDeErrores Buzon;
 
@@ -59,7 +60,7 @@ postfix_print(const char *line)
 
     if (Buzon.GetHuboError())
     {
-      fprintf(stderr, "Error %s\n", Buzon.GetErrorInfo());
+      fprintf(stderr, "Error de sintaxis: %s\n", Buzon.GetErrorInfo());
       Buzon.Vacear();
     }
     else
@@ -71,22 +72,26 @@ postfix_print(const char *line)
 
       for (Token *tok = Post; tok; tok = tok->GetSig())
         printf("%s ", tok->AsString(tmp_buf, BUF_SIZE));
+      if (Post)
+        putchar('\n');
 
       fflush(stdout);
 
       Token *Res = EvaluaPostfijo(Post);
 
-      if (Res)
+      if (Buzon.GetHuboError())
       {
-        printf("%s ", Res->AsString(tmp_buf, BUF_SIZE));
-        delete Res;
+        fprintf(stderr, "Error en ejecución: %s\n", Buzon.GetErrorInfo());
+        Buzon.Vacear();
       }
+      else if (Res)
+        printf("Resultado => %s\n", Res->AsString(tmp_buf, BUF_SIZE));
       else
         fprintf(stderr, __FILE__":%d EvaluaPostfijo returned NULL\n", __LINE__);
 
       LiberarListaToken(Post);
-
-      putchar('\n');
+      if (Res)
+        delete Res;
     }
 
     print_counters_if_needed();
@@ -95,6 +100,10 @@ postfix_print(const char *line)
 int
 main(int argc, char *argv[])
 {
+  const char *prompt = ">>> ";
+
+  fprintf(stderr, "%s %s " __DATE__ "\n\n", program_name, program_version);
+  fflush(stderr);
 
   PilaDeTablas.Apilar(new Tabla); /* new symbol table */
 
@@ -102,18 +111,18 @@ main(int argc, char *argv[])
   while(1)
   {
     char *line;
-    line = readline("DFD> ");
+    line = readline(prompt);
     if (!line)
       break;
     postfix_print(line);
     free(line);
   }
 #else
-  printf("DFD> ");
+  printf(prompt);
   while(std::cin.getline(buffer, BUF_SIZE))
   {
     postfix_print(buffer);
-    printf("DFD> ");
+    printf(prompt);
   }
 #endif
 
