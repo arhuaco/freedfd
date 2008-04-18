@@ -111,11 +111,11 @@ MenosUnitario (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
   long double ValorRetorno = -1.0L * Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   Token *TokenRetorno = ConsigueToken (ValorRetorno);
   if (Buzon.GetHuboError ())
     return;
@@ -135,12 +135,12 @@ Seno (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
 
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   ValorDominio = Estado.AngulosEnGrados ? ValorDominio * (M_PI / 180.0L) :
     ValorDominio;
   long double ValorRetorno;
@@ -170,12 +170,12 @@ Coseno (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
   long double ValorRetorno;
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   ValorDominio = Estado.AngulosEnGrados ? ValorDominio * (M_PI / 180.0L) :
     ValorDominio;
   if (fabsl (sinl (ValorDominio)) == 1.0L)
@@ -205,12 +205,12 @@ Tangente (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
 
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   ValorDominio = Estado.AngulosEnGrados ? ValorDominio * M_PI / 180.0L :
     ValorDominio;
   long double ValorSeno = sinl (ValorDominio);
@@ -248,12 +248,12 @@ SenoHiperbolico (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
 
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   long double ValorRetorno = sinhl (ValorDominio);
   if (Buzon.GetHuboError ())
     return;
@@ -278,12 +278,12 @@ CosenoHiperbolico (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
 
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   long double ValorRetorno = coshl (ValorDominio);
   if (Buzon.GetHuboError ())
     return;
@@ -308,12 +308,12 @@ TangenteHiperbolica (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
 
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   long double ValorRetorno = tanhl (ValorDominio);
   if (Buzon.GetHuboError ())
     return;
@@ -338,12 +338,12 @@ ArcoSeno (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
 
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   long double ValorRetorno = asinl (ValorDominio);
   if (Buzon.GetHuboError ())
     return;
@@ -368,12 +368,12 @@ ArcoCoseno (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
 
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   long double ValorRetorno = acosl (ValorDominio);
   if (Buzon.GetHuboError ())
     return;
@@ -398,12 +398,12 @@ ArcoTangente (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
 
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   long double ValorRetorno = atanl (ValorDominio);
   if (Buzon.GetHuboError ())
     return;
@@ -428,12 +428,12 @@ Exp (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
 
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   long double ValorRetorno = expl (ValorDominio);
   if (Buzon.GetHuboError ())
     return;
@@ -457,12 +457,12 @@ Log (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
 
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   long double ValorRetorno = log10l (ValorDominio);
   if (Buzon.GetHuboError ())
     return;
@@ -485,12 +485,12 @@ Ln (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
 
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   long double ValorRetorno = logl (ValorDominio);
   if (Buzon.GetHuboError ())
     return;
@@ -514,11 +514,11 @@ Trunc (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
 
   long double ValorRetorno = floorl (fabsl (ValorDominio)) *
     (ValorDominio < 0 ? (-1.0L) : (1.0L));
@@ -544,11 +544,11 @@ Round (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
   long double ValorDominio = Operando->GetDatoReal ();
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
 
   long double ValorRetorno = floorl (fabsl (ValorDominio) + 0.5L) *
     (ValorDominio < 0 ? (-1.0L) : (1.0L));
@@ -575,11 +575,11 @@ Abs (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
   long double ValorRetorno = fabsl (Operando->GetDatoReal ());
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   if (Buzon.GetHuboError ())
     return;
   Token *TokenRetorno = ConsigueToken (ValorRetorno);
@@ -600,11 +600,11 @@ Sqrt (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
   long double ValorRetorno = sqrtl (Operando->GetDatoReal ());
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   if (Buzon.GetHuboError ())
     return;
   Token *TokenRetorno = ConsigueToken (ValorRetorno);
@@ -626,11 +626,11 @@ Random (Token ** Pila)
     return;
   if (NoEsReal (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
   long double ValorDominio = (Operando->GetDatoReal ());
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   long double ValorAleatorio = rand ();
   if (ValorDominio > 32767.0L)
     ValorAleatorio *= ValorDominio / 32767.0L;
@@ -655,11 +655,11 @@ Not (Token ** Pila)
     return;
   if (NoEsLogico (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
   bool ValorRetorno = (Operando->GetDatoLogico ())? false : true;
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   Token *TokenRetorno = ConsigueToken (ValorRetorno);
   if (Buzon.GetHuboError ())
     return;
@@ -680,11 +680,11 @@ Len (Token ** Pila)
     return;
   if (NoEsString (Operando))
     {
-      BorrarToken (Operando);
+      BorrarTokenSiEsVariable (Operando);
       return;
     }
   long double ValorRetorno = (long double) strlen (Operando->GetDatoStr ());
-  BorrarToken (Operando);
+  BorrarTokenSiEsVariable (Operando);
   Token *TokenRetorno = ConsigueToken (ValorRetorno);
   if (Buzon.GetHuboError ())
     return;
@@ -707,13 +707,13 @@ Relacion (Token ** Pila, int Caso)
   Token *Op1 = EntornoEjecucion_BuscaSimbolo ((*Pila)->GetSig ());
   if (Buzon.GetHuboError ())
     {
-      BorrarToken (Op2);
+      BorrarTokenSiEsVariable (Op2);
       return;
     }
   if (Op1->GetTipoDato () != Op2->GetTipoDato ())
     {
-      BorrarToken (Op2);
-      BorrarToken (Op1);
+      BorrarTokenSiEsVariable (Op2);
+      BorrarTokenSiEsVariable (Op1);
       Buzon.Error (LOS_TIPOS_NO_COINCIDEN);
       return;
     }
@@ -787,8 +787,8 @@ Relacion (Token ** Pila, int Caso)
       break;
     }
 
-  BorrarToken (Op1);
-  BorrarToken (Op2);
+  BorrarTokenSiEsVariable (Op1);
+  BorrarTokenSiEsVariable (Op2);
   if (Buzon.GetHuboError ())
     return;
   if (Caso == 3 || Caso == 4 || Caso == 6)
@@ -870,25 +870,25 @@ LogicosBinarios (Token ** Pila, int Caso)
   Token *Operando1 = EntornoEjecucion_BuscaSimbolo ((*Pila)->GetSig ());
   if (Buzon.GetHuboError ())
     {
-      BorrarToken (Operando2);
+      BorrarTokenSiEsVariable (Operando2);
       return;
     }
   if (NoEsLogico (Operando1))
     {
-      BorrarToken (Operando2);
-      BorrarToken (Operando1);
+      BorrarTokenSiEsVariable (Operando2);
+      BorrarTokenSiEsVariable (Operando1);
       return;
     }
   if (NoEsLogico (Operando2))
     {
-      BorrarToken (Operando2);
-      BorrarToken (Operando1);
+      BorrarTokenSiEsVariable (Operando2);
+      BorrarTokenSiEsVariable (Operando1);
       return;
     }
   bool Op2 = Operando2->GetDatoLogico ();
-  BorrarToken (Operando2);
+  BorrarTokenSiEsVariable (Operando2);
   bool Op1 = Operando1->GetDatoLogico ();
-  BorrarToken (Operando1);
+  BorrarTokenSiEsVariable (Operando1);
   bool Respuesta;
   switch (Caso)
     {
@@ -986,13 +986,13 @@ Sumar (Token ** Pila)
   Token *Op1 = EntornoEjecucion_BuscaSimbolo ((*Pila)->GetSig ());
   if (Buzon.GetHuboError ())
     {
-      BorrarToken (Op2);
+      BorrarTokenSiEsVariable (Op2);
       return;
     }
   if (Op1->GetTipoDato () != Op2->GetTipoDato ())
     {
-      BorrarToken (Op2);
-      BorrarToken (Op1);
+      BorrarTokenSiEsVariable (Op2);
+      BorrarTokenSiEsVariable (Op1);
       Buzon.Error (LOS_TIPOS_NO_COINCIDEN);
       return;
     }
@@ -1019,8 +1019,8 @@ Sumar (Token ** Pila)
       Buzon.Error (OPERADOR_LOGICO_ILEGAL);
       break;
     };
-  BorrarToken (Op1);
-  BorrarToken (Op2);
+  BorrarTokenSiEsVariable (Op1);
+  BorrarTokenSiEsVariable (Op2);
   if (Buzon.GetHuboError ())
     return;
   Token *TokenRetorno;
@@ -1054,25 +1054,25 @@ NumericosBinarios (Token ** Pila, int Caso)
   Token *Operando1 = EntornoEjecucion_BuscaSimbolo ((*Pila)->GetSig ());
   if (Buzon.GetHuboError ())
     {
-      BorrarToken (Operando2);
+      BorrarTokenSiEsVariable (Operando2);
       return;
     }
   if (NoEsReal (Operando1))
     {
-      BorrarToken (Operando1);
-      BorrarToken (Operando2);
+      BorrarTokenSiEsVariable (Operando1);
+      BorrarTokenSiEsVariable (Operando2);
       return;
     }
   if (NoEsReal (Operando2))
     {
-      BorrarToken (Operando1);
-      BorrarToken (Operando2);
+      BorrarTokenSiEsVariable (Operando1);
+      BorrarTokenSiEsVariable (Operando2);
       return;
     }
   long double Op1 = Operando1->GetDatoReal ();
-  BorrarToken (Operando1);
+  BorrarTokenSiEsVariable (Operando1);
   long double Op2 = Operando2->GetDatoReal ();
-  BorrarToken (Operando2);
+  BorrarTokenSiEsVariable (Operando2);
   long double ValorRetorno;
   switch (Caso)
     {
@@ -1189,7 +1189,7 @@ Substring (Token ** Pila, int NArgumentos)
   TokInicio = EntornoEjecucion_BuscaSimbolo (YoRecorro);
   if (Buzon.GetHuboError ())
     {
-      BorrarToken (TokHasta);
+      BorrarTokenSiEsVariable (TokHasta);
       return;
     }
   YoRecorro = YoRecorro->GetSig ();
@@ -1198,8 +1198,8 @@ Substring (Token ** Pila, int NArgumentos)
   TokCadena = EntornoEjecucion_BuscaSimbolo (YoRecorro);
   if (Buzon.GetHuboError ())
     {
-      BorrarToken (TokInicio);
-      BorrarToken (TokHasta);
+      BorrarTokenSiEsVariable (TokInicio);
+      BorrarTokenSiEsVariable (TokHasta);
       return;
     }
 
@@ -1245,16 +1245,16 @@ Substring (Token ** Pila, int NArgumentos)
         Buzon.Error (OPERADOR_ILEGAL);
       else
         Buzon.Error (LLAMADO_DE_FUNCION_NO_VALIDO);
-      BorrarToken (TokCadena);
-      BorrarToken (TokInicio);
-      BorrarToken (TokHasta);
+      BorrarTokenSiEsVariable (TokCadena);
+      BorrarTokenSiEsVariable (TokInicio);
+      BorrarTokenSiEsVariable (TokHasta);
       return;
     }
   char *Cadena = TokCadena->GetDatoStr ();
   int Hasta = (int) TokHasta->GetDatoReal ();
   int Inicio = (int) TokInicio->GetDatoReal ();
-  BorrarToken (TokInicio);
-  BorrarToken (TokHasta);
+  BorrarTokenSiEsVariable (TokInicio);
+  BorrarTokenSiEsVariable (TokHasta);
 
   int Largo = strlen (Cadena);
   int NAux = 0;
@@ -1268,7 +1268,7 @@ Substring (Token ** Pila, int NArgumentos)
   Token *TokenRetorno = new Token (Aux, OPERANDO, CONSTANTE);
   delete[]Aux;
 
-  BorrarToken (TokCadena);
+  BorrarTokenSiEsVariable (TokCadena);
   for (int i = 0; i < 4; ++i)
     delete Desapila (Pila);
   Apila (Pila, TokenRetorno);

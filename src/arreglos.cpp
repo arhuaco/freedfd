@@ -55,7 +55,7 @@ AccesoArreglo (Token ** Pila, int Dim)
       if (Buzon.GetHuboError ())
         {
           for (int j = 0; j < i; ++j)
-            BorrarToken (TokenIndice[j]);
+            BorrarTokenSiEsVariable (TokenIndice[j]);
           delete[]TokenIndice;
           delete[]Indices;
           return;
@@ -87,7 +87,7 @@ AccesoArreglo (Token ** Pila, int Dim)
       Buzon.SetIdentificadorAsociado (YoRecorro->GetDatoStr ());
       Buzon.Error (INDICES);
       for (int j = 0; j < Dim; ++j)
-        BorrarToken (TokenIndice[j]);
+        BorrarTokenSiEsVariable (TokenIndice[j]);
       delete[]TokenIndice;
       delete[]Indices;
       return;
@@ -96,7 +96,7 @@ AccesoArreglo (Token ** Pila, int Dim)
   Token *TokenRetorno = PilaDeTablas.Leer (YoRecorro->GetDatoStr (),
                                            Indices, Dim);
   for (int i = 0; i < Dim; ++i)
-    BorrarToken (TokenIndice[i]);
+    BorrarTokenSiEsVariable (TokenIndice[i]);
 
   delete[]Indices;
   delete[]TokenIndice;

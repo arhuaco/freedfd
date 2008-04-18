@@ -120,11 +120,9 @@ LiberarListaToken (Token * Inicio)
 }
 
 void
-BorrarToken (Token * UnToken)
+BorrarTokenSiEsVariable (Token * UnToken)
 {
   if (UnToken->GetTipoAlmacenamiento () == VARIABLE)
     delete UnToken;
-  else
-    fprintf(stderr, __FILE__":%d TODO: How come this token is not deleted?\n", __LINE__);
   return;
 }

@@ -36,6 +36,22 @@ const char *program_name = "FreeDFD";
 
 BuzonDeErrores Buzon;
 
+
+void
+print_counters_if_needed()
+{
+  if (ContadorCajita)
+    fprintf(stderr, "Ops. ContadorCajita == %d\n", ContadorCajita);
+  if (ContadorCampoVariable)
+    fprintf(stderr, "Ops. ContadorCampoVariable == %d\n", ContadorCampoVariable);
+  if (ContadorVariable)
+    fprintf(stderr, "Ops. ContadorVariable == %d\n", ContadorVariable);
+  if (ContadorToken)
+    fprintf(stderr, "Ops. ContadorToken == %d\n", ContadorToken);
+  if (ContadorTabla != 1)
+    fprintf(stderr, "Ops. ContadorTabla == %d\n", ContadorTabla);
+}
+
 void
 postfix_print(const char *line)
 {
@@ -49,30 +65,39 @@ postfix_print(const char *line)
     else
     {
       char tmp_buf[BUF_SIZE];
-      Token *tok = Post;
-      if (tok)
+
+      if (Post)
         printf("Postfijo => ");
-      while (tok)
-      {
+
+      for (Token *tok = Post; tok; tok = tok->GetSig())
         printf("%s ", tok->AsString(tmp_buf, BUF_SIZE));
 
-        Token *aux = tok;
-        tok = tok->GetSig();
-        delete aux;
-      }
+      fflush(stdout);
 
       Token *Res = EvaluaPostfijo(Post);
+
+      if (Res)
+      {
+        printf("%s ", Res->AsString(tmp_buf, BUF_SIZE));
+        delete Res;
+      }
+      else
+        fprintf(stderr, __FILE__":%d EvaluaPostfijo returned NULL\n", __LINE__);
+
       LiberarListaToken(Post);
-      printf("%s ", Res->AsString(tmp_buf, BUF_SIZE));
-      //delete Res; TODO: We have to delete this one.
 
       putchar('\n');
     }
+
+    print_counters_if_needed();
 }
 
 int
 main(int argc, char *argv[])
 {
+
+  PilaDeTablas.Apilar(new Tabla); /* new symbol table */
+
 #if HAVE_READLINE
   while(1)
   {
