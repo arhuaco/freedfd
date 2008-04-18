@@ -87,18 +87,6 @@ NoEsString (Token * UnToken)
 }
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-/* TODO: y que pasa si es constante?  También lo debe borrar, no? */
-void
-BorrarToken (Token * UnToken)
-{
-  if (UnToken->GetTipoAlmacenamiento () == VARIABLE)
-    delete UnToken;
-  return;
-}
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 template < class TIPO > static Token *
 ConsigueToken (TIPO Valor)
 {
@@ -817,7 +805,7 @@ Relacion (Token ** Pila, int Caso)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 Menor (Token ** Pila)
 {
   Relacion (Pila, 1);
@@ -826,7 +814,7 @@ Menor (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 Mayor (Token ** Pila)
 {
   Relacion (Pila, 2);
@@ -835,7 +823,7 @@ Mayor (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 MenorIgual (Token ** Pila)
 {
   Relacion (Pila, 3);
@@ -844,7 +832,7 @@ MenorIgual (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 MayorIgual (Token ** Pila)
 {
   Relacion (Pila, 4);
@@ -853,7 +841,7 @@ MayorIgual (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 Igual (Token ** Pila)
 {
   Relacion (Pila, 5);
@@ -862,7 +850,7 @@ Igual (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 NoIgual (Token ** Pila)
 {
   Relacion (Pila, 6);
@@ -934,7 +922,7 @@ LogicosBinarios (Token ** Pila, int Caso)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 And (Token ** Pila)
 {
   LogicosBinarios (Pila, 1);
@@ -943,7 +931,7 @@ And (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 Nand (Token ** Pila)
 {
   LogicosBinarios (Pila, 2);
@@ -952,7 +940,7 @@ Nand (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 Or (Token ** Pila)
 {
   LogicosBinarios (Pila, 3);
@@ -961,7 +949,7 @@ Or (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 Nor (Token ** Pila)
 {
   LogicosBinarios (Pila, 4);
@@ -970,7 +958,7 @@ Nor (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 Xor (Token ** Pila)
 {
   LogicosBinarios (Pila, 5);
@@ -979,7 +967,7 @@ Xor (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 Xnor (Token ** Pila)
 {
   LogicosBinarios (Pila, 6);
@@ -1126,7 +1114,7 @@ NumericosBinarios (Token ** Pila, int Caso)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 Restar (Token ** Pila)
 {
   NumericosBinarios (Pila, 1);
@@ -1135,7 +1123,7 @@ Restar (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 Multiplicar (Token ** Pila)
 {
   NumericosBinarios (Pila, 2);
@@ -1145,7 +1133,7 @@ Multiplicar (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 Dividir (Token ** Pila)
 {
   NumericosBinarios (Pila, 3);
@@ -1155,7 +1143,7 @@ Dividir (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 Modulo (Token ** Pila)
 {
   NumericosBinarios (Pila, 4);
@@ -1164,7 +1152,7 @@ Modulo (Token ** Pila)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-inline void
+void
 Elevar (Token ** Pila)
 {
   NumericosBinarios (Pila, 5);

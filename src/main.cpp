@@ -10,7 +10,7 @@
  *   (libreadline5-dev in Debian or Ubuntu).
  * http://en.wikipedia.org/wiki/Readline
  */
-#define HAVE_READLINE 1
+#define HAVE_READLINE 0
 
 #if HAVE_READLINE
   #include <readline/readline.h>
