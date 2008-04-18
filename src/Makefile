@@ -1,5 +1,5 @@
 CXX = g++
-CXXFLAGS = -Wall -I. # -ggdb3 -DDEBUG
+CXXFLAGS = -Wall -I.  -ggdb3 -DDEBUG
 PROGRAM = freedfd
 SOURCES = main.cpp token.cpp errores.cpp operador.cpp tokeniza.cpp variables.cpp tabla-simbolos.cpp evaluacion.cpp funcion.cpp dfd-wrappers.cpp entorno-ejecucion.cpp arreglos.cpp
 OBJECTS := $(patsubst %.cpp,%.o,$(SOURCES))
