@@ -2,6 +2,7 @@
 #include <tokeniza.h>
 #include <errores.h>
 #include <entorno-ejecucion.h>
+#include <evaluacion.h>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -12,12 +13,13 @@
  */
 #define HAVE_READLINE 0
 
+#define BUF_SIZE 256
+
 #if HAVE_READLINE
   #include <readline/readline.h>
 #else
   #include <iostream>
   using namespace std;
-  #define BUF_SIZE 256
   char buffer[BUF_SIZE];
 #endif
 
@@ -37,7 +39,7 @@ BuzonDeErrores Buzon;
 void
 postfix_print(const char *line)
 {
-    Token * tok = GetPostfijo (line);
+    Token * Post = GetPostfijo (line);
 
     if (Buzon.GetHuboError())
     {
@@ -46,17 +48,24 @@ postfix_print(const char *line)
     }
     else
     {
+      char tmp_buf[BUF_SIZE];
+      Token *tok = Post;
       if (tok)
         printf("Postfijo => ");
       while (tok)
       {
-        char tmp_buf[256];
-        printf("%s ", tok->AsString(tmp_buf, 256));
+        printf("%s ", tok->AsString(tmp_buf, BUF_SIZE));
 
         Token *aux = tok;
         tok = tok->GetSig();
         delete aux;
       }
+
+      Token *Res = EvaluaPostfijo(Post);
+      LiberarListaToken(Post);
+      printf("%s ", Res->AsString(tmp_buf, BUF_SIZE));
+      //delete Res; TODO: We have to delete this one.
+
       putchar('\n');
     }
 }
