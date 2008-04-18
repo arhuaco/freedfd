@@ -1,6 +1,7 @@
 #include <dfd.h>
 #include <tokeniza.h>
 #include <errores.h>
+#include <entorno-ejecucion.h>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,6 +27,8 @@ int ContadorCampoVariable = 0;
 int ContadorVariable = 0;
 int ContadorToken = 0;
 int ContadorTabla = 0;
+EstadoPrograma Estado;
+PilaDeTablas PilaDeTablas; /* entorno de ejecucion, stack, tabla de simbolos */
 
 const char *program_name = "FreeDFD";
 

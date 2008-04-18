@@ -27,7 +27,7 @@ Tabla::Buscar (char *Id)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 Token *
-Tabla::Leer (char *Id, unsigned *Indices, int Dim)
+Tabla::Leer (const char *Id, unsigned *Indices, int Dim)
 {
 
   Variable *Aux = Buscar (Id);

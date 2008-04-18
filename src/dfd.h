@@ -50,4 +50,16 @@ extern int ContadorVariable;
 extern int ContadorToken;
 extern int ContadorTabla;
 
+class EstadoPrograma {
+public:
+  EstadoPrograma(){
+    AngulosEnGrados = true;
+  }
+  bool AngulosEnGrados;
+};
+extern EstadoPrograma Estado;
+
+class PilaDeTablas;
+extern PilaDeTablas PilaDeTablas;
+
 #endif

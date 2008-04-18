@@ -47,16 +47,16 @@ public:
   {
     return Tope;
   }
-  Token *Leer (char *Id, unsigned *Indices, int Dim);
+  Token *Leer (const char *Id, unsigned *Indices, int Dim);
   void ActualizarVariables (Variable *);
   void Vacear ();
 
-} PilaDeTablas;
+};
 
 /* Busca el valor de una variable en el entorno de ejecución actual. */
 Token * EntornoEjecucion_BuscaSimbolo (const char * symbol);
 /* Busca el valor de una variable en el entorno de ejecución actual.
  * Si el token que llega es una constante, retorna el mismo token */
-// Token * EntornoEjecucion_BuscaSimbolo (const char * symbol);
+Token * EntornoEjecucion_BuscaSimbolo (Token *symbol);
 
 #endif
