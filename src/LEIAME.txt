@@ -1,26 +1,36 @@
-    FreeDFD: Editor e intérprete de diagramas de flujo.
+    FreeDFD: Editor e intérprete de diagramas de fluxo de dados.
     Copyright (C) 1997-2008
 
     Nelson Castillo Izquierdo <arhuaco@freaks-unidos.net>
     Eduardo Daza Castillo <eduardodazacastillo@gmail.com>
     Fabián Cárdenas Varela <f_cardenas@yahoo.com>
 
-    Ver la lista completa de autores y colaboradores en la página web
-    http://freedfd.freaks-unidos.net.
+    Veja a lista completa de autores e colaboradores na página web.
 
-    Necesitamos ayuda para terminar la nueva versión, que funcionará dentro
-    de GNU/Linux y dentro de Windows, y que incluirá múltiples mejoras.
-    Visítenos en:
+    Precisamos de ajuda para terminar a nova versão, que funcionará em 
+    GNU/Linux e Windows, e que incluirá muitas melhorias.
+    Visite-nos em:
 
     http://freedfd.freaks-unidos.net
 
     
-    También puede escribir a arhuaco@freaks-unidos.net, si quiere averiguar más
-    sobre el proyecto FreeDFD.
+    Também pode escrever para arhuaco@freaks-unidos.net, se quiser saber 
+    mais sobre o projeto FreeDFD.
 
+ Português:
 
-    El archivo "bwcc32.dll" es propiedad de Borland.
+    Este programa é um software livre. Você pode distribuí-lo e/ou modificá-lo
+    sob os termos da Licença Pública Geral da GNU como publicada pela Free 
+    Software Foundation, pela versão 2 da Licença, ou (a seu critério) por 
+    qualquer versão posterior.
 
+    Este programa é distribuído na esperança de que seja útil, mas SEM QUALQUER 
+    GARANTIA; sem mesmo garantias implícitas de COMERCIALIZAÇÃO ou de ADEQUAÇÃO 
+    A PROPÓSITO PARTICULAR. Veja a Licença Pública Geral GNU para mais detalhes.
+
+    Você deveria ter recebido uma cópia da Licença Pública Geral GNU junto com 
+    este programa; se não, escreva para a Free Software Foundation, Inc., 
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
  Español:
 
