@@ -77,7 +77,7 @@ public:
 
   void Vacear ();
 
-  void AlmacenaVector (char *);
+  void AlmacenaVector (const char *);
 
 };
 

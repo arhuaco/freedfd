@@ -2,7 +2,9 @@
 
 # TODO: Remove ccache if you are not using it.
 CXX = ccache g++
-CXXFLAGS = -Wall -I.  -ggdb3 -DDEBUG
+#CXX = i586-mingw32msvc-g++ 
+
+CXXFLAGS = -Wall -I. #-ggdb3 -DDEBUG
 PROGRAM = freedfd
 
 EXTRA_LIBS=  -lm
