@@ -22,6 +22,8 @@ TODO:
   Estamos permitiendo acentos en los símbolos. Í va a ser diferente
   de í, creo. TODO: confirmar. Por el momento, nos toca no usar
   acentos en los identificadores.
+* Reemplazar  Buzon.SetIdentificadorAsociado ("2X") y las que se
+  parezcan
 
 TODO (tal vez):
 

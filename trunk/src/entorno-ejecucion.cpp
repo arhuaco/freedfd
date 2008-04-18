@@ -68,3 +68,19 @@ ActualizarVariables (Variable * Muestra)
   PilaDeTablas.ActualizarVariables (Muestra);
 }
 
+Token *
+EntornoEjecucion_BuscaSimbolo (const char * symbol)
+{
+  Token *Retorno = PilaDeTablas.Leer (symbol, 0, 0);
+  if (Buzon.GetHuboError ())
+    return 0;
+  Retorno->SetTipoAlmacenamiento (VARIABLE);
+  return Retorno;
+}
+Token *
+EntornoEjecucion_BuscaSimbolo (Token * UnToken)
+{
+  if (UnToken->GetTipoAlmacenamiento () == CONSTANTE)
+    return UnToken;
+  return EntornoEjecucion_BuscaSimbolo(UnToken->GetDatoStr());
+}
