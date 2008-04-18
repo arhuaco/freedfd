@@ -1,6 +1,10 @@
+#include <dfd.h>
 #include <tabla-simbolos.h>
+#include <errores.h>
 
-Tabla::Tabla ();
+#include <string.h>
+
+Tabla::Tabla ()
 {
   Inicio = 0;
   ContadorTabla++;
@@ -13,7 +17,7 @@ Tabla::Buscar (char *Id)
   Variable *Aux = Inicio;
   while (Aux)
     {
-      if (!strcmpi (Id, Aux->GetIdentificador ()))
+      if (!strcasecmp(Id, Aux->GetIdentificador()))
         break;
       Aux = Aux->GetSig ();
     }

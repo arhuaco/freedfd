@@ -8,6 +8,7 @@
 
 extern const char *program_name;
 
+
 enum Accion { EDICION = 0, EJECUCION, DEPURACION };
 
 enum TipoDato { REAL, STRING, LOGICO };
@@ -40,5 +41,13 @@ enum TipoError {
     POCOS_ARGUMENTOS, PARAMETRO_NO_VARIABLE
 };
 
+/* shared symbols */
+class BuzonDeErrores;
+extern BuzonDeErrores Buzon;
+extern int ContadorCajita;
+extern int ContadorCampoVariable;
+extern int ContadorVariable;
+extern int ContadorToken;
+extern int ContadorTabla;
 
 #endif

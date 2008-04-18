@@ -21,12 +21,6 @@
 
 #include <string.h>
 
-extern int ContadorCajita;
-extern int ContadorCampoVariable;
-extern int ContadorVariable;
-extern BuzonDeErrores Buzon;
-
-
 void
 CampoVariable::AsignarValor (Token * UnToken, unsigned *Indices,
                              int Dim, char *Id)

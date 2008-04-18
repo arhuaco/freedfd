@@ -9,7 +9,7 @@
  *   (libreadline5-dev in Debian or Ubuntu).
  * http://en.wikipedia.org/wiki/Readline
  */
-#define HAVE_READLINE 0
+#define HAVE_READLINE 1
 
 #if HAVE_READLINE
   #include <readline/readline.h>
@@ -24,6 +24,8 @@
 int ContadorCajita = 0;
 int ContadorCampoVariable = 0;
 int ContadorVariable = 0;
+int ContadorToken = 0;
+int ContadorTabla = 0;
 
 const char *program_name = "FreeDFD";
 
@@ -41,7 +43,8 @@ postfix_print(const char *line)
     }
     else
     {
-      printf("Postfijo => ");
+      if (tok)
+        printf("Postfijo => ");
       while (tok)
       {
         char tmp_buf[256];
@@ -62,15 +65,19 @@ main(int argc, char *argv[])
   while(1)
   {
     char *line;
-    line = readline("FreeDFD> ");
+    line = readline("DFD> ");
     if (!line)
       break;
     postfix_print(line);
     free(line);
   }
 #else
+  printf("DFD> ");
   while(std::cin.getline(buffer, BUF_SIZE))
+  {
     postfix_print(buffer);
+    printf("DFD> ");
+  }
 #endif
 
   return EXIT_SUCCESS;

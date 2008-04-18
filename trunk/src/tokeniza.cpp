@@ -32,8 +32,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-extern BuzonDeErrores Buzon;
-
 // En la primera pasada del analizador de expresiones de obtiene una lista de Tokens
 // en Infijo a partir de una cadena de caracteres.
 // Se revisan errores en la cadena. Algunas de estas revisiones no son necesarias,

@@ -20,11 +20,10 @@
  * auxiliares.
  */
 
+#include <dfd.h>
 #include <token.h>
 #include <errores.h>
 #include <funcion.h>
-
-extern BuzonDeErrores Buzon;
 
 #include <math.h>
 #include <string.h>

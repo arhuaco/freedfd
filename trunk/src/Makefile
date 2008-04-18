@@ -5,9 +5,9 @@ CFLAGS=-Wall -I.
 
 all: main
 	g++ main.cpp token.o errores.o operador.o tokeniza.o \
-	variables.o dfd-wrappers.o ${CFLAGS} -g -lreadline
+	variables.o dfd-wrappers.o tabla-simbolos.o ${CFLAGS} -g -lreadline
 
-main: token.o errores.o operador.o tokeniza.o variables.o
+main: token.o errores.o operador.o tokeniza.o variables.o tabla-simbolos.o
 	echo Done
 
 token.o: token.cpp errores.o 
@@ -27,6 +27,9 @@ dfd-wrappers.o:
 
 variables.o: variables.cpp variables.h
 	g++ -c variables.cpp  ${CFLAGS}
+
+tabla-simbolos.o: tabla-simbolos.cpp
+	g++ -c tabla-simbolos.cpp  ${CFLAGS}
 
 .PHONY:clean
 clean:

@@ -18,6 +18,10 @@ TODO:
 * Borrar todos los TABs.
 * Necesitamos un ícono. Diseñarlo.
 * No estamos verificando el retorno de "new". ¿Esto está bien?
+* strcasecmp no es consistente con el manejo de simbolos que tenemos.
+  Estamos permitiendo acentos en los símbolos. Í va a ser diferente
+  de í, creo. TODO: confirmar. Por el momento, nos toca no usar
+  acentos en los identificadores.
 
 TODO (tal vez):
 
