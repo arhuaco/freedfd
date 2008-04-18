@@ -3,6 +3,12 @@ Seguir con:
 funcion.cpp
 analiza.cpp
 
+PREGUNTAS:
+
+ ¿Deberíamos retornar 99999.99999L cuando un elemento de un vector
+ no existe?
+ Yo creo que más bien deberíamos sacar un error.
+
 TODO:
 
 * Dividir campos.cpp en varios arhivos
