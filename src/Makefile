@@ -1,3 +1,5 @@
+# Warning. If you modify a .h you have to execute make clean && make
+
 CXX = ccache g++
 CXXFLAGS = -Wall -I.  -ggdb3 -DDEBUG
 PROGRAM = freedfd
