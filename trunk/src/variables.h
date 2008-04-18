@@ -1,7 +1,46 @@
 #ifndef __VARIABLE__H__
 #define __VARIABLE__H__
 
-class CampoVariable;
+#include <dfd.h>
+#include <token.h>
+#include <tabla-simbolos.h>
+
+class CampoVariable
+{
+  TipoDato Tipo;
+  int Dimension;
+  struct Cajita
+  {
+    Cajita ()
+    {
+      ContadorCajita++;
+    }
+     ~Cajita ()
+    {
+      ContadorCajita--;
+    }
+    unsigned int *Indices;
+    union
+    {
+      char *DatoStr;
+      long double DatoReal;
+      bool DatoLogico;
+    };
+    Cajita *Sig;
+  } *Inicio;
+
+public:
+  CampoVariable (Token * UnToken, unsigned *Indices, int Dim, char *Id);
+  Token *Leer (unsigned *Indices, int Dim, char *Id);
+  void AsignarValor (Token * UnToken, unsigned *Indices, int Dim, char *Id);
+  ~CampoVariable ();
+  TipoDato GetTipo ()
+  {
+    return Tipo;
+  }
+
+};
+
 class Variable
 {
 
@@ -45,7 +84,7 @@ public:
   {
     return PrimerPadre;
   }
-#if 0
+
   CampoVariable *GetCampo ()
   {
     return Campo;
@@ -54,7 +93,7 @@ public:
   {
     Campo = UnCampo;
   }
-#endif
+
   char *GetIdentificador ()
   {
     return Identificador;
@@ -75,11 +114,8 @@ public:
   {
     Tipo = UnTipo;
   }
+
   ~Variable ();
-  CampoVariable *GetCampo ()
-  {
-    return Campo;
-  }
 
 };
 

@@ -1,6 +1,9 @@
 #ifndef __ENTORNO_EJECUCION_H__
 #define __ENTORNO_EJECUCION_H__
 
+#include <tabla-simbolos.h>
+#include <token.h>
+
 class PilaDeTablas
 {
 

@@ -29,7 +29,6 @@ const char *program_name = "FreeDFD";
 
 BuzonDeErrores Buzon;
 
-
 void
 postfix_print(const char *line)
 {
