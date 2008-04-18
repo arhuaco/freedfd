@@ -27,6 +27,7 @@ TODO:
   parezcan
 * Revisar los objetos que incluyan a entorno-ejecucion.h, para eliminar
   esta dependencia circular: void ActualizarVariables (Variable *);
+* Traducir los mensajes al inglés.
 
 TODO (tal vez):
 
