@@ -105,3 +105,18 @@ Desapila (Token ** Inicio)
   *Inicio = (*Inicio)->GetSig ();
   return Ret;
 }
+
+void
+LiberarListaToken (Token * Inicio)
+{
+
+  Token *Aux;
+  while (Inicio)
+    {
+      Aux = Inicio;
+      Inicio = Inicio->GetSig ();
+      delete Aux;
+    }
+}
+
+

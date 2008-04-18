@@ -13,10 +13,16 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
-#ifndef __ANALIZA_CPP
-#define __ANALIZA_CPP
+#include <dfd.h>
+#include <token.h>
+#include <funcion.h>
+#include <errores.h>
+#include <arreglos.h>
 
-/* Evaluación de expresiones  / NO USADO TODAVIA */
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+#include <entorno-ejecucion.h>
 
 Token *
 EvaluaPostfijo (Token * Expresion)
@@ -43,6 +49,8 @@ EvaluaPostfijo (Token * Expresion)
           Buzon.SetIdentificadorAsociado (Cadena);
           switch (Actual->GetAlcanceOperador ())
             {
+            case ARRAY:
+            case UNITARIOBINARIO: assert(0); break;
 
             case UNITARIO:
               if (!Pila)
@@ -61,43 +69,43 @@ EvaluaPostfijo (Token * Expresion)
                 ;
               else if (!strcmp (Cadena, "-"))
                 MenosUnitario (&Pila);
-              else if (!strcmpi (Cadena, "SIN"))
+              else if (!strcasecmp (Cadena, "SIN"))
                 Seno (&Pila);
-              else if (!strcmpi (Cadena, "COS"))
+              else if (!strcasecmp (Cadena, "COS"))
                 Coseno (&Pila);
-              else if (!strcmpi (Cadena, "TAN"))
+              else if (!strcasecmp (Cadena, "TAN"))
                 Tangente (&Pila);
-              else if (!strcmpi (Cadena, "SINH"))
+              else if (!strcasecmp (Cadena, "SINH"))
                 SenoHiperbolico (&Pila);
-              else if (!strcmpi (Cadena, "COSH"))
+              else if (!strcasecmp (Cadena, "COSH"))
                 CosenoHiperbolico (&Pila);
-              else if (!strcmpi (Cadena, "TANH"))
+              else if (!strcasecmp (Cadena, "TANH"))
                 TangenteHiperbolica (&Pila);
-              else if (!strcmpi (Cadena, "ASIN"))
+              else if (!strcasecmp (Cadena, "ASIN"))
                 ArcoSeno (&Pila);
-              else if (!strcmpi (Cadena, "ACOS"))
+              else if (!strcasecmp (Cadena, "ACOS"))
                 ArcoCoseno (&Pila);
-              else if (!strcmpi (Cadena, "ATAN"))
+              else if (!strcasecmp (Cadena, "ATAN"))
                 ArcoTangente (&Pila);
-              else if (!strcmpi (Cadena, "EXP"))
+              else if (!strcasecmp (Cadena, "EXP"))
                 Exp (&Pila);
-              else if (!strcmpi (Cadena, "LOG"))
+              else if (!strcasecmp (Cadena, "LOG"))
                 Log (&Pila);
-              else if (!strcmpi (Cadena, "LN"))
+              else if (!strcasecmp (Cadena, "LN"))
                 Ln (&Pila);
-              else if (!strcmpi (Cadena, "TRUNC"))
+              else if (!strcasecmp (Cadena, "TRUNC"))
                 Trunc (&Pila);
-              else if (!strcmpi (Cadena, "ROUND"))
+              else if (!strcasecmp (Cadena, "ROUND"))
                 Round (&Pila);
-              else if (!strcmpi (Cadena, "ABS"))
+              else if (!strcasecmp (Cadena, "ABS"))
                 Abs (&Pila);
-              else if (!strcmpi (Cadena, "SQRT"))
+              else if (!strcasecmp (Cadena, "SQRT"))
                 Sqrt (&Pila);
-              else if (!strcmpi (Cadena, "NOT"))
+              else if (!strcasecmp (Cadena, "NOT"))
                 Not (&Pila);
-              else if (!strcmpi (Cadena, "RANDOM"))
+              else if (!strcasecmp (Cadena, "RANDOM"))
                 Random (&Pila);
-              else if (!strcmpi (Cadena, "LEN"))
+              else if (!strcasecmp (Cadena, "LEN"))
                 Len (&Pila);
               else if (*Cadena == '@')
                 Substring (&Pila, atoi (Cadena + 1));
@@ -135,19 +143,19 @@ EvaluaPostfijo (Token * Expresion)
                 Dividir (&Pila);
               else if (!strcmp (Cadena, "^"))
                 Elevar (&Pila);
-              else if (!strcmpi (Cadena, "AND"))
+              else if (!strcasecmp (Cadena, "AND"))
                 And (&Pila);
-              else if (!strcmpi (Cadena, "OR"))
+              else if (!strcasecmp (Cadena, "OR"))
                 Or (&Pila);
-              else if (!strcmpi (Cadena, "XOR"))
+              else if (!strcasecmp (Cadena, "XOR"))
                 Xor (&Pila);
-              else if (!strcmpi (Cadena, "NAND"))
+              else if (!strcasecmp (Cadena, "NAND"))
                 Nand (&Pila);
-              else if (!strcmpi (Cadena, "NOR"))
+              else if (!strcasecmp (Cadena, "NOR"))
                 Nor (&Pila);
-              else if (!strcmpi (Cadena, "XNOR"))
+              else if (!strcasecmp (Cadena, "XNOR"))
                 Xnor (&Pila);
-              else if (!strcmpi (Cadena, "MOD"))
+              else if (!strcasecmp (Cadena, "MOD"))
                 Modulo (&Pila);
               else if (!strcmp (Cadena, "<"))
                 Menor (&Pila);
@@ -185,6 +193,7 @@ EvaluaPostfijo (Token * Expresion)
     }
   else
     Error = true;
+
   if (Error)
     {
       Buzon.SetIdentificadorAsociado ("5X");
@@ -192,11 +201,11 @@ EvaluaPostfijo (Token * Expresion)
       LiberarListaToken (Pila);
       return 0;
     }
+
   if (Pila->GetTipoAlmacenamiento () == CONSTANTE)
     return Pila;
-  Token *TokenRetorno = ObtieneTokenPila (Pila);
+  Token *TokenRetorno = EntornoEjecucion_BuscaSimbolo (Pila->GetDatoStr());
   delete Pila;
   return TokenRetorno;
 }
 
-#endif

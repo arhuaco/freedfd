@@ -87,21 +87,6 @@ NoEsString (Token * UnToken)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-Token *
-ObtieneTokenPila (Token * UnToken)
-{
-
-  if (UnToken->GetTipoAlmacenamiento () == CONSTANTE)
-    return UnToken;
-  Token *Retorno = PilaDeTablas.Leer (UnToken->GetDatoStr (), 0, 0);
-  if (Buzon.GetHuboError ())
-    return 0;
-  Retorno->SetTipoAlmacenamiento (VARIABLE);
-  return Retorno;
-}
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 void
 BorrarToken (Token * UnToken)
 {

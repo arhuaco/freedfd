@@ -118,7 +118,9 @@ public:
 };
 
 
+/* Funciones auxiliares para el manejo de Tokens */
 void Apila (Token ** Inicio, Token * Nuevo);
 Token * Desapila (Token ** Inicio);
+void LiberarListaToken (Token * Inicio);
 
 #endif

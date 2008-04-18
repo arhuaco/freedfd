@@ -35,7 +35,7 @@
 
 #include <token.h>
 #include <errores.h>
-
+#include <arreglos.h>
 
 #include <math.h>
 

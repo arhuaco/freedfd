@@ -131,21 +131,6 @@ Insertar (Token ** Inicio, Token ** Ultimo, const char *ValorStr,
   *Ultimo = Nuevo;
 }
 
-// Rutina que libera una lista de tokens
-void
-LiberarListaToken (Token * Inicio)
-{
-
-  Token *Aux;
-  while (Inicio)
-    {
-      Aux = Inicio;
-      Inicio = Inicio->GetSig ();
-      delete Aux;
-    }
-}
-
-
 // Funcion que retorna una cadena dinamica cuyo contenido son los n primeros
 // caracteres de la cadena Fuente.
 char *
@@ -1016,8 +1001,8 @@ GetPostfijo (const char *Expresion)
 
   if (Buzon.GetHuboError ())
     {
-      if (Retorno)              // nelson 29/08/97
-        LiberarListaToken (Retorno);    // nelson 29/08/97
+      if (Retorno)
+        LiberarListaToken (Retorno);
       return 0;
     }
   Retorno = InfijoAPostfijo (Retorno);
