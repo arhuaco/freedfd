@@ -11,6 +11,7 @@ PREGUNTAS:
 
 TODO:
 
+* Usar http://cxxtest.sourceforge.net/ para pruebas automáticas.
 * Dividir campos.cpp en varios arhivos
 * Introducir el objeto EntornoEjecución, para que se pueda
   correr más de un hilo de FreeDfd
