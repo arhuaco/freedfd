@@ -36,7 +36,9 @@ public:
   {
     return Tope->Crear (Id, Vengo, FP);
   }
-  Variable *Buscar (char *Id);
+
+  Variable *Buscar (const char *Id);
+
   void AsignarValor (char *Id, Token * UnToken, unsigned *Indices, int Dim)
   {
 
@@ -58,5 +60,7 @@ Token * EntornoEjecucion_BuscaSimbolo (const char * symbol);
 /* Busca el valor de una variable en el entorno de ejecución actual.
  * Si el token que llega es una constante, retorna el mismo token */
 Token * EntornoEjecucion_BuscaSimbolo (Token *symbol);
+
+void ActualizarVariables (Variable *);
 
 #endif

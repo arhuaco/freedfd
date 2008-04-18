@@ -28,7 +28,7 @@ int ContadorVariable = 0;
 int ContadorToken = 0;
 int ContadorTabla = 0;
 EstadoPrograma Estado;
-PilaDeTablas PilaDeTablas; /* entorno de ejecucion, stack, tabla de simbolos */
+class PilaDeTablas PilaDeTablas; /* entorno de ejecucion, stack, tabla de simbolos */
 
 const char *program_name = "FreeDFD";
 

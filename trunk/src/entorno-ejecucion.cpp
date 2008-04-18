@@ -27,7 +27,7 @@ PilaDeTablas::Leer (const char *Id, unsigned *Indices, int Dim)
 
 
 Variable *
-PilaDeTablas::Buscar (char *Id)
+PilaDeTablas::Buscar (const char *Id)
 {
   if (!Tope)
     {

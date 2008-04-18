@@ -18,6 +18,7 @@
 #include <token.h>
 #include <errores.h>
 #include <variables.h>
+#include <entorno-ejecucion.h>
 
 #include <string.h>
 
@@ -248,7 +249,6 @@ Variable::~Variable()
 void
 Variable::AsignarValor (Token * UnToken, unsigned *Indices, int Dim)
 {
-  void ActualizarVariables (Variable *);
   if (FU)
     Campo->AsignarValor (UnToken, Indices, Dim, Identificador);
   else

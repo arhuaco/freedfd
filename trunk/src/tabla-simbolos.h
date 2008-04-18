@@ -15,7 +15,7 @@ public:
   Variable *Crear (char *Id, Token * Untoken, Variable * Vengo,
                    unsigned *Indices, int Dim);
   Variable *Crear (char *Id, Variable * Vengo, bool FP);
-  Variable *Buscar (char *Id);
+  Variable *Buscar (const char *Id);
   Variable *GetInicio ()
   {
     return Inicio;
