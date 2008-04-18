@@ -20,7 +20,7 @@ public:
   {
     return Inicio;
   }
-  Token *Leer (char *Id, unsigned *Indices, int Dim);
+  Token *Leer (const char *Id, unsigned *Indices, int Dim);
   void AsignarValor (char *Id, Token * UnToken, unsigned *Indices, int Dim);
   /*void SetRetorno (ObjetoEjecucion * R)
   {

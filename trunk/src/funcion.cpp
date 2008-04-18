@@ -24,6 +24,7 @@
 #include <token.h>
 #include <errores.h>
 #include <funcion.h>
+#include <entorno-ejecucion.h>
 
 #include <math.h>
 #include <string.h>
@@ -116,7 +117,7 @@ void
 MenosUnitario (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -140,7 +141,7 @@ MenosUnitario (Token ** Pila)
 void
 Seno (Token ** Pila)
 {
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -175,7 +176,7 @@ Seno (Token ** Pila)
 void
 Coseno (Token ** Pila)
 {
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -210,7 +211,7 @@ void
 Tangente (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -253,7 +254,7 @@ void
 SenoHiperbolico (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -283,7 +284,7 @@ void
 CosenoHiperbolico (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -313,7 +314,7 @@ void
 TangenteHiperbolica (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -343,7 +344,7 @@ void
 ArcoSeno (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -373,7 +374,7 @@ void
 ArcoCoseno (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -403,7 +404,7 @@ void
 ArcoTangente (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -433,7 +434,7 @@ void
 Exp (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -462,7 +463,7 @@ Exp (Token ** Pila)
 void
 Log (Token ** Pila)
 {
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -490,7 +491,7 @@ Log (Token ** Pila)
 void
 Ln (Token ** Pila)
 {
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -519,7 +520,7 @@ void
 Trunc (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -549,7 +550,7 @@ void
 Round (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -580,7 +581,7 @@ void
 Abs (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -605,7 +606,7 @@ void
 Sqrt (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -631,7 +632,7 @@ void
 Random (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsReal (Operando))
@@ -660,7 +661,7 @@ void
 Not (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsLogico (Operando))
@@ -685,7 +686,7 @@ void
 Len (Token ** Pila)
 {
 
-  Token *Operando = ObtieneTokenPila (*Pila);
+  Token *Operando = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
   if (NoEsString (Operando))
@@ -711,10 +712,10 @@ Len (Token ** Pila)
 void
 Relacion (Token ** Pila, int Caso)
 {
-  Token *Op2 = ObtieneTokenPila (*Pila);
+  Token *Op2 = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
-  Token *Op1 = ObtieneTokenPila ((*Pila)->GetSig ());
+  Token *Op1 = EntornoEjecucion_BuscaSimbolo ((*Pila)->GetSig ());
   if (Buzon.GetHuboError ())
     {
       BorrarToken (Op2);
@@ -874,10 +875,10 @@ NoIgual (Token ** Pila)
 void
 LogicosBinarios (Token ** Pila, int Caso)
 {
-  Token *Operando2 = ObtieneTokenPila (*Pila);
+  Token *Operando2 = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
-  Token *Operando1 = ObtieneTokenPila ((*Pila)->GetSig ());
+  Token *Operando1 = EntornoEjecucion_BuscaSimbolo ((*Pila)->GetSig ());
   if (Buzon.GetHuboError ())
     {
       BorrarToken (Operando2);
@@ -990,10 +991,10 @@ Xnor (Token ** Pila)
 void
 Sumar (Token ** Pila)
 {
-  Token *Op2 = ObtieneTokenPila (*Pila);
+  Token *Op2 = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
-  Token *Op1 = ObtieneTokenPila ((*Pila)->GetSig ());
+  Token *Op1 = EntornoEjecucion_BuscaSimbolo ((*Pila)->GetSig ());
   if (Buzon.GetHuboError ())
     {
       BorrarToken (Op2);
@@ -1058,10 +1059,10 @@ Sumar (Token ** Pila)
 void
 NumericosBinarios (Token ** Pila, int Caso)
 {
-  Token *Operando2 = ObtieneTokenPila (*Pila);
+  Token *Operando2 = EntornoEjecucion_BuscaSimbolo (*Pila);
   if (Buzon.GetHuboError ())
     return;
-  Token *Operando1 = ObtieneTokenPila ((*Pila)->GetSig ());
+  Token *Operando1 = EntornoEjecucion_BuscaSimbolo ((*Pila)->GetSig ());
   if (Buzon.GetHuboError ())
     {
       BorrarToken (Operando2);
@@ -1189,14 +1190,14 @@ Substring (Token ** Pila, int NArgumentos)
       return;
     }
 
-  TokHasta = ObtieneTokenPila (YoRecorro);
+  TokHasta = EntornoEjecucion_BuscaSimbolo (YoRecorro);
   if (Buzon.GetHuboError ())
     {
       return;
     }
   YoRecorro = YoRecorro->GetSig ();
 
-  TokInicio = ObtieneTokenPila (YoRecorro);
+  TokInicio = EntornoEjecucion_BuscaSimbolo (YoRecorro);
   if (Buzon.GetHuboError ())
     {
       BorrarToken (TokHasta);
@@ -1205,7 +1206,7 @@ Substring (Token ** Pila, int NArgumentos)
   YoRecorro = YoRecorro->GetSig ();
 
 
-  TokCadena = ObtieneTokenPila (YoRecorro);
+  TokCadena = EntornoEjecucion_BuscaSimbolo (YoRecorro);
   if (Buzon.GetHuboError ())
     {
       BorrarToken (TokInicio);

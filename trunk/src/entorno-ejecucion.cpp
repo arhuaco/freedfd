@@ -14,7 +14,7 @@ PilaDeTablas::Vacear ()
 }
 
 Token *
-PilaDeTablas::Leer (char *Id, unsigned *Indices, int Dim)
+PilaDeTablas::Leer (const char *Id, unsigned *Indices, int Dim)
 {
   if (!Tope)
     {
@@ -77,6 +77,7 @@ EntornoEjecucion_BuscaSimbolo (const char * symbol)
   Retorno->SetTipoAlmacenamiento (VARIABLE);
   return Retorno;
 }
+
 Token *
 EntornoEjecucion_BuscaSimbolo (Token * UnToken)
 {
