@@ -1,5 +1,6 @@
 #ifndef __TABLA__SIMBOLOS__H__
 #define __TABLA__SIMBOLOS__H__
+#include <variables.h>
 
 class Tabla
 {
@@ -8,11 +9,8 @@ class Tabla
   Tabla *Sig;
 
 public:
-    Tabla ()
-  {
-    Inicio = 0;
-    ContadorTabla++;
-  }
+  Tabla ();
+
   Variable *Crear (char *Id, Token * Untoken, Variable * Vengo,
                    unsigned *Indices, int Dim);
   Variable *Crear (char *Id, Variable * Vengo, bool FP);

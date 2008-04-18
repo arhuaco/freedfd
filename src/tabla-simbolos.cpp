@@ -1,5 +1,11 @@
 #include <tabla-simbolos.h>
 
+Tabla::Tabla ();
+{
+  Inicio = 0;
+  ContadorTabla++;
+}
+
 Variable *
 Tabla::Buscar (char *Id)
 {
