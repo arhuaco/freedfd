@@ -2289,7 +2289,7 @@
    SetCmdShow(SW_SHOWMAXIMIZED); //Maximizada
 
 	//Construccion de la barra de estado:
-	TStatusBar* sb = new TStatusBar(Frame, TGadget::Plain);
+	TStatusBar* sb = new TStatusBar(Frame, TGadget::Plain, 0, new TGadgetWindowFont(11));
 	/*None, Plain, Raised, Recessed, or Embossed--*/
 	BarraEstado= sb;
 
