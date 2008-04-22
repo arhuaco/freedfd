@@ -291,6 +291,7 @@
 
   /* menú */
 
+
   #define TXT_MENU_FILE "&Archivo"
   #define TXT_MENU_EDIT "&Edicion"
   #define TXT_MENU_OBJECT "&Objeto"
@@ -300,6 +301,15 @@
   #define TXT_MENU_DEBUG "&Depuración"
   #define TXT_MENU_THEOPTIONS "O&pciones"
   #define TXT_MENU_THEHELP "A&yuda"
+
+  /* teclas rápidas, hay que manternerlas consistentes con lo que se defina debajo */
+  #define TXT_ACCEL_FILE_NEW "^N"
+  #define TXT_ACCEL_FILE_OPEN "^A"
+  #define TXT_ACCEL_FILE_SAVE "^G"
+  #define TXT_ACCEL_FILE_PRINT "^P"
+  #define TXT_ACCEL_EDIT_CUT "^X"
+  #define TXT_ACCEL_EDIT_COPY "^C"
+  #define TXT_ACCEL_EDIT_PASTE "^V"
 
   #define TXT_CM_ARCHIVONUEVO "&Nuevo\tCtrl+N"
   #define TXT_CM_ARCHIVOABRIR "&Abrir...\tCtrl+A"
@@ -523,6 +533,15 @@
   #define TXT_MENU_DEBUG "&Depurar"
   #define TXT_MENU_THEOPTIONS "O&pções"
   #define TXT_MENU_THEHELP "A&juda"
+
+  /* teclas rápidas, hay que manternerlas consistentes con lo que se defina debajo */
+  #define TXT_ACCEL_FILE_NEW "^N"
+  #define TXT_ACCEL_FILE_OPEN "^A"
+  #define TXT_ACCEL_FILE_SAVE "^G"
+  #define TXT_ACCEL_FILE_PRINT "^P"
+  #define TXT_ACCEL_EDIT_CUT "^X"
+  #define TXT_ACCEL_EDIT_COPY "^C"
+  #define TXT_ACCEL_EDIT_PASTE "^V"
 
   #define TXT_CM_ARCHIVONUEVO "&Novo\tCtrl+N"
   #define TXT_CM_ARCHIVOABRIR "&Abrir...\tCtrl+A"
