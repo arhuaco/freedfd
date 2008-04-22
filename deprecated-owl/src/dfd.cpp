@@ -550,7 +550,7 @@
 	char Titulo[1024];
 	strcpy( Titulo, "Dfd - [" );
 	strncat( Titulo, Directorio, 512 );
-	strcat( Titulo, "\\Sin nombre.dfd]" );
+	strcat( Titulo, "\\" TXT_CANCLOSE_NONAME_FILE "]" );
 	CambiarTitulo(Titulo);
 	//Timer...
    if(!Estado.Registrado){ //Siempre falso
@@ -563,15 +563,14 @@
 	char *DirectorioActual( char* );
 	if(Estado.SeModifico){
 	  char CadAux[2048];
-	  if( Estado.EsNuevo ){
-		 char Directorio[1024];
-		 DirectorioActual( Directorio );
-		 strcpy( CadAux, "¿Guardar cambios en " );
-		 strncat( CadAux, Directorio, 512 );
-		 strcat( CadAux, "\\Sin nombre.dfd?" );
+	  char Nombre[1024];
+	  if (Estado.EsNuevo){
+		 DirectorioActual(Nombre);
+		 strcat(Nombre, "\\" TXT_CANCLOSE_NONAME_FILE);
 	  }
 	  else
-		 sprintf( CadAux,"¿Guardar cambios en %s?",Archivo->FileName );
+              strcpy(Nombre, Archivo->FileName);
+	 sprintf(CadAux, TXT_CANCLOSE_SAVE_CHANGES_TO, Nombre);
 
 	  switch(MessageBox( CadAux,NOMBREPROGRAMA,
 								MB_YESNOCANCEL | MB_ICONEXCLAMATION)) {
@@ -939,7 +938,7 @@
 	char Titulo[1024];
 	strcpy( Titulo, "Dfd - [" );
 	strncat( Titulo, Directorio, 512 );
-	strcat( Titulo, "\\Sin nombre.dfd]" );
+	strcat( Titulo, "\\" TXT_CANCLOSE_NONAME_FILE "]" );
 	CambiarTitulo(Titulo);
 
 	return;
@@ -996,7 +995,7 @@
 	char AntiguoFileName[1024];
 	strcpy( AntiguoFileName, Archivo->FileName );
 	if(Estado.EsNuevo)
-	  strcpy( Archivo->FileName,  "Sin Nombre.dfd"/*Titulo*/ );
+	  strcpy( Archivo->FileName, TXT_CANCLOSE_NONAME_FILE /*Titulo*/ );
 
 
 	if ((TFileSaveDialog(this, *Archivo)).Execute() == IDOK){
@@ -1019,7 +1018,7 @@
 	if (Printer) {
 	  char Nombre[1024];
 	  if(Estado.EsNuevo)
-		 strcpy( Nombre, "Sin Nombre.dfd" );
+		 strcpy( Nombre, TXT_CANCLOSE_NONAME_FILE);
 	  else
 		 strcpy( Nombre, Archivo->FileName );
 	  TWindowPrintout printout( Nombre, this);
