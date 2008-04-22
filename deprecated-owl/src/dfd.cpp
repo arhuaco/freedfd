@@ -392,15 +392,6 @@
 
 
 	EV_COMMAND_ENABLE(CM_OBJETONUEVOSUBPROGRAMA,CeNuevoSubprograma ),
-/*	EV_COMMAND_ENABLE(CM_OBJETOSALIDA, CeObjetoSalida ),
-	EV_COMMAND_ENABLE(CM_OBJETOLLAMADA, CeObjetoLlamada ),
-	EV_COMMAND_ENABLE(CM_OBJETOLECTURA, CeObjetoLectura ),
-	EV_COMMAND_ENABLE(CM_OBJETODECISION, CeObjetoDesicion ),
-	EV_COMMAND_ENABLE(CM_OBJETOPARA, CeObjetoPara ),
-	EV_COMMAND_ENABLE(CM_OBJETOMIENTRAS, CeObjetoMientras ),
-	EV_COMMAND_ENABLE(CM_OBJETOASIGNACION, CeObjetoAsignacion),
-	EV_COMMAND_ENABLE(CM_OBJETOPARA, CeObjetoPara),
-	EV_COMMAND_ENABLE(CM_SELECCIONACURSOR,CeSeleccionarCursor ),*/
 
 	EV_COMMAND_ENABLE(CM_OBJETOSALIDAMENU, CeObjetoSalidaMenu ),
 	EV_COMMAND_ENABLE(CM_OBJETOLLAMADAMENU, CeObjetoLlamadaMenu ),
@@ -553,7 +544,7 @@
 	strcat( Titulo, "\\" TXT_CANCLOSE_NONAME_FILE "]" );
 	CambiarTitulo(Titulo);
 	//Timer...
-   if(!Estado.Registrado){ //Siempre falso
+   if(false /*!Estado.Registrado*/){ //Siempre falso, lo dejo para documentar el timer
 	  if(SetTimer(0, 1000, 0) == 0)
 	    MessageBox("Could not Create Timer", NOMBREPROGRAMA, MB_OK);
    }
@@ -619,8 +610,6 @@
 			  ListaHojas.SetSeleccionado( ObjetoAExaminar );
 			  ListaHojas.GetSeleccionado()->
 				 DibujarSeleccionado( ActualX, ActualY, 1 );
-
-			  //Invalidate();/* OJO BORRAR **************************/
 			}
 			return;
 		 }
