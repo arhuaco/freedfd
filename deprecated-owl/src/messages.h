@@ -229,10 +229,13 @@
   #define TXT_FREEDFD_LICENSE "FreeDFD is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.\n\nWe are working in a new version and we need help. Please visit our homepage (http://freedfd.freaks-unidos.net) for more information on the new version"
   #define TXT_WEBPAGE_CHECK "Please check the web page for the complete list of authors and collaborators"
 
+
+  /* misc */
+
+  #define TXT_CANCLOSE_SAVE_CHANGES_TO "Save changes to %s?"
+  #define TXT_CANCLOSE_NONAME_FILE     "no_name.dfd"
+
   /* __ENGLISH__ END */
-
-
-
 
 
 
@@ -455,6 +458,12 @@
   #define TXT_FREEDFD_LICENSE "FreeDFD es Software Libre, y está cubierto por la licencia  pública GNU (GPL).\n\nUsted puede tener acceso al código fuente, y puede modificarlo de acuerdo a sus necesidades si cumple con la licencia. Lo invitamos a copiar y distribuir este programa.\n\nEstamos trabajando en una nueva versión. Necesitamos ayuda para el desarrollo. Favor visitar la página (http://freedfd.freaks-unidos.net) para obtener más información sobre el desarrollo de la nueva version"
   #define TXT_WEBPAGE_CHECK "Consulte la página web para ver la lista completa de autores y colaboradores"
 
+  /* misc */
+
+  #define TXT_CANCLOSE_SAVE_CHANGES_TO "¿Guardar cambios en %s?"
+  #define TXT_CANCLOSE_NONAME_FILE     "Sin_nombre.dfd"
+
+
 
   /* __SPANISH__ END */
   #elif 0 /* Português by Charles Guimarães Cavalcante - www.charles.art.br - e-mail@charles.art.br */
@@ -671,6 +680,11 @@
 
   #define TXT_FREEDFD_LICENSE "FreeDFD es Software Libre, y está cubierto por la licencia  pública GNU (GPL).\n\nUsted puede tener acceso al código fuente, y puede modificarlo de acuerdo a sus necesidades si cumple con la licencia. Lo invitamos a copiar y distribuir este programa.\n\nEstamos trabajando en una nueva versión. Necesitamos ayuda para el desarrollo. Favor visitar la página (http://freedfd.freaks-unidos.net) para obtener más información sobre el desarrollo de la nueva version"
   #define TXT_WEBPAGE_CHECK "Consulte la página web para ver la lista completa de autores y colaboradores"
+
+  /* misc */
+
+  #define TXT_CANCLOSE_SAVE_CHANGES_TO "¿Guardar cambios en %s?"
+  #define TXT_CANCLOSE_NONAME_FILE     "Sin_nombre.dfd"
 
   /* __PORTUGUESE__ END */
 #else
