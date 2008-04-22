@@ -2234,7 +2234,19 @@
 
  };
 
+#define TXT_STATUS_MODE "Actual mode"
+#define TXT_STATUS_DEBUG_RUNTO "Depuración -> ejecutar hasta"
+#define TXT_STATUS_DEBUG_RUNNING "Ejecución"
+#define TXT_STATUS_EDITION "Edición"
+#define TXT_STATUS_DEBUG_STEPYSTEP "Depuración -> paso a paso"
 
+void
+BarraEstadoAccionAux(const char *action_txt)
+{
+  char message[256];
+  sprintf(message, "%s:[ %s ]", TXT_STATUS_MODE, action_txt);
+  BarraEstado->SetText(message);
+}
 
  bool TDrawApp::IdleAction(long x){
 	static int UltimaAccion= EJECUCION;
@@ -2242,15 +2254,15 @@
 	  switch( Estado.Accion ){
 	  case EJECUCION:
 		 if(Estado.ObjetoHasta)
-			BarraEstado->SetText("Acción:[ Depuración/ejecutar hasta ]");
+                   BarraEstadoAccionAux(TXT_STATUS_DEPURACION_RUNTO);
 		 else
-		   BarraEstado->SetText("Acción:[ Ejecución ]");
+                   BarraEstadoAccionAux(TXT_STATUS_DEPURACION_RUNNING);
 		 break;
 	  case EDICION:
-		 BarraEstado->SetText("Acción:[ Edición ]");
+                   BarraEstadoAccionAux(TXT_STATUS_EDITION);
 		 break;
 	  case DEPURACION:
-			BarraEstado->SetText("Acción:[ Depuración/paso a paso ]");
+                   BarraEstadoAccionAux(TXT_STATUS_DEBUG_STEPYSTEP);
 		 break;
 	  };
 	  UltimaAccion= Estado.Accion;
