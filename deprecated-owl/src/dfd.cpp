@@ -2254,9 +2254,9 @@ BarraEstadoAccionAux(const char *action_txt)
 	  switch( Estado.Accion ){
 	  case EJECUCION:
 		 if(Estado.ObjetoHasta)
-                   BarraEstadoAccionAux(TXT_STATUS_DEPURACION_RUNTO);
+                   BarraEstadoAccionAux(TXT_STATUS_DEBUG_RUNTO);
 		 else
-                   BarraEstadoAccionAux(TXT_STATUS_DEPURACION_RUNNING);
+                   BarraEstadoAccionAux(TXT_STATUS_DEBUG_RUNNING);
 		 break;
 	  case EDICION:
                    BarraEstadoAccionAux(TXT_STATUS_EDITION);
