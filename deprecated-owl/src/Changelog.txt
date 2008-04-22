@@ -2,6 +2,13 @@
 
 FreeDFD (1.1-RC5)
 
+  * Nuevas cadenas traducidas, se hizo posible la traducción de los diálogos
+    faltantes
+  * Traducción al Inglés (preliminar)
+ -- Nelson Castillo <arhuaco@freaks-unidos.net>, Thu Apr 17 2008
+
+FreeDFD (1.1-RC5)
+
   * Traducción de la mayoría de los mensajes del programa al portugués.
   * Traducción de archivos: LEAME.txt al portugués.
  -- Charles Guimarães Cavalcante <mail@charles.art.br>, Thu Apr 17 2008
