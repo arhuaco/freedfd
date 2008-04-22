@@ -2234,11 +2234,6 @@
 
  };
 
-#define TXT_STATUS_MODE "Actual mode"
-#define TXT_STATUS_DEBUG_RUNTO "Depuración -> ejecutar hasta"
-#define TXT_STATUS_DEBUG_RUNNING "Ejecución"
-#define TXT_STATUS_EDITION "Edición"
-#define TXT_STATUS_DEBUG_STEPYSTEP "Depuración -> paso a paso"
 
 void
 BarraEstadoAccionAux(const char *action_txt)
