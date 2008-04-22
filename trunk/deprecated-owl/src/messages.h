@@ -235,8 +235,13 @@
   #define TXT_CANCLOSE_SAVE_CHANGES_TO "Save changes to %s?"
   #define TXT_CANCLOSE_NONAME_FILE     "no_name.dfd"
 
-  /* __ENGLISH__ END */
+  #define TXT_STATUS_MODE "Actual Mode"
+  #define TXT_STATUS_DEBUG_RUNTO "Debug -> run to"
+  #define TXT_STATUS_DEBUG_RUNNING "Running"
+  #define TXT_STATUS_EDITION "Edition"
+  #define TXT_STATUS_DEBUG_STEPYSTEP "Debug -> step by step"
 
+  /* __ENGLISH__ END */
 
 
 #elif 0 /* Español */
@@ -473,7 +478,11 @@
   #define TXT_CANCLOSE_SAVE_CHANGES_TO "¿Guardar cambios en %s?"
   #define TXT_CANCLOSE_NONAME_FILE     "Sin_nombre.dfd"
 
-
+  #define TXT_STATUS_MODE "Modo Actual"
+  #define TXT_STATUS_DEBUG_RUNTO "Depuración -> ejecutar hasta"
+  #define TXT_STATUS_DEBUG_RUNNING "Ejecución"
+  #define TXT_STATUS_EDITION "Edición"
+  #define TXT_STATUS_DEBUG_STEPYSTEP "Depuración -> paso a paso"
 
   /* __SPANISH__ END */
   #elif 0 /* Português by Charles Guimarães Cavalcante - www.charles.art.br - e-mail@charles.art.br */
@@ -704,6 +713,12 @@
 
   #define TXT_CANCLOSE_SAVE_CHANGES_TO "¿Guardar cambios en %s?"
   #define TXT_CANCLOSE_NONAME_FILE     "Sin_nombre.dfd"
+
+  #define TXT_STATUS_MODE "Modo Actual"
+  #define TXT_STATUS_DEBUG_RUNTO "Depuración -> ejecutar hasta"
+  #define TXT_STATUS_DEBUG_RUNNING "Ejecución"
+  #define TXT_STATUS_EDITION "Edición"
+  #define TXT_STATUS_DEBUG_STEPYSTEP "Depuración -> paso a paso"
 
   /* __PORTUGUESE__ END */
 #else
