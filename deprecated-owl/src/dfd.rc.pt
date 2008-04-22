@@ -1642,7 +1642,7 @@ FONT 11, "MS Sans Serif"
  CONTROL "Nelson Enrique Castillo Izquierdo", -1, "STATIC", SS_CENTER | WS_CHILD | WS_VISIBLE | WS_GROUP, 16, 43, 150, 8
  CONTROL "", -1, "BorShade", BSS_HDIP | BSS_LEFT | WS_CHILD | WS_VISIBLE, 12, 81, 256, 4
  CONTROL "http://freedfd.freaks-unidos.net", IDC_STATICTEXT1, "static", SS_CENTER | WS_CHILD | WS_VISIBLE, 34, 14, 116, 9
- CONTROL "FreeDFD es Software Libre, y está cubierto por la licencia  pública GNU (GPL).\n\nUsted puede tener acceso al código fuente, y puede modificarlo de acuerdo a sus necesidades si cumple con la licencia. Lo invitamos a copiar y distribuir este programa.\n\nEstamos trabajando en una versión portable que funcione en Windows y GNU/Linux de forma nativa, ya que para correr FreeDFD dentro de GNU/Linux se usa el programa Wine. Necesitamos ayuda para el desarrollo. Favor visitar la página (http://freedfd.freaks-unidos.net) para obtener más información sobre el desarrollo de la nueva version, o escribir a freedfd@listas.el-directorio.org.", IDC_STATICTEXT2, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 91, 264, 84
+ CONTROL "FreeDFD es Software Libre, y está cubierto por la licencia  pública GNU (GPL).\n\nUsted puede tener acceso al código fuente, y puede modificarlo de acuerdo a sus necesidades si cumple con la licencia. Lo invitamos a copiar y distribuir este programa.\n\nEstamos trabajando en una nueva versión. Necesitamos ayuda para el desarrollo. Favor visitar la página (http://freedfd.freaks-unidos.net) para obtener más información sobre el desarrollo de la nueva version", IDC_STATICTEXT2, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 91, 264, 84
  CONTROL "Copyright(c) 1997-2008", IDC_STATICTEXT3, "static", SS_CENTER | WS_CHILD | WS_VISIBLE, 9, 28, 160, 9
  CONTROL "Consulte la página web para ver la lista completa de autores y colaboradores", IDC_STATICTEXT4, "static", SS_LEFT | WS_CHILD | WS_VISIBLE, 8, 60, 270, 16
 }
@@ -1676,31 +1676,31 @@ FONT 8, "MS Sans Serif"
 
 DIALOGOLECTURA DIALOG 30, 34, 194, 119
 STYLE DS_MODALFRAME | WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU
-CAPTION "Lectura"
+CAPTION "Entrada de valores por teclado"
 FONT 8, "MS Sans Serif"
 {
  CONTROL "", IDC_EDIT1, "EDIT", ES_LEFT | ES_MULTILINE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL | WS_TABSTOP, 13, 20, 167, 64
  CONTROL "Aceptar", IDOK, "BUTTON", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 16, 96, 76, 14
  CONTROL "Cancelar", IDCANCEL, "BUTTON", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 104, 96, 76, 14
- CONTROL "Leer:", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 13, 8, 167, 11
+ CONTROL "Leer", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 13, 8, 167, 11
 }
 
 
 DIALOGOSALIDA DIALOG 30, 34, 194, 119
 STYLE DS_MODALFRAME | WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU
-CAPTION "Salida"
+CAPTION "Salida por pantalla"
 FONT 8, "MS Sans Serif"
 {
  CONTROL "", IDC_EDIT1, "EDIT", ES_LEFT | ES_MULTILINE | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL | WS_TABSTOP, 13, 20, 167, 60
  CONTROL "Aceptar", IDOK, "BUTTON", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 16, 96, 72, 14
  CONTROL "Cancelar", IDCANCEL, "BUTTON", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 100, 96, 76, 14
- CONTROL "Mostrar:", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 13, 8, 167, 11
+ CONTROL "Salida:", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 13, 8, 167, 11
 }
 
 
 DIALOGOLLAMADA DIALOG 30, 34, 194, 125
 STYLE DS_MODALFRAME | WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU
-CAPTION "Llamada a subprograma"
+CAPTION "Llamado a subprograma"
 FONT 8, "MS Sans Serif"
 {
  CONTROL "", IDC_EDIT1, "EDIT", ES_LEFT | ES_MULTILINE | ES_AUTOHSCROLL | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 12, 23, 167, 14
@@ -1775,7 +1775,7 @@ FONT 8, "MS Sans Serif"
  CONTROL "Cancelar", IDCANCEL, "BUTTON", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 104, 173, 76, 14
  CONTROL "Nombre del subprograma:", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 13, 12, 163, 9
  CONTROL "Parámetros:", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 13, 46, 167, 10
- CONTROL "Descripción", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 13, 102, 163, 10
+ CONTROL "Descripción:", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 13, 102, 163, 10
 }
 
 DIALOGOENTRADATECLADO DIALOG 33, 40, 192, 123
@@ -1787,19 +1787,19 @@ FONT 8, "MS Sans Serif"
  CONTROL "Continuar", IDOK, "BUTTON", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 16, 94, 72, 14
  CONTROL "Pausa", IDDETENER, "BUTTON", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 104, 94, 72, 14
  CONTROL "IDI_TECLADO", -1, "STATIC", SS_ICON | WS_CHILD | WS_VISIBLE, 15, 6, 21, 20
- CONTROL "Valor:", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 15, 33, 165, 12
+ CONTROL "Valor a ingresar:", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 15, 33, 165, 12
 }
 
 DIALOGOSALIDAPORPANTALLA DIALOG 34, 26, 217, 228
 STYLE DS_MODALFRAME | WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU
-CAPTION "Impresion por pantalla"
+CAPTION "Salida por pantalla"
 FONT 8, "MS Sans Serif"
 {
  CONTROL "Continuar", IDOK, "BUTTON", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 8, 199, 88, 14
  CONTROL "Pausa", IDDETENER, "BUTTON", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 112, 199, 96, 14
  CONTROL "", IDC_EDIT0, "EDIT", ES_LEFT | ES_MULTILINE | ES_AUTOVSCROLL | ES_NOHIDESEL | ES_PASSWORD | ES_OEMCONVERT | ES_READONLY | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_VSCROLL | WS_TABSTOP, 8, 46, 200, 137
  CONTROL "IDI_PANTALLA", -1, "STATIC", SS_ICON | WS_CHILD | WS_VISIBLE, 16, 8, 21, 20
- CONTROL "Salida :", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 8, 33, 200, 12
+ CONTROL "Salida:", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 8, 33, 200, 12
 }
 
 DIALOGOPREGUNTADECISION DIALOG 24, 33, 303, 65
@@ -1811,7 +1811,7 @@ FONT 8, "MS Sans Serif"
  CONTROL "Derecha", IDC_DERECHA, "BUTTON", BS_PUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 112, 41, 76, 14
  CONTROL "Cancelar", IDCANCEL, "BUTTON", BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 208, 41, 68, 14
  CONTROL "IDI_PREGUNTA", 0, "STATIC", SS_ICON | WS_CHILD | WS_VISIBLE, 9, 5, 21, 20
- CONTROL "¿ Insertar en... ?", -1, "BorStatic", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 35, 18, 241, 11
+ CONTROL "¿ Insertar en ... ?", -1, "BorStatic", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 35, 18, 241, 11
 }
 
 DIALOGOEXPRESION DIALOG 50, 53, 208, 77
@@ -1837,8 +1837,5 @@ FONT 8, "MS Sans Serif"
  CONTROL "Expresión:", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 17, 7, 175, 8
  CONTROL "Resultado:", -1, "STATIC", SS_LEFT | WS_CHILD | WS_VISIBLE | WS_GROUP, 17, 55, 175, 8
 }
-
-
-
 
 #endif
