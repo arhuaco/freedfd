@@ -2,6 +2,8 @@
 
 use strict;
 
+# This program is slow but very handy.
+
 open MSG, '<messages.h';
 
 my %S;
@@ -17,10 +19,12 @@ while(<MSG>)
   }
   if ($is_in)
   {
-    for my $prefix ('TXT_CM_', 'TXT_MENU_', 'HELP_CM_')
+    for my $prefix ('TXT_', 'HELP_CM_')
     {
       if ($is_in && /define\s+($prefix\w+)\s+(\".*?\")/)
       {
+        die ("duplicated key")
+          if exists $S{$1};
         $S{$1} = $2;
       }
     }

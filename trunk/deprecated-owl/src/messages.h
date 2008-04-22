@@ -96,7 +96,6 @@
   #define TXT_CM_DEPURARDETENER "&Detener\tCtrl+Pausa"
   #define TXT_CM_DEPURARPASOSIMPLE "&Paso simple\tF7"
   #define TXT_CM_DEPURAREJECUTARHASTA "&Ejecutar hasta\tF4"
-  #define TXT_CM_DEPURARDETENER "&Detener\tCtrl+Pausa"
   #define TXT_CM_DEPURAREVALUAR "E&valuar\tF5"
   #define TXT_CM_ANGULOSENGRADOS "&Angulos en &grados"
   #define TXT_CM_ANGULOSENRADIANES "Angulos en &radianes"
@@ -190,6 +189,45 @@
   #define TXT_RUNNING_OBJECT_BLOCK_END "Cierre"
   #define TXT_RUNNING_OBJECT_RETURN "Retornar"
 
+  /* Cuadros de diálogo */
+
+  #define TXT_DIALOG_CLOSE "Cerrar"
+  #define TXT_DIALOG_EVALUATE "Evaluar"
+  #define TXT_DIALOG_EXPRESSION "Expresión:"
+  #define TXT_DIALOG_NEW_EXPRESSION "Nueva expresión"
+  #define TXT_DIALOG_RESULT "Resultado:"
+  #define TXT_DIALOG_OK "Aceptar"
+  #define TXT_DIALOG_CANCEL "Cancelar"
+  #define TXT_DIALOG_LEFT "Izquierda"
+  #define TXT_DIALOG_RIGHT "Derecha"
+  #define TXT_DIALOG_INSERT_AT "¿ Insertar en ... ?"
+  #define TXT_DIALOG_PAUSE "Pausa"
+  #define TXT_DIALOG_CONTINUE "Continuar"
+  #define TXT_DIALOG_OUTPUT_TITLE "Salida por pantalla"
+  #define TXT_DIALOG_OUTPUT "Salida:"
+  #define TXT_DIALOG_INPUT_TITLE "Entrada de valores por teclado"
+  #define TXT_DIALOG_INPUT_VALUE "Valor a ingresar:"
+  #define TXT_DIALOG_INPUT_VALUE_TO_READ "Leer"
+
+  #define TXT_DIALOG_SUBPROGRAM_TITLE "Subprograma"
+  #define TXT_DIALOG_SUBPROGRAM_CALL_TITLE "Llamado a subprograma"
+  #define TXT_DIALOG_SUBPROGRAM_NAME "Nombre del subprograma:"
+  #define TXT_DIALOG_DESCRIPTION "Descripción:"
+  #define TXT_DIALOG_PARAMETERS "Parámetros:"
+  #define TXT_DIALOG_ARGUMENTS "Argumentos:"
+  #define TXT_DIALOG_COND "Condición:"
+
+  #define TXT_DIALOG_ASSIGNATION_TITLE "Asignación"
+  #define TXT_DIALOG_BEGIN_TITLE "Inicio"
+  #define TXT_DIALOG_FOR_LOOP_TITLE "Ciclo Para"
+  #define TXT_DIALOG_FOR "Para:"
+  #define TXT_DIALOG_WHILE_LOOP_TITLE "Ciclo Mientras"
+  #define TXT_DIALOG_IF_TITLE "Decisión"
+  #define TXT_DIALOG_IF_TRUE_CONDITION " Condición verdadera  "
+
+  #define TXT_FREEDFD_LICENSE "FreeDFD es Software Libre, y está cubierto por la licencia  pública GNU (GPL).\n\nUsted puede tener acceso al código fuente, y puede modificarlo de acuerdo a sus necesidades si cumple con la licencia. Lo invitamos a copiar y distribuir este programa.\n\nEstamos trabajando en una nueva versión. Necesitamos ayuda para el desarrollo. Favor visitar la página (http://freedfd.freaks-unidos.net) para obtener más información sobre el desarrollo de la nueva version"
+  #define TXT_WEBPAGE_CHECK "Consulte la página web para ver la lista completa de autores y colaboradores"
+
   /* __SPANISH__ END */
   #elif 0 /* Português by Charles Guimarães Cavalcante - www.charles.art.br - e-mail@charles.art.br */
   /* __PORTUGUESE__ BEGIN */
@@ -281,7 +319,6 @@
   #define TXT_CM_DEPURARDETENER "&Parar\tCtrl+Pausa"
   #define TXT_CM_DEPURARPASOSIMPLE "Passo &simples\tF7"
   #define TXT_CM_DEPURAREJECUTARHASTA "&Executar até\tF4"
-  #define TXT_CM_DEPURARDETENER "&Parar\tCtrl+Pausa"
   #define TXT_CM_DEPURAREVALUAR "&Avaliar\tF5"
   #define TXT_CM_ANGULOSENGRADOS "Ângulos em &graus"
   #define TXT_CM_ANGULOSENRADIANES "Ângulos em &radianos"
@@ -374,6 +411,45 @@
   #define TXT_RUNNING_OBJECT_END "Fim"
   #define TXT_RUNNING_OBJECT_BLOCK_END "Fechar"
   #define TXT_RUNNING_OBJECT_RETURN "Voltar"
+
+  /* Cuadros de diálogo */
+
+  #define TXT_DIALOG_CLOSE "Cerrar"
+  #define TXT_DIALOG_EVALUATE "Evaluar"
+  #define TXT_DIALOG_EXPRESSION "Expresión:"
+  #define TXT_DIALOG_NEW_EXPRESSION "Nueva expresión"
+  #define TXT_DIALOG_RESULT "Resultado:"
+  #define TXT_DIALOG_OK "Aceptar"
+  #define TXT_DIALOG_CANCEL "Cancelar"
+  #define TXT_DIALOG_LEFT "Izquierda"
+  #define TXT_DIALOG_RIGHT "Derecha"
+  #define TXT_DIALOG_INSERT_AT "¿ Insertar en ... ?"
+  #define TXT_DIALOG_PAUSE "Pausa"
+  #define TXT_DIALOG_CONTINUE "Continuar"
+  #define TXT_DIALOG_OUTPUT_TITLE "Salida por pantalla"
+  #define TXT_DIALOG_OUTPUT "Salida:"
+  #define TXT_DIALOG_INPUT_TITLE "Entrada de valores por teclado"
+  #define TXT_DIALOG_INPUT_VALUE "Valor a ingresar:"
+  #define TXT_DIALOG_INPUT_VALUE_TO_READ "Leer"
+
+  #define TXT_DIALOG_SUBPROGRAM_TITLE "Subprograma"
+  #define TXT_DIALOG_SUBPROGRAM_CALL_TITLE "Llamado a subprograma"
+  #define TXT_DIALOG_SUBPROGRAM_NAME "Nombre del subprograma:"
+  #define TXT_DIALOG_DESCRIPTION "Descripción:"
+  #define TXT_DIALOG_PARAMETERS "Parámetros:"
+  #define TXT_DIALOG_ARGUMENTS "Argumentos:"
+  #define TXT_DIALOG_COND "Condición:"
+
+  #define TXT_DIALOG_ASSIGNATION_TITLE "Asignación"
+  #define TXT_DIALOG_BEGIN_TITLE "Inicio"
+  #define TXT_DIALOG_FOR_LOOP_TITLE "Ciclo Para"
+  #define TXT_DIALOG_FOR "Para:"
+  #define TXT_DIALOG_WHILE_LOOP_TITLE "Ciclo Mientras"
+  #define TXT_DIALOG_IF_TITLE "Decisión"
+  #define TXT_DIALOG_IF_TRUE_CONDITION " Condición verdadera  "
+
+  #define TXT_FREEDFD_LICENSE "FreeDFD es Software Libre, y está cubierto por la licencia  pública GNU (GPL).\n\nUsted puede tener acceso al código fuente, y puede modificarlo de acuerdo a sus necesidades si cumple con la licencia. Lo invitamos a copiar y distribuir este programa.\n\nEstamos trabajando en una nueva versión. Necesitamos ayuda para el desarrollo. Favor visitar la página (http://freedfd.freaks-unidos.net) para obtener más información sobre el desarrollo de la nueva version"
+  #define TXT_WEBPAGE_CHECK "Consulte la página web para ver la lista completa de autores y colaboradores"
 
   /* __PORTUGUESE__ END */
 #else
