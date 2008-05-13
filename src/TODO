@@ -5,31 +5,37 @@ analiza.cpp
 
 PREGUNTAS:
 
- ¿Deberíamos retornar 99999.99999L cuando un elemento de un vector
- no existe?
- Yo creo que más bien deberíamos sacar un error.
+ * ¿Deberíamos retornar 99999.99999L cuando un elemento de un vector
+ no existe? Yo creo que más bien deberíamos sacar un error.
+
+ * No estamos verificando el retorno de "new". ¿Esto está bien? (creo que sí).
 
 TODO:
 
+* Escoger la librería para los gráficos (debe tener soporte a UTF8).
 * Usar http://cxxtest.sourceforge.net/ para pruebas automáticas.
-* Dividir campos.cpp en varios arhivos
-* Introducir el objeto EntornoEjecución, para que se pueda
-  correr más de un hilo de FreeDfd
 * Usar autoconf
 * Borrar todos los TABs.
 * Necesitamos un ícono. Diseñarlo.
-* No estamos verificando el retorno de "new". ¿Esto está bien?
 * strcasecmp no es consistente con el manejo de simbolos que tenemos.
   Estamos permitiendo acentos en los símbolos. Í va a ser diferente
   de í, creo. TODO: confirmar. Por el momento, nos toca no usar
   acentos en los identificadores.
 * Reemplazar  Buzon.SetIdentificadorAsociado ("2X") y las que se
-  parezcan
+  parezcan por asserts (assert.h).
 * Revisar los objetos que incluyan a entorno-ejecucion.h, para eliminar
   esta dependencia circular: void ActualizarVariables (Variable *);
-* Traducir los mensajes al inglés.
+
+Poca prioridad:
+
+* Introducir el objeto EntornoEjecución, para que se pueda
+  correr más de un hilo de FreeDfd
 
 TODO (tal vez):
 
 * Usar doxygen.
 * Tener el intérprete y el evaluador de expresiones en un directorio aparte.
+
+Hecho:
+
+* Traducir los mensajes al inglés (hecho).
