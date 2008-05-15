@@ -14,7 +14,7 @@ PREGUNTAS:
 
 TODO:
 
-* En Windows Borland C++ tenía una función "matherrl", que se llamaba
+* En Windows, Borland C++ tenía una función "matherrl", que se llamaba
   cuando había una excepción numérica. Esta función era muy util para
   reportar errores durante la ejecución. ¿Cual es el equivalente en
   UNIX? Parece que la llegada de la señal SIGFPE no está garantizada.
