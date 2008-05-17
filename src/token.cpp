@@ -81,7 +81,7 @@ Token::AsString(char *buff, int buff_size)
     case STRING:
     case LOGICO:
       tmp = TipoD == STRING ? DatoStr :
-            (DatoLogico ? ".f." : ".v.");
+            (DatoLogico ? ".V." : ".F.");
       snprintf(buff, buff_size, "%s", tmp);
       break;
     default:
