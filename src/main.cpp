@@ -64,6 +64,47 @@ print_counters_if_needed()
 }
 
 void
+postfix_test(const char *theexp, const char *result)
+{
+    Token * Post = GetPostfijo (theexp);
+    if (Buzon.GetHuboError())
+    {
+      fprintf(stderr, "Error de sintaxis: %s\n", Buzon.GetErrorInfo());
+      Buzon.Vacear();
+    }
+    else
+    {
+      char tmp_buf[BUF_SIZE];
+
+      Token *Res = EvaluaPostfijo(Post);
+
+      if (Buzon.GetHuboError())
+      {
+        fprintf(stderr, "Error en ejecución: %s\n", Buzon.GetErrorInfo());
+        Buzon.Vacear();
+      }
+      else if (Res)
+      {
+        const char *r = Res->AsString(tmp_buf, BUF_SIZE);
+        if (strncmp(r, result, BUF_SIZE))
+        {
+          fprintf(stderr, "Test FAILED:");
+        }
+        else
+          fprintf(stderr, "Test OK:");
+        fprintf(stderr, "EvaluaPostfijo(%s) returnex '%s' and we expected '%s'\n", theexp, r, result);
+      }
+      else
+        fprintf(stderr, __FILE__":%d EvaluaPostfijo returned NULL\n", __LINE__);
+
+      LiberarListaToken(Post);
+      if (Res)
+        delete Res;
+    }
+}
+
+
+void
 postfix_print(const char *line)
 {
     Token * Post = GetPostfijo (line);
@@ -107,6 +148,16 @@ postfix_print(const char *line)
     print_counters_if_needed();
 }
 
+void
+make_tests(void)
+{
+  postfix_test("1", "1");
+  postfix_test(".v.", ".V.");
+  postfix_test(".f.", ".F.");
+  postfix_test("'hola'", "hola");
+  postfix_test("'hola' + ' mundo'", "hola mundo");
+}
+
 int
 main(int argc, char *argv[])
 {
@@ -125,6 +176,7 @@ main(int argc, char *argv[])
   x.Ejecutar();
   x.Despreprocesar();
 
+  make_tests();
 
 #ifdef HAVE_READLINE
   while(1)
