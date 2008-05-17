@@ -208,6 +208,7 @@ GetListaToken (const char *Expresion)
                 LiberarListaToken (Inicio);
                 return 0;
               }
+
             if (EsLetra (Expresion[p]) || EstaEn (Expresion[p], "._'("))
               {
                 char *Aux = Copiar (Nuevo, strlen (Nuevo) + 2);
@@ -222,14 +223,10 @@ GetListaToken (const char *Expresion)
                 return 0;
               }
 
-/* Por hacer: usar strtol y no atol, esto permite obtener errores.
- * Ver la función strtol_wrapper en:
- *
- * http://wiki.freaks-unidos.net/weblogs/arhuaco/up-with-strtol
- */
-
-            Insertar (&Inicio, &Ultimo, (long double) atol (Nuevo),
+            /* TODO: Atof no es long double, antes estaba _atold, que convertía a long double */
+            Insertar (&Inicio, &Ultimo, (long double) atof (Nuevo),
                       OPERANDO, CONSTANTE);
+
             if (Buzon.GetHuboError ())
               {
                 LiberarListaToken (Inicio);
