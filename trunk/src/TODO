@@ -31,6 +31,7 @@ TODO:
   parezcan por asserts (assert.h).
 * Revisar los objetos que incluyan a entorno-ejecucion.h, para eliminar
   esta dependencia circular: void ActualizarVariables (Variable *);
+* ¿Existe algo como atof pero para long doubles? ¿Toca con sscanf?
 
 Poca prioridad:
 
