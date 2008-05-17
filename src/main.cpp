@@ -152,10 +152,20 @@ void
 make_tests(void)
 {
   postfix_test("1", "1");
+  postfix_test("2 + 2", "4");
+  postfix_test("2.3 + 2.2", "4.5");
   postfix_test(".v.", ".V.");
   postfix_test(".f.", ".F.");
   postfix_test("'hola'", "hola");
   postfix_test("'hola' + ' mundo'", "hola mundo");
+  // caso 2
+  postfix_test("y + 2.2", "3.2");
+  // caso 4
+  postfix_test("(2 + 3) * 2", "10");
+  postfix_test("(7 - 2) * 2", "10");
+  postfix_test("7 / 2", "3.5");
+  postfix_test("3 = 3", ".V.");
+  postfix_test("3 != 2", ".V.");
 }
 
 int
