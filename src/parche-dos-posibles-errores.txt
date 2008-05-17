@@ -1,0 +1,77 @@
+Index: Makefile
+===================================================================
+--- Makefile	(revision 149)
++++ Makefile	(working copy)
+@@ -4,7 +4,7 @@
+ CXX = ccache g++
+ #CXX = i586-mingw32msvc-g++ 
+ 
+-CXXFLAGS = -Wall -I. #-ggdb3 -DDEBUG
++CXXFLAGS = -Wall -I. -ggdb3 -DDEBUG
+ PROGRAM = freedfd
+ 
+ EXTRA_LIBS=  -lm
+@@ -13,8 +13,8 @@
+ # EXTRA_LIBS += -lefence
+ 
+ #Better line edition, define and install libreadline5-dev in Debian or Ubuntu
+-#EXTRA_LIBS += -lreadline
+-#CXXFLAGS += -DHAVE_READLINE
++EXTRA_LIBS += -lreadline
++CXXFLAGS += -DHAVE_READLINE
+ 
+ 
+ SOURCES = main.cpp token.cpp errores.cpp operador.cpp \
+Index: tokeniza.cpp
+===================================================================
+--- tokeniza.cpp	(revision 149)
++++ tokeniza.cpp	(working copy)
+@@ -42,11 +42,13 @@
+ bool
+ EstaEn (char Ch, const char *Str)
+ {
+-  for (; *Str; ++Str)
+-    if (*Str == Ch)
+-      return true;
++  int y = 2;
++  if (Ch == 0)
++    y = Ch / 0;
+ 
+-  return false;
++  fprintf(stderr, "Str:'%s' Ch:%d\n", Str, Ch);
++  char *r =  strchr(Str, Ch);
++  return r != NULL ? true : false;
+ }
+ 
+ /* Aca deberiamos usar isalpha, no? Creo que isalpha no funciona bien
+@@ -153,7 +155,8 @@
+   int p, q, Caso;
+   Token *Inicio = 0, *Ultimo;
+ 
+-  for (p = 0; EstaEn (Expresion[p], " "); ++p);
++  /* TODO: use isspace */
++  for (p = 0; Expresion[p] != '\0' && EstaEn(Expresion[p], " "); ++p);
+ 
+   while (Expresion[p] != '\0')
+     {
+@@ -187,6 +190,9 @@
+       q = p;
+       ++p;
+ 
++      if (Expresion[p] == '\0')
++        continue;
++
+       switch (Caso)
+         {
+ 
+@@ -261,8 +267,8 @@
+ 
+         case 2:
+           {                     //Letra
+-            for (; EsDigito (Expresion[p]) || EsLetra (Expresion[p]) ||
+-                 Expresion[p] == '_'; ++p);
++            for (; Expresion[p] && (EsDigito (Expresion[p]) || EsLetra (Expresion[p]) ||
++                 Expresion[p] == '_'); ++p);
+             char *Nuevo = Copiar (&Expresion[q], p - q);
+             NodoOperador *Op =  operador_buscar (Nuevo);
+             for (; EsEspacio (Expresion[p]); ++p);
