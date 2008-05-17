@@ -4,7 +4,7 @@
 CXX = ccache g++
 #CXX = i586-mingw32msvc-g++ 
 
-CXXFLAGS = -Wall -I. #-ggdb3 -DDEBUG
+CXXFLAGS = -Wall -I. -ggdb3 -DDEBUG
 PROGRAM = freedfd
 
 EXTRA_LIBS=  -lm
@@ -13,8 +13,8 @@ EXTRA_LIBS=  -lm
 # EXTRA_LIBS += -lefence
 
 #Better line edition, define and install libreadline5-dev in Debian or Ubuntu
-#EXTRA_LIBS += -lreadline
-#CXXFLAGS += -DHAVE_READLINE
+EXTRA_LIBS += -lreadline
+CXXFLAGS += -DHAVE_READLINE
 
 
 SOURCES = main.cpp token.cpp errores.cpp operador.cpp \
