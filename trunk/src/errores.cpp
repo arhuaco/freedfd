@@ -68,7 +68,10 @@ BuzonDeErrores::IntroducirError (const char *msg, TipoError UnError)
     len = strlen (msg) + 3;
 
   NuevoError->Info = new char[len];
-  strcpy(NuevoError->Info, IdentificadorAsociado);
+
+  if (IdentificadorAsociado)
+    strcpy(NuevoError->Info, IdentificadorAsociado);
+
   strcat(NuevoError->Info, ": ");
   strcat(NuevoError->Info, msg);
 
