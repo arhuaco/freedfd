@@ -38,15 +38,18 @@
 // ya que el error sería atrapado en la segunda pasada.
 
 
-/* Nota: Esta función parece duplicar lo que hace strchr */
+/* Nota: Esta función parece duplicar lo que hace strchr, pero no lo hace.
+ * El código que está hace llamados a EstaEn, usando Ch == NULL. Cambiar
+ * la función por strchr por todos lados implicaría hacer cambios en la
+ * manera como se hace el preprocesamiento */
+
 bool
 EstaEn (char Ch, const char *Str)
 {
-  for (; *Str; ++Str)
-    if (*Str == Ch)
-      return true;
+  if (Ch == 0)
+    return false;
 
-  return false;
+  return strchr(Str, Ch) != NULL;
 }
 
 /* Aca deberiamos usar isalpha, no? Creo que isalpha no funciona bien
