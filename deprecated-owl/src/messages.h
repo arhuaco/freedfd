@@ -187,7 +187,8 @@
   #define TXT_RUNNING_OBJECT_WHILE "WH"
   #define TXT_RUNNING_OBJECT_BEGIN "Begin"
   #define TXT_RUNNING_OBJECT_END "End"
-  #define TXT_RUNNING_OBJECT_BLOCK_END "Close"
+  #define TXT_RUNNING_OBJECT_FOR_BLOCK_END "Close (For)"
+  #define TXT_RUNNING_OBJECT_WHILE_BLOCK_END "Close (While)"
   #define TXT_RUNNING_OBJECT_RETURN "Return"
 
   /* Dialog boxes */
@@ -431,7 +432,8 @@
   #define TXT_RUNNING_OBJECT_WHILE "MQ"
   #define TXT_RUNNING_OBJECT_BEGIN "Inicio"
   #define TXT_RUNNING_OBJECT_END "Fin"
-  #define TXT_RUNNING_OBJECT_BLOCK_END "Cierre"
+  #define TXT_RUNNING_OBJECT_FOR_BLOCK_END "Fin (Para)"
+  #define TXT_RUNNING_OBJECT_WHILE_BLOCK_END "Fin (MQ)"
   #define TXT_RUNNING_OBJECT_RETURN "Retornar"
 
   /* Cuadros de diálogo */
@@ -667,7 +669,8 @@
   #define TXT_RUNNING_OBJECT_WHILE "En"
   #define TXT_RUNNING_OBJECT_BEGIN "Começar"
   #define TXT_RUNNING_OBJECT_END "Fim"
-  #define TXT_RUNNING_OBJECT_BLOCK_END "Fechar"
+  #define TXT_RUNNING_OBJECT_FOR_BLOCK_END "Fechar (Para)"
+  #define TXT_RUNNING_OBJECT_WHILE_BLOCK_END "Fechar (Repetição &En.)"
   #define TXT_RUNNING_OBJECT_RETURN "Voltar"
 
   /* Cuadros de diálogo */
