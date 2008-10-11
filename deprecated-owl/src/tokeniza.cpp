@@ -151,14 +151,15 @@
  // Funcion que recibe para revisar errores de sintaxis y formar
  // la lista de Token con la que se trabajara.
  Token *GetListaToken( char *Expresion ){
-
+   char el_delimitador = '"';
 	int p,q,Caso;
 	Token *Inicio= 0, *Ultimo;
 	for( p= 0 ;  EstaEn(Expresion[p]," ") ; ++p );
 	while ( Expresion[p]!='\0' ){
 	  if( EsDigito( Expresion[p] ) )         Caso= 1;
 	  else if( EsLetra( Expresion[p] ) )     Caso= 2;
-	  else if( Expresion[p]=='\'' )          Caso= 3;
+	  else if( Expresion[p]=='\'') { el_delimitador = '\''; Caso= 3000; }
+     else if( Expresion[p]=='"') { el_delimitador = '"'; Caso= 3001; }
 	  else if( Expresion[p]=='.' )           Caso= 4;
 	  else if( Expresion[p]=='(' )           Caso= 5;
 	  else if( Expresion[p]==')' )           Caso= 6;
@@ -277,8 +278,12 @@
 			break;
 		 }
 
-		 case 3:{       // Comilla simple
-			for( ; Expresion[p] && Expresion[p] != '\''; ++p );
+       /* Funciona con comillas simples y dobles */
+
+		 case 3000:
+       case 3001:
+       {
+			for( ; Expresion[p] && Expresion[p] != el_delimitador; ++p );
 			if( Expresion[p]== '\0' ){
 			  Buzon.SetIdentificadorAsociado( &Expresion[q+1] );
 			  Buzon.Error( CADENA_INDETERMINADA );

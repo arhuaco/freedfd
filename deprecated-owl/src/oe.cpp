@@ -2157,8 +2157,8 @@
 	DibujarFlecha( cx, cy-Estado.DistanciaPuntos-1 );
 
 	DibujarLineaEnlace(ActualX, ActualY);
-	TSize Tamanyo= Graficador->GetTextExtent(TXT_RUNNING_OBJECT_BLOCK_END, strlen(TXT_RUNNING_OBJECT_BLOCK_END));
-	Graficador->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_BLOCK_END);
+	TSize Tamanyo= Graficador->GetTextExtent(TXT_RUNNING_OBJECT_FOR_BLOCK_END, strlen(TXT_RUNNING_OBJECT_FOR_BLOCK_END));
+	Graficador->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_FOR_BLOCK_END);
 
  }
 
@@ -2184,8 +2184,8 @@
 	DibujarFlechaImp( cx, cy-Estado.DistanciaPuntos-1 );
 
 	DibujarLineaEnlaceImp(ActualX, ActualY);
-	TSize Tamanyo= Impresor->GetTextExtent(TXT_RUNNING_OBJECT_BLOCK_END, strlen(TXT_RUNNING_OBJECT_BLOCK_END));
-	Impresor->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_BLOCK_END);
+	TSize Tamanyo= Impresor->GetTextExtent(TXT_RUNNING_OBJECT_FOR_BLOCK_END, strlen(TXT_RUNNING_OBJECT_FOR_BLOCK_END));
+	Impresor->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_FOR_BLOCK_END);
 
  }
 
@@ -2238,8 +2238,8 @@
 	  Graficador->SelectObject( *LapizSolido );
 	DibujarFlecha( cx, cy-Estado.DistanciaPuntos-1 );
 	DibujarLineaEnlace(ActualX, ActualY);
-	TSize Tamanyo= Graficador->GetTextExtent(TXT_RUNNING_OBJECT_BLOCK_END, strlen(TXT_RUNNING_OBJECT_BLOCK_END));
-	Graficador->TextOut(cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_BLOCK_END);
+	TSize Tamanyo= Graficador->GetTextExtent(TXT_RUNNING_OBJECT_WHILE_BLOCK_END, strlen(TXT_RUNNING_OBJECT_WHILE_BLOCK_END));
+	Graficador->TextOut(cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_WHILE_BLOCK_END);
 
  }
 
@@ -2263,8 +2263,8 @@
 						  cx+2*Estado.DistanciaPuntos,cy-Estado.DistanciaPuntos	);
 	DibujarFlechaImp( cx, cy-Estado.DistanciaPuntos-1 );
 	DibujarLineaEnlaceImp(ActualX, ActualY);
-	TSize Tamanyo= Impresor->GetTextExtent(TXT_RUNNING_OBJECT_BLOCK_END, strlen(TXT_RUNNING_OBJECT_BLOCK_END) );
-	Impresor->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_BLOCK_END);
+	TSize Tamanyo= Impresor->GetTextExtent(TXT_RUNNING_OBJECT_WHILE_BLOCK_END, strlen(TXT_RUNNING_OBJECT_WHILE_BLOCK_END) );
+	Impresor->TextOut( cx-Tamanyo.cx/2, cy-Tamanyo.cy/2, TXT_RUNNING_OBJECT_WHILE_BLOCK_END);
 
  }
 
