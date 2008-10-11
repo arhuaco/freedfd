@@ -1,5 +1,8 @@
 Últimos cambios:
 
+FreeDFD (1.1)
+  * Se aceptan comillas dobles - Sugerencia de Carlos Ballesteros.
+  * Cambiado mensaje del cierre de ciclos (Para y MQ) - Sugerencia de Carlos Ballesteros.
 FreeDFD (1.1-RC7)
   * Texto de la barra de estado ahora está traducido.
   * Barra de estado con fuentes más grandes.
