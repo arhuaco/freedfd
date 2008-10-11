@@ -670,7 +670,7 @@
   #define TXT_RUNNING_OBJECT_BEGIN "Começar"
   #define TXT_RUNNING_OBJECT_END "Fim"
   #define TXT_RUNNING_OBJECT_FOR_BLOCK_END "Fechar (Para)"
-  #define TXT_RUNNING_OBJECT_WHILE_BLOCK_END "Fechar (Repetição &En.)"
+  #define TXT_RUNNING_OBJECT_WHILE_BLOCK_END "Fechar (Rep.)"
   #define TXT_RUNNING_OBJECT_RETURN "Voltar"
 
   /* Cuadros de diálogo */
