@@ -187,8 +187,8 @@
   #define TXT_RUNNING_OBJECT_WHILE "WH"
   #define TXT_RUNNING_OBJECT_BEGIN "Begin"
   #define TXT_RUNNING_OBJECT_END "End"
-  #define TXT_RUNNING_OBJECT_FOR_BLOCK_END "Close (For)"
-  #define TXT_RUNNING_OBJECT_WHILE_BLOCK_END "Close (While)"
+  #define TXT_RUNNING_OBJECT_FOR_BLOCK_END "End (For)"
+  #define TXT_RUNNING_OBJECT_WHILE_BLOCK_END "End (While)"
   #define TXT_RUNNING_OBJECT_RETURN "Return"
 
   /* Dialog boxes */
