@@ -80,7 +80,7 @@
   #define TXT_CM_EDICIONINSERTAROBJETO "Insertar Objeto\tIns"
   #define TXT_CM_EDICIONEDITAR "E&ditar Objeto...\tEnter"
   #define TXT_CM_SELECCIONACURSORMENU "&Cursor"
-  #define TXT_CM_OBJETOASIGNACIONMENU "&Asignacion"
+  #define TXT_CM_OBJETOASIGNACIONMENU "&Assignment"
   #define TXT_CM_OBJETOMIENTRASMENU "Ciclo &mientras"
   #define TXT_CM_OBJETOPARAMENU "Ciclo &para"
   #define TXT_CM_OBJETODECISIONMENU "&Decision"
