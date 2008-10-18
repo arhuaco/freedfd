@@ -3,6 +3,7 @@
 use strict;
 
 # This program is slow but very handy.
+# Optimize when needed.
 
 open MSG, '<messages.h';
 

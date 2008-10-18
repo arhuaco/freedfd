@@ -159,7 +159,7 @@ COMMANDS MENU
  POPUP "&Object"
  {
               MENUITEM "&Cursor", CM_SELECCIONACURSORMENU
-              MENUITEM "&Assignation", CM_OBJETOASIGNACIONMENU
+              MENUITEM "&Assignment", CM_OBJETOASIGNACIONMENU
               MENUITEM "W&hile loop", CM_OBJETOMIENTRASMENU
               MENUITEM "&For loop", CM_OBJETOPARAMENU
               MENUITEM "&Conditional", CM_OBJETODECISIONMENU
