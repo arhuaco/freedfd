@@ -197,11 +197,12 @@ GetListaToken (const char *Expresion)
           {                     //Numero
             bool HuboPunto = false;
             for (; EsDigito (Expresion[p]) || Expresion[p] == '.'; ++p)
-              if (Expresion[p] == '.')
+              if (Expresion[p] == '.') {
                 if (HuboPunto)
                   break;
                 else
                   HuboPunto = true;
+              }
             char *Nuevo = Copiar (&Expresion[q], p - q);
             if (Buzon.GetHuboError ())
               {
