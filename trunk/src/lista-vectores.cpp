@@ -84,25 +84,19 @@ ListaVectores::EvaluaActualesIndices ()
 }
 
 
-void
-ListaVectores::AlmacenaVector (const char *orig)
+/* We do touch orig. */
+void ListaVectores::AlmacenaVectorInternal(char *Cadena)
 {
-
-  if (!orig)
-    {
-      Buzon.Error (ILEGAL_COMA_O_CADENA_VACIA);
-      return;
-    }
-
-  char * Cadena = dfd_strdup(orig);
   int Largo = strlen (Cadena);
+
   Insertar ();
 
   int ActualChar = 0;
   for (; ActualChar < Largo && (Cadena[ActualChar] != '('); ++ActualChar);
+  char tmp = Cadena[ActualChar];
   Cadena[ActualChar] = 0;
   Token *t = GetPostfijo (Cadena);
-  delete []Cadena;
+  Cadena[ActualChar] = tmp;
 
   if (Buzon.GetHuboError ())
     return;
@@ -119,8 +113,9 @@ ListaVectores::AlmacenaVector (const char *orig)
       Buzon.Error (SOLO_VARIABLES);
       return;
     }
-  SetNuevoIdentificador (t->GetDatoStr ());
+  SetNuevoIdentificador (t->GetDatoStr());
   delete t;
+
   if (Cadena[ActualChar] == 0)
     return;
 
@@ -178,6 +173,20 @@ ListaVectores::AlmacenaVector (const char *orig)
     // Solo se admiten campos variables; un error pa'l buzon
     Buzon.Error (SOLO_VARIABLES);
   return;
+}
+
+void
+ListaVectores::AlmacenaVector (const char *orig)
+{
+  if (!orig)
+    {
+      Buzon.Error (ILEGAL_COMA_O_CADENA_VACIA);
+      return;
+    }
+
+  char * Cadena = dfd_strdup(orig);
+  AlmacenaVectorInternal (Cadena);
+  delete []Cadena;
 }
 
 void ListaVectores::SetNuevoIdentificador (char *Identificador)

@@ -26,6 +26,8 @@ class ListaVectores
 
   int NItems;
 
+  void AlmacenaVectorInternal (char *);
+
 public:
 
   ListaVectores ()
@@ -77,7 +79,6 @@ public:
   void Vacear ();
 
   void AlmacenaVector (const char *);
-
 };
 
 #endif
