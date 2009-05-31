@@ -14,46 +14,24 @@
 /* Esto está complicado. Creo que se puede simplificar, y separar
  * completamente de la parte gráfica. */
 
-
+// FIXME: what do we do here? Don't allow it?
 OE_Asignacion::OE_Asignacion ()
 {
-  CadenasDestino.Reset ();
-  CadenasFuente.Reset ();
-  int Items = CadenasDestino.GetNItems ();
-  const char *AuxCd1, *AuxCf1;
-  char *AuxCd2, *AuxCf2;
-  for (int i = 0; i < Items; ++i)
-    {
-      AuxCd1 = CadenasDestino.Itera ();
-      AuxCf1 = CadenasFuente.Itera ();
-      AuxCd2 = new char[strlen (AuxCd1) + 1];
-      AuxCf2 = new char[strlen (AuxCf1) + 1];
-      strcpy (AuxCd2, AuxCd1);
-      strcpy (AuxCf2, AuxCf1);
-      CadenasDestino.Insertar (AuxCd2);
-      CadenasFuente.Insertar (AuxCf2);
-    }
-    void Ejecutar (); /* esta era virtual, definida en una clase base*/
+}
+
+OE_Asignacion::~OE_Asignacion ()
+{
+       delete []Destino;
+       delete []Fuente;
 }
 
 void
 OE_Asignacion::Preprocesar ()
 {
-  int n = CadenasDestino.GetNItems ();
-  if (n == 0)
-    {
-      Buzon.Error (ILEGAL_COMA_O_CADENA_VACIA);
-      return;
-    }
-  CadenasDestino.Reset ();
-  CadenasFuente.Reset ();
-
-  for (int i = 0; i < n; ++i)
-    {
-      Destinos.AlmacenaVector (CadenasDestino.Itera ());
+      Destinos.AlmacenaVector(Destino);
       if (Buzon.GetHuboError ())
         return;
-      Token *Temp = GetPostfijo (CadenasFuente.Itera ());
+      Token *Temp = GetPostfijo (Fuente);
       if (Buzon.GetHuboError ())
         return;
       if (!Temp)
@@ -62,7 +40,6 @@ OE_Asignacion::Preprocesar ()
           return;
         }
       Fuentes.Insertar (Temp);
-    }
 
   return;
 }
@@ -91,7 +68,6 @@ OE_Asignacion::Ejecutar ()
       Token *t = EvaluaPostfijo (Fuentes.Itera ());
       if (Buzon.GetHuboError ())
         return;
-
 
       PilaDeTablas.AsignarValor (Id, t, Vec, NInd);
       delete t;

@@ -10,34 +10,33 @@
 #include <lista-expresiones.h>
 #include <lista-vectores.h>
 #include <lista-cadenas.h>
+#include <dfd-wrappers.h>
 
 class OE_Asignacion
 {
   ListaVectores Destinos;
   ListaExpresiones Fuentes;
-  ListaCadenas CadenasDestino, CadenasFuente;
+  char *Destino, *Fuente;
 public:
   OE_Asignacion ();
+  ~OE_Asignacion ();
   void Preprocesar ();
   void Despreprocesar ();
   void Ejecutar();
 
   void NuevaAsignacion(const char *destino, const char *fuente)
   {
-    /* esto de tener listas de cadenas no se va a necesitar */
-    CadenasDestino.Vacear();
-    CadenasDestino.Insertar(destino);
-    CadenasFuente.Vacear();
-    CadenasFuente.Insertar(fuente);
+    Destino = dfd_strdup(destino);
+    Fuente = dfd_strdup(fuente);
   }
 
-  ListaCadenas & GetCadenasDestino ()
+  const char *GetDestino ()
   {
-    return CadenasDestino;
+    return Destino;
   }
-  ListaCadenas & GetCadenasFuente ()
+  const char * GetFuente ()
   {
-    return CadenasFuente;
+    return Fuente;
   }
 };
 
