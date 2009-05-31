@@ -52,7 +52,7 @@ print_counters_if_needed()
     fprintf(stderr, "Ops. ContadorTabla == %d\n", ContadorTabla);
   if (ContadorNodoListaExpresiones)
     fprintf(stderr, "Ops. ContadorNodoListaExpresiones == %d\n", ContadorTabla);
-  if (ContadorNodoListaVectores)
+  if (ContadorNodoListaVectores != 1)
     fprintf(stderr, "Ops. ContadorNodoListaVectores == %d\n", ContadorNodoListaVectores);
 #if 0
   if (ContadorCajita || ContadorCampoVariable || ContadorVariable)

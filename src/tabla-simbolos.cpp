@@ -59,7 +59,7 @@ Tabla::~Tabla ()
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 Variable *
-Tabla::Crear (char *Id, Token * UnToken, Variable * Vengo,
+Tabla::Crear (const char *Id, Token * UnToken, Variable * Vengo,
               unsigned *Indices, int Dim)
 {
   Variable *NuevaVariable;
@@ -77,7 +77,7 @@ Tabla::Crear (char *Id, Token * UnToken, Variable * Vengo,
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 Variable *
-Tabla::Crear (char *Id, Variable * Vengo, bool FP)
+Tabla::Crear (const char *Id, Variable * Vengo, bool FP)
 {
   Variable *NuevaVariable;
   NuevaVariable = new Variable (Id, Vengo);
@@ -95,7 +95,7 @@ Tabla::Crear (char *Id, Variable * Vengo, bool FP)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 void
-Tabla::AsignarValor (char *Id, Token * UnToken, unsigned *Indices, int Dim)
+Tabla::AsignarValor (const char *Id, Token * UnToken, unsigned *Indices, int Dim)
 {
 
   Variable *Aux = Buscar (Id);

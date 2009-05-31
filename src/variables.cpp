@@ -19,12 +19,13 @@
 #include <errores.h>
 #include <variables.h>
 #include <entorno-ejecucion.h>
+#include <dfd-wrappers.h>
 
 #include <string.h>
 
 void
 CampoVariable::AsignarValor (Token * UnToken, unsigned *Indices,
-                             int Dim, char *Id)
+                             int Dim, const char *Id)
 {
 
   int ResultadoInsercion = 1;
@@ -104,7 +105,7 @@ CampoVariable::AsignarValor (Token * UnToken, unsigned *Indices,
 
 
 CampoVariable::CampoVariable (Token * UnToken, unsigned *Indices, int Dim,
-                              char *Id)
+                              const char *Id)
 {
   ContadorCampoVariable++;      //Depuracion
   Inicio = 0;
@@ -200,7 +201,7 @@ CampoVariable::~CampoVariable ()
     }
 }
 
-Variable::Variable (char *Id, Token * UnToken, Variable * Vengo,
+Variable::Variable (const char *Id, Token * UnToken, Variable * Vengo,
                     unsigned *Indices, int Dim)
 {
   ContadorVariable++;
@@ -224,11 +225,10 @@ Variable::Variable (char *Id, Token * UnToken, Variable * Vengo,
     PrimerPadre = VengoDe->PrimerPadre;
 }
 
-Variable::Variable (char *Id, Variable * Vengo)
+Variable::Variable (const char *Id, Variable * Vengo)
 {
   ContadorVariable++;
-  Identificador = new char[strlen (Id) + 1];
-  strcpy (Identificador, Id);
+  Identificador = dfd_strdup(Id);
   FU = false;
   FP = false;
   VengoDe = Vengo;
