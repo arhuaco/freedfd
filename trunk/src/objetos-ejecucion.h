@@ -8,7 +8,7 @@
  * completamente de la parte gráfica. */
 
 #include <lista-expresiones.h>
-#include <lista-vectores.h>
+#include <variable-o-vector.h>
 #include <lista-cadenas.h>
 #include <dfd-wrappers.h>
 
