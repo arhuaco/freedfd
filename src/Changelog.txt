@@ -4,6 +4,9 @@ FreeDfd 1.5.1:
  -- Nelson Castillo <arhuaco@freaks-unidos.net>, Fri Apr 18 2008
   Now we can compile this code using GCC. The Infix->postfix translation is working.
  -- Nelson Castillo <arhuaco@freaks-unidos.net>, Thu Apr 17 2008
+  Now we can assign values to vectors.
+ -- Nelson Castillo <arhuaco@freaks-unidos.net>, Sun May 21 2009
+
 
 FreeDFD (1.1-RC4)
 
