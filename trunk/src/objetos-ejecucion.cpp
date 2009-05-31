@@ -55,12 +55,12 @@ void
 OE_Asignacion::Ejecutar ()
 {
    Fuentes.Reset ();
-   Destinos.EvaluaActualesIndices ();
+   Destinos.EvaluaIndices ();
    if (Buzon.GetHuboError ())
       return;
-   const char *Id = Destinos.GetActualIdentificador ();
-   unsigned int *Vec = Destinos.GetActualVectorIndices ();
-   int NInd = Destinos.GetActualLista().GetNItems();
+   const char *Id = Destinos.GetIdentificador ();
+   unsigned int *Vec = Destinos.GetVectorIndices ();
+   int NInd = Destinos.GetLista().GetNItems();
    Token *t = EvaluaPostfijo (Fuentes.Itera ());
    if (Buzon.GetHuboError ())
      return;

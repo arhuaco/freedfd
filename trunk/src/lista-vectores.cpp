@@ -31,7 +31,7 @@ ListaVectores::Vacear ()
 
 
 void
-ListaVectores::EvaluaActualesIndices ()
+ListaVectores::EvaluaIndices ()
 {
   ListaExpresiones & L = Lista;
   L.Reset ();
