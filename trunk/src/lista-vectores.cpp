@@ -113,7 +113,9 @@ void ListaVectores::AlmacenaVectorInternal(char *Cadena)
       Buzon.Error (SOLO_VARIABLES);
       return;
     }
-  SetNuevoIdentificador (t->GetDatoStr());
+
+  Ultimo->Identificador = dfd_strdup(t->GetDatoStr());
+
   delete t;
 
   if (Cadena[ActualChar] == 0)
@@ -189,8 +191,3 @@ ListaVectores::AlmacenaVector (const char *orig)
   delete []Cadena;
 }
 
-void ListaVectores::SetNuevoIdentificador (char *Identificador)
-{
-  Ultimo->Identificador = new char[strlen (Identificador) + 1];
-  strcpy (Ultimo->Identificador, Identificador);
-}
