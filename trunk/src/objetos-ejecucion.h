@@ -14,7 +14,7 @@
 
 class OE_Asignacion
 {
-  ListaVectores Destinos;
+  VariableVector Destinos;
   ListaExpresiones Fuentes;
   char *Destino, *Fuente;
 public:

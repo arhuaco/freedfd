@@ -16,7 +16,7 @@
  */
 
 void
-ListaVectores::Vacear ()
+VariableVector::Vacear ()
 {
    if (Identificador) {
         delete[] Identificador;
@@ -31,7 +31,7 @@ ListaVectores::Vacear ()
 
 
 void
-ListaVectores::EvaluaIndices ()
+VariableVector::EvaluaIndices ()
 {
   ListaExpresiones & L = Lista;
   L.Reset ();
@@ -64,7 +64,7 @@ ListaVectores::EvaluaIndices ()
 
 
 /* We do touch orig. */
-void ListaVectores::AlmacenaVectorInternal(char *Cadena)
+void VariableVector::AlmacenaVectorInternal(char *Cadena)
 {
   int Largo = strlen (Cadena);
 
@@ -156,7 +156,7 @@ void ListaVectores::AlmacenaVectorInternal(char *Cadena)
 }
 
 void
-ListaVectores::AlmacenaVector (const char *orig)
+VariableVector::AlmacenaVector (const char *orig)
 {
   if (!orig)
     {
