@@ -28,14 +28,13 @@ public:
     Vacear();
   }
 
-  //FIXME: rename Actual borrandolo
-  const char *GetActualIdentificador ()  {   return Identificador;  }
+  const char *GetIdentificador ()  {   return Identificador;  }
 
-  unsigned int *GetActualVectorIndices ()  { return VectorIndices; }
+  unsigned int *GetVectorIndices ()  { return VectorIndices; }
 
-  ListaExpresiones & GetActualLista ()  { return Lista; }
+  ListaExpresiones & GetLista ()  { return Lista; }
 
-  void EvaluaActualesIndices ();
+  void EvaluaIndices ();
 
   void Vacear ();
 

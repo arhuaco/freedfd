@@ -181,7 +181,7 @@ main(int argc, char *argv[])
    * se hace acá. Creo */
   PilaDeTablas.Apilar(new Tabla); /* new symbol table */
   OE_Asignacion x;
-  x.NuevaAsignacion("y", "1"); /* No funciona con vectores */
+  x.NuevaAsignacion("y(1)", "1");
   x.Preprocesar();
   x.Ejecutar();
   x.Despreprocesar();
