@@ -1,5 +1,5 @@
 #include <dfd.h>
-#include <lista-vectores.h>
+#include <variable-o-vector.h>
 #include <token.h>
 #include <tokeniza.h>
 #include <errores.h>

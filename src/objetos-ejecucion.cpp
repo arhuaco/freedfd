@@ -1,7 +1,7 @@
 #include <dfd.h>
 #include <objetos-ejecucion.h>
 #include <lista-expresiones.h>
-#include <lista-vectores.h>
+#include <variable-o-vector.h>
 #include <errores.h>
 #include <token.h>
 #include <tokeniza.h>

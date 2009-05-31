@@ -21,7 +21,7 @@ SOURCES = main.cpp token.cpp errores.cpp operador.cpp \
           tokeniza.cpp variables.cpp tabla-simbolos.cpp \
           evaluacion.cpp funcion.cpp dfd-wrappers.cpp \
           entorno-ejecucion.cpp arreglos.cpp lista-expresiones.cpp \
-          lista-vectores.cpp lista-cadenas.cpp objetos-ejecucion.cpp
+          variable-o-vector.cpp lista-cadenas.cpp objetos-ejecucion.cpp
 OBJECTS := $(patsubst %.cpp,%.o,$(SOURCES))
 HEADERS := $(filter-out main.h,$(patsubst %.cpp,%.h,$(SOURCES))) 
 
