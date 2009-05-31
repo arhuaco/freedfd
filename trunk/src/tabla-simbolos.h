@@ -12,16 +12,16 @@ class Tabla
 public:
   Tabla ();
 
-  Variable *Crear (char *Id, Token * Untoken, Variable * Vengo,
+  Variable *Crear (const char *Id, Token * Untoken, Variable * Vengo,
                    unsigned *Indices, int Dim);
-  Variable *Crear (char *Id, Variable * Vengo, bool FP);
+  Variable *Crear (const char *Id, Variable * Vengo, bool FP);
   Variable *Buscar (const char *Id);
   Variable *GetInicio ()
   {
     return Inicio;
   }
   Token *Leer (const char *Id, unsigned *Indices, int Dim);
-  void AsignarValor (char *Id, Token * UnToken, unsigned *Indices, int Dim);
+  void AsignarValor (const char *Id, Token * UnToken, unsigned *Indices, int Dim);
   /*void SetRetorno (ObjetoEjecucion * R)
   {
     Retorno = R;

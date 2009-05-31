@@ -65,6 +65,7 @@ ListaExpresiones::Vacear ()
       delete Temp;
     }
   NItems = 0;
+  Inicio = NULL;
 }
 
 

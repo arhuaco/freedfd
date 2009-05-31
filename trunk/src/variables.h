@@ -30,9 +30,9 @@ class CampoVariable
   } *Inicio;
 
 public:
-  CampoVariable (Token * UnToken, unsigned *Indices, int Dim, char *Id);
+  CampoVariable (Token * UnToken, unsigned *Indices, int Dim, const char *Id);
   Token *Leer (unsigned *Indices, int Dim, char *Id);
-  void AsignarValor (Token * UnToken, unsigned *Indices, int Dim, char *Id);
+  void AsignarValor (Token * UnToken, unsigned *Indices, int Dim, const char *Id);
   ~CampoVariable ();
   TipoDato GetTipo ()
   {
@@ -54,9 +54,9 @@ class Variable
   Variable *Sig;
 
 public:
-    Variable (char *Id, Token * UnToken, Variable * Vengo, unsigned *Indices,
+    Variable (const char *Id, Token * UnToken, Variable * Vengo, unsigned *Indices,
               int Dim);
-    Variable (char *Id, Variable * Vengo);
+    Variable (const char *Id, Variable * Vengo);
   void AsignarValor (Token * UnToken, unsigned *Indices, int Dim);
   Token *Leer (unsigned *Indices, int Dim);
 

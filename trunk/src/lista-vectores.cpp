@@ -16,50 +16,29 @@
  */
 
 void
-ListaVectores::Insertar ()
-{
-  Nodo *Nuevo = new Nodo;
-  Nuevo->Sig = 0;
-  Nuevo->VectorIndices = 0;
-  Nuevo->Identificador = 0;
-  if (!Inicio)
-    Inicio = Nuevo;
-  else
-    Ultimo->Sig = Nuevo;
-  Ultimo = Nuevo;
-  Iterador = Inicio;
-  ++NItems;
-}
-
-
-void
 ListaVectores::Vacear ()
 {
-  while (Inicio)
-    {
-      Nodo *Temp = Inicio;
-      Inicio = Inicio->Sig;
-      if (Temp->Identificador)
-        delete[]Temp->Identificador;
-      if (Temp->VectorIndices)
-        delete[]Temp->VectorIndices;
-      Temp->Lista.Vacear ();
-      delete Temp;
-    }
-  NItems = 0;
+   if (Identificador) {
+        delete[] Identificador;
+        Identificador = NULL;
+   }
+    if (VectorIndices) {
+        delete[] VectorIndices;
+        VectorIndices = NULL;
+   }
+   Lista.Vacear ();
 }
 
 
 void
 ListaVectores::EvaluaActualesIndices ()
 {
-  ListaExpresiones & L = Iterador->Lista;       // Ultimo->Lista;
+  ListaExpresiones & L = Lista;
   L.Reset ();
-  int NIndices = L.GetNItems ();
-  unsigned int *Vec = Iterador->VectorIndices;  //Ultimo->VectorIndices;
-  for (int j = 0; j < NIndices; ++j)
+  unsigned int *Vec = VectorIndices;
+  for (int j = 0; j < L.GetNItems(); ++j)
     {
-      Token *t = EvaluaPostfijo (L.Itera ());
+      Token *t = EvaluaPostfijo (L.Itera());
       if (Buzon.GetHuboError ())
         return;
       if (t->GetTipoDato () != REAL)
@@ -89,8 +68,6 @@ void ListaVectores::AlmacenaVectorInternal(char *Cadena)
 {
   int Largo = strlen (Cadena);
 
-  Insertar ();
-
   int ActualChar = 0;
   for (; ActualChar < Largo && (Cadena[ActualChar] != '('); ++ActualChar);
   char tmp = Cadena[ActualChar];
@@ -100,6 +77,7 @@ void ListaVectores::AlmacenaVectorInternal(char *Cadena)
 
   if (Buzon.GetHuboError ())
     return;
+
   if (!t)
     {
       //Uso ilegal de la coma o cadena vacia; un error pa'l buzon
@@ -114,7 +92,7 @@ void ListaVectores::AlmacenaVectorInternal(char *Cadena)
       return;
     }
 
-  Ultimo->Identificador = dfd_strdup(t->GetDatoStr());
+  Identificador = dfd_strdup(t->GetDatoStr());
 
   delete t;
 
@@ -151,7 +129,7 @@ void ListaVectores::AlmacenaVectorInternal(char *Cadena)
               Buzon.Error (ILEGAL_COMA_O_CADENA_VACIA);
               return;
             }
-          GetNuevaLista ().Insertar (t);
+          Lista.Insertar (t);
         }
     }
   if (Parent)
@@ -160,14 +138,14 @@ void ListaVectores::AlmacenaVectorInternal(char *Cadena)
       Buzon.Error (ABIERTO_PARENTESIS_NO_CERRADO);
       return;
     }
-  int n = GetNuevaLista ().GetNItems ();
+  int n = Lista.GetNItems ();
   if (!n)
     {
       //No hay indices entre los parentesis; un error pa'l buzon
       Buzon.Error (NO_INDICES);
       return;
     }
-  Ultimo->VectorIndices = new unsigned int[n];
+  VectorIndices = new unsigned int[n];
   if (ActualChar >= Largo)
     return;
   t = GetPostfijo (Cadena + ActualChar);

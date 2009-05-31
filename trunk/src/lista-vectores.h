@@ -8,23 +8,9 @@
 
 class ListaVectores
 {
-  struct Nodo
-  {
-    Nodo ()
-    {
-      ContadorNodoListaVectores++;
-    }
-     ~Nodo ()
-    {
-      ContadorNodoListaVectores--;
-    }
-    char *Identificador;
-    ListaExpresiones Lista;
-    unsigned int *VectorIndices;
-    Nodo *Sig;
-  } *Inicio, *Iterador, *Ultimo;
-
-  int NItems;
+  char *Identificador;
+  ListaExpresiones Lista;
+  unsigned int *VectorIndices;
 
   void AlmacenaVectorInternal (char *);
 
@@ -32,47 +18,24 @@ public:
 
   ListaVectores ()
   {
-    Inicio = 0;
-    NItems = 0;
+    ContadorNodoListaVectores++;
+    Identificador = 0;
+    VectorIndices = 0;
   }
-  int GetNItems ()
+   ~ListaVectores ()
   {
-    return NItems;
+    ContadorNodoListaVectores--;
+    Vacear();
   }
 
-  char *GetActualIdentificador ()
-  {
-    return Iterador->Identificador;
-  }
+  //FIXME: rename Actual borrandolo
+  const char *GetActualIdentificador ()  {   return Identificador;  }
 
-  unsigned int *GetActualVectorIndices ()
-  {
-    return Iterador->VectorIndices;
-  }
+  unsigned int *GetActualVectorIndices ()  { return VectorIndices; }
 
-  ListaExpresiones & GetActualLista ()
-  {
-    return Iterador->Lista;
-  }
-
-  ListaExpresiones & GetNuevaLista ()
-  {
-    return Ultimo->Lista;
-  }
+  ListaExpresiones & GetActualLista ()  { return Lista; }
 
   void EvaluaActualesIndices ();
-
-  void Reset ()
-  {
-    Iterador = Inicio;
-  }
-
-  void Itera ()
-  {
-    Iterador = Iterador->Sig;
-  }
-
-  void Insertar ();
 
   void Vacear ();
 

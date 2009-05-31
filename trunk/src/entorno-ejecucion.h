@@ -39,7 +39,7 @@ public:
 
   Variable *Buscar (const char *Id);
 
-  void AsignarValor (char *Id, Token * UnToken, unsigned *Indices, int Dim)
+  void AsignarValor (const char *Id, Token * UnToken, unsigned *Indices, int Dim)
   {
 
     Tope->AsignarValor (Id, UnToken, Indices, Dim);

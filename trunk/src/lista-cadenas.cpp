@@ -83,4 +83,5 @@ ListaCadenas::Vacear ()
       delete Aux;
     }
   NItems = 0;
+  Inicio = 0;
 }
