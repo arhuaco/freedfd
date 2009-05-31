@@ -31,7 +31,7 @@ int ContadorVariable = 0;
 int ContadorToken = 0;
 int ContadorTabla = 0;
 int ContadorNodoListaExpresiones = 0;
-int ContadorNodoListaVectores = 0;
+int ContadorVariableVector = 0;
 
 
 EstadoPrograma Estado;
@@ -52,8 +52,8 @@ print_counters_if_needed()
     fprintf(stderr, "Ops. ContadorTabla == %d\n", ContadorTabla);
   if (ContadorNodoListaExpresiones)
     fprintf(stderr, "Ops. ContadorNodoListaExpresiones == %d\n", ContadorTabla);
-  if (ContadorNodoListaVectores != 1)
-    fprintf(stderr, "Ops. ContadorNodoListaVectores == %d\n", ContadorNodoListaVectores);
+  if (ContadorVariableVector != 1)
+    fprintf(stderr, "Ops. ContadorVariableVector == %d\n", ContadorVariableVector);
 #if 0
   if (ContadorCajita || ContadorCampoVariable || ContadorVariable)
   {
@@ -159,7 +159,7 @@ make_tests(void)
   postfix_test("'hola'", "hola");
   postfix_test("'hola' + ' mundo'", "hola mundo");
   // caso 2
-  postfix_test("y + 2.2", "3.2");
+  postfix_test("y(1) + 2.2", "3.2");
   // caso 4
   postfix_test("(2 + 3) * 2", "10");
   postfix_test("(7 - 2) * 2", "10");
