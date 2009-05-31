@@ -62,8 +62,6 @@ public:
 
   void EvaluaActualesIndices ();
 
-  void SetNuevoIdentificador (char *Identificador);
-
   void Reset ()
   {
     Iterador = Inicio;
