@@ -9,7 +9,6 @@
 
 #include <lista-expresiones.h>
 #include <variable-o-vector.h>
-#include <lista-cadenas.h>
 #include <dfd-wrappers.h>
 
 class OE_Asignacion
