@@ -1,6 +1,5 @@
 #include <dfd.h>
 #include <objetos-ejecucion.h>
-#include <lista-expresiones.h>
 #include <variable-o-vector.h>
 #include <errores.h>
 #include <token.h>
@@ -12,12 +11,17 @@
 
 OE_Asignacion::OE_Asignacion ()
 {
+    Fuentes = NULL;
 }
 
 OE_Asignacion::~OE_Asignacion ()
 {
        delete []Destino;
        delete []Fuente;
+       if (Fuentes) {
+           LiberarListaToken(Fuentes);
+           Fuentes = NULL;
+       }
 }
 
 void
@@ -34,7 +38,8 @@ OE_Asignacion::Preprocesar ()
           Buzon.Error (ILEGAL_COMA_O_CADENA_VACIA);
           return;
         }
-      Fuentes.Insertar (Temp);
+
+      Fuentes = Temp;
 
   return;
 }
@@ -43,20 +48,20 @@ void
 OE_Asignacion::Despreprocesar ()
 {
   Destinos.Vacear ();
-  Fuentes.Vacear ();
+  LiberarListaToken(Fuentes);
+  Fuentes = NULL;
 }
 
 void
 OE_Asignacion::Ejecutar ()
 {
-   Fuentes.Reset ();
    Destinos.EvaluaIndices ();
    if (Buzon.GetHuboError ())
       return;
    const char *Id = Destinos.GetIdentificador ();
    unsigned int *Vec = Destinos.GetVectorIndices ();
    int NInd = Destinos.GetLista().GetNItems();
-   Token *t = EvaluaPostfijo (Fuentes.Itera ());
+   Token *t = EvaluaPostfijo (Fuentes);
    if (Buzon.GetHuboError ())
      return;
 

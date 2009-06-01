@@ -7,15 +7,15 @@
 /* Esto está complicado. Creo que se puede simplificar, y separar
  * completamente de la parte gráfica. */
 
-#include <lista-expresiones.h>
 #include <variable-o-vector.h>
 #include <dfd-wrappers.h>
 
 class OE_Asignacion
 {
   VariableVector Destinos;
-  ListaExpresiones Fuentes;
+  Token * Fuentes;
   char *Destino, *Fuente;
+
 public:
   OE_Asignacion ();
   ~OE_Asignacion ();
