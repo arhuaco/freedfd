@@ -11,10 +11,6 @@
 #include <math.h>
 
 
-/* Este código no parece tan necesario. Uno debería meter la
- * asignación en la evaluación de expresiones.
- */
-
 void
 VariableVector::Vacear ()
 {

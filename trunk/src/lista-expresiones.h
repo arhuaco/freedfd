@@ -3,6 +3,11 @@
 
 #include <token.h>
 
+/*
+ * Esta clase no sólo implementa una lista. Hay lógica.
+ * El nombre puede confundir.
+ */
+
 class ListaExpresiones
 {
 
