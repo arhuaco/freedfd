@@ -7,14 +7,9 @@
 #include <tokeniza.h>
 #include <evaluacion.h>
 #include <entorno-ejecucion.h>
-#include <lista-cadenas.h> // Usamos STL?
 
 #include <string.h>
 
-/* Esto está complicado. Creo que se puede simplificar, y separar
- * completamente de la parte gráfica. */
-
-// FIXME: what do we do here? Don't allow it?
 OE_Asignacion::OE_Asignacion ()
 {
 }
