@@ -36,9 +36,7 @@ OE_Asignacion::Preprocesar ()
           Buzon.Error (ILEGAL_COMA_O_CADENA_VACIA);
           return;
         }
-
       Fuentes = Temp;
-
   return;
 }
 

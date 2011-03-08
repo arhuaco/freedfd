@@ -1,12 +1,6 @@
 #ifndef __OBJETOS__EJECUCION__H__
 #define __OBJETOS__EJECUCION__H__
 
-/* Dejemos este código acá temporalmente, para poder
- * hacer el REPL. No sabemos si lo vamos a usar. */
-
-/* Esto está complicado. Creo que se puede simplificar, y separar
- * completamente de la parte gráfica. */
-
 #include <variable-o-vector.h>
 #include <dfd-wrappers.h>
 
