@@ -25,6 +25,9 @@ public:
 
   void NuevaAsignacion(const char *destino, const char *fuente)
   {
+    delete [] Destino;
+    delete [] Fuente;
+    LiberarListaToken(Fuentes);
     Destino = dfd_strdup(destino);
     Fuente = dfd_strdup(fuente);
   }

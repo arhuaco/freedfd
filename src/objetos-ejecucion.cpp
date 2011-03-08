@@ -11,17 +11,15 @@
 
 OE_Asignacion::OE_Asignacion ()
 {
-    Fuentes = NULL;
+  Fuentes = NULL;
+  Destino = Fuente = NULL;
 }
 
 OE_Asignacion::~OE_Asignacion ()
 {
-       delete []Destino;
-       delete []Fuente;
-       if (Fuentes) {
-           LiberarListaToken(Fuentes);
-           Fuentes = NULL;
-       }
+  delete []Destino;
+  delete []Fuente;
+  LiberarListaToken(Fuentes);
 }
 
 void

@@ -92,7 +92,7 @@ postfix_test(const char *theexp, const char *result)
         }
         else
           fprintf(stderr, "Test OK:");
-        fprintf(stderr, "EvaluaPostfijo(%s) returnex '%s' and we expected '%s'\n", theexp, r, result);
+        fprintf(stderr, "EvaluaPostfijo(%s) returned '%s' and we expected '%s'\n", theexp, r, result);
       }
       else
         fprintf(stderr, __FILE__":%d EvaluaPostfijo returned NULL\n", __LINE__);
