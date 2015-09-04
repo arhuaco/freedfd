@@ -30,18 +30,21 @@
 #include <string.h>
 #include <stdlib.h>
 
+// This should be done in a better way.
+// Checking the floating point flags before an operation and after it.
+#define MAX_VALID_FLOAT  1.7E+308
+
 static bool
 FueraDeRango (Token * UnToken)
 {
-
   long double Valor = fabsl (UnToken->GetDatoReal ());
-  if (fabsl (Valor) > 1e2000L)
+  if (fabsl (Valor) > MAX_VALID_FLOAT)
     {
       Buzon.Error (DESBORDAMIENTO);
       delete UnToken;
       return true;
     }
-  if (fabsl (Valor) < 1e-2000L && Valor != 0.0L)
+  if (fabsl (Valor) < MAX_VALID_FLOAT && Valor != 0.0L)
     {
       Buzon.Error (DESBORDAMIENTO_NEGATIVO);
       delete UnToken;
