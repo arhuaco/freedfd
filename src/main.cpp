@@ -80,7 +80,7 @@ postfix_test(const char *theexp, const char *result)
 
       if (Buzon.GetHuboError())
       {
-        fprintf(stderr, "Error en ejecuciÛn: %s\n", Buzon.GetErrorInfo());
+        fprintf(stderr, "Error en ejecuci√≥n: %s\n", Buzon.GetErrorInfo());
         Buzon.Vacear();
       }
       else if (Res)
@@ -132,7 +132,7 @@ postfix_print(const char *line)
 
       if (Buzon.GetHuboError())
       {
-        fprintf(stderr, "Error en ejecuciÛn: %s\n", Buzon.GetErrorInfo());
+        fprintf(stderr, "Error en ejecuci√≥n: %s\n", Buzon.GetErrorInfo());
         Buzon.Vacear();
       }
       else if (Res)
@@ -177,8 +177,8 @@ main(int argc, char *argv[])
   fprintf(stderr, "%s %s " __DATE__ "\n\n", program_name, program_version);
   fflush(stderr);
 
-  /* Una asignaciÛn, esto se va a dejar de usar asÌ como
-   * se hace ac·. Creo */
+  /* Una asignaci√≥n, esto se va a dejar de usar as√≠ como
+   * se hace ac√°. Creo */
   PilaDeTablas.Apilar(new Tabla); /* new symbol table */
   OE_Asignacion x;
   x.NuevaAsignacion("y(1)", "1");
