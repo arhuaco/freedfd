@@ -1,10 +1,10 @@
 /*
-    FreeDFD: Editor e intÈrprete de diagramas de flujo.
+    FreeDFD: Editor e int√©rprete de diagramas de flujo.
     Copyright (C) 1997-2006
 
     Nelson Castillo Izquierdo <arhuaco@freaks-unidos.net>
     Eduardo Daza Castillo <eduardodazacastillo@gmail.com>
-    Fabi·n C·rdenas Varela <f_cardenas@yahoo.com>
+    Fabi√°n C√°rdenas Varela <f_cardenas@yahoo.com>
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -35,12 +35,12 @@
 // En la primera pasada del analizador de expresiones de obtiene una lista de Tokens
 // en Infijo a partir de una cadena de caracteres.
 // Se revisan errores en la cadena. Algunas de estas revisiones no son necesarias,
-// ya que el error serÌa atrapado en la segunda pasada.
+// ya que el error ser√≠a atrapado en la segunda pasada.
 
 
-/* Nota: Esta funciÛn parece duplicar lo que hace strchr, pero no lo hace.
- * El cÛdigo que est· hace llamados a EstaEn, usando Ch == NULL. Cambiar
- * la funciÛn por strchr por todos lados implicarÌa hacer cambios en la
+/* Nota: Esta funci√≥n parece duplicar lo que hace strchr, pero no lo hace.
+ * El c√≥digo que est√° hace llamados a EstaEn, usando Ch == NULL. Cambiar
+ * la funci√≥n por strchr por todos lados implicar√≠a hacer cambios en la
  * manera como se hace el preprocesamiento */
 
 bool
@@ -60,7 +60,7 @@ EsLetra (char Caracter)
 {
   Caracter = (char) toupper (Caracter);
   return (Caracter >= 'A' && Caracter <= 'Z')
-    || EstaEn (Caracter, "Á«„‚ÍıÙ√¬ ’‘Ò—¸·ÈÌÛ˙¡…Õ”⁄‡¿");
+    || EstaEn (Caracter, "√ß√á√£√¢√™√µ√¥√É√Ç√ä√ï√î√±√ë√º√°√©√≠√≥√∫√Å√â√ç√ì√ö√†√Ä");
 }
 
 /* Aca podemos usar isdigit de ctype */
@@ -76,7 +76,7 @@ EsEspacio (char Caracter)
   return Caracter == ' ';
 }
 
- // Rutina que de acuerdo a sus parametros crea un Token y lo aÒade a la
+ // Rutina que de acuerdo a sus parametros crea un Token y lo a√±ade a la
  // lista controlada con *Inicio y *Ultimo, los dos primeros parametros.
 
 void
@@ -224,7 +224,7 @@ GetListaToken (const char *Expresion)
                 return 0;
               }
 
-            /* TODO: Atof no es long double, antes estaba _atold, que convertÌa a long double */
+            /* TODO: Atof no es long double, antes estaba _atold, que convert√≠a a long double */
             Insertar (&Inicio, &Ultimo, (long double) atof (Nuevo),
                       OPERANDO, CONSTANTE);
 
@@ -622,7 +622,7 @@ GetListaToken (const char *Expresion)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-// PreprocesarExpresiÛn : Esta funciÛn realiza una segunda pasada sobre
+// PreprocesarExpresi√≥n : Esta funci√≥n realiza una segunda pasada sobre
 // la lista de Token's para encontrar errores que no fueron detectados en
 // la primera etapa, incluir el operador de acceso de arrays y cambiar
 // el alcance de los operadores mixtos ( +, - )
@@ -861,7 +861,7 @@ PreprocesarExpresion (Token * Expresion)
       Actual = Actual->GetSig ();
     }
 
-  //AquÌ se comprueba el correcto uso de la coma (,)
+  //Aqu√≠ se comprueba el correcto uso de la coma (,)
   int Tope = 0;
   bool *PilaParentesis = new bool[NumeroDeParentesisAbiertos + 2];
   PilaParentesis[0] = false;
@@ -895,7 +895,7 @@ PreprocesarExpresion (Token * Expresion)
   return;
 }
 
-// InsertarDeUltimo : Esta funciÛn inserta un nodo al final de una lista
+// InsertarDeUltimo : Esta funci√≥n inserta un nodo al final de una lista
 // simplemente ligada.
 // Al comenzar a insertar Inicio debe valer 0 y Ultimo tambien.
 
@@ -912,8 +912,8 @@ InsertarDeUltimo (Token * Nuevo, Token ** Inicio, Token ** Ultimo)
 
 
 
-// InfijoAPostfijo : Esta funciÛn convierte una lista de Token's
-// organizados en Infijo a su correspondiente notaciÛn PostFijo
+// InfijoAPostfijo : Esta funci√≥n convierte una lista de Token's
+// organizados en Infijo a su correspondiente notaci√≥n PostFijo
 
 Token *
 InfijoAPostfijo (Token * InicioInfijo)
