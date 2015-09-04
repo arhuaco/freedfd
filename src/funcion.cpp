@@ -1260,7 +1260,7 @@ Substring (Token ** Pila, int NArgumentos)
   int NAux = 0;
   char *Aux = new char[Largo + 1];
 
-  for (register int Cont = Inicio - 1;
+  for (int Cont = Inicio - 1;
        (Cont < Inicio + Hasta - 1) && (Cont < Largo); ++Cont)
     Aux[NAux++] = Cadena[Cont];
   Aux[NAux] = 0;
