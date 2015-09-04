@@ -171,9 +171,6 @@ make_tests(void)
 int
 main(int argc, char *argv[])
 {
-  const char *prompt = ">>> ";
-
-
   fprintf(stderr, "%s %s " __DATE__ "\n\n", program_name, program_version);
   fflush(stderr);
 
@@ -192,18 +189,18 @@ main(int argc, char *argv[])
   while(1)
   {
     char *line;
-    line = readline(prompt);
+    line = readline(">>> ");
     if (!line)
       break;
     postfix_print(line);
     free(line);
   }
 #else
-  printf(prompt);
+  printf(">>> ");
   while(std::cin.getline(buffer, BUF_SIZE))
   {
     postfix_print(buffer);
-    printf(prompt);
+    printf(">>> ");
   }
 #endif
 
