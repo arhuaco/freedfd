@@ -3,40 +3,46 @@
 
 #include <tabla-simbolos.h>
 #include <token.h>
+#include <vector>
+
+/* Using a bit of new c++ to make things simpler. */
 
 class PilaDeTablas {
-  Tabla *Tope;
+  std::vector <Tabla *> pila_;
 
  public:
-  PilaDeTablas() { Tope = 0; }
-  void Apilar(Tabla *UnaTabla) {
-    UnaTabla->SetSig(Tope);
-    Tope = UnaTabla;
+  void Apilar(Tabla *tabla) {
+    pila_.push_back(tabla);
   }
+
   void Desapilar() {
-    Tabla *Aux;
-    Aux = Tope;
-    Tope = Tope->GetSig();
-    delete Aux;
+    delete pila_.back();
+    pila_.pop_back();
+  }
+
+  Tabla * GetTablaActual() {
+      return pila_.back();
   }
 
   Variable *Crear(char *Id, Token *UnToken, Variable *Vengo, unsigned *Indices,
                   int Dim) {
-    return Tope->Crear(Id, UnToken, Vengo, Indices, Dim);
+    return GetTablaActual()->Crear(Id, UnToken, Vengo, Indices, Dim);
   }
+
   Variable *Crear(char *Id, Variable *Vengo, bool FP) {
-    return Tope->Crear(Id, Vengo, FP);
+    return GetTablaActual()->Crear(Id, Vengo, FP);
   }
 
   Variable *Buscar(const char *Id);
 
   void AsignarValor(const char *Id, Token *UnToken, unsigned *Indices,
                     int Dim) {
-    Tope->AsignarValor(Id, UnToken, Indices, Dim);
+    GetTablaActual()->AsignarValor(Id, UnToken, Indices, Dim);
     return;
   }
-  Tabla *GetTope() { return Tope; }
+
   Token *Leer(const char *Id, unsigned *Indices, int Dim);
+
   void ActualizarVariables(Variable *);
   void Vacear();
 };

@@ -11,7 +11,7 @@ Tabla::Tabla() {
 Variable *Tabla::Buscar(const char *Id) {
   /* TODO: hacer que sea más rápido con hashing */
   for (Variable *var: simbolos_) {
-      if (!strcasecmp(Id, var->GetIdentificador()) {
+      if (!strcasecmp(Id, var->GetIdentificador())) {
           return var;
       }
   }

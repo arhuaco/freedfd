@@ -2,6 +2,7 @@
 #include <tokeniza.h>
 #include <errores.h>
 #include <evaluacion.h>
+#include <entorno-ejecucion.h>
 
 /* Counters that help us check we don't have (obvious) memory leaks */
 int ContadorCajita = 0;
@@ -16,6 +17,7 @@ const char *program_name = "FreeDFD";
 const char *program_version = "1.5.1";
 
 BuzonDeErrores Buzon;
+PilaDeTablas Entorno;
 
 /*
     Token * Post = GetPostfijo (theexp);
@@ -55,6 +57,6 @@ main(int argc, char *argv[])
   //x.NuevaAsignacion("y(1)", "1");
   //x.Preprocesar();
   //x.Ejecutar();
-  //x.Despreprocesar();
-  return EXIT_SUCCESS;
+  //x.Despreprocesar()
+  return 0;
 }

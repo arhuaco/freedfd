@@ -93,7 +93,7 @@ AccesoArreglo (Token ** Pila, int Dim)
       return;
     }
 
-  Token *TokenRetorno = PilaDeTablas.Leer (YoRecorro->GetDatoStr (),
+  Token *TokenRetorno = Entorno.Leer (YoRecorro->GetDatoStr (),
                                            Indices, Dim);
   for (int i = 0; i < Dim; ++i)
     BorrarTokenSiEsVariable (TokenIndice[i]);

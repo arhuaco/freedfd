@@ -61,8 +61,6 @@ enum TipoError {
 };
 
 /* shared symbols */
-class BuzonDeErrores;
-extern BuzonDeErrores Buzon;
 extern int ContadorCajita;
 extern int ContadorCampoVariable;
 extern int ContadorVariable;
@@ -70,8 +68,10 @@ extern int ContadorToken;
 extern int ContadorTabla;
 extern int ContadorNodoListaExpresiones;
 extern int ContadorVariableVector;
-
-/* True by default. */
-extern bool AngulosEnGrados;
+extern bool AngulosEnGrados; // True by default.
+class BuzonDeErrores;
+extern BuzonDeErrores Buzon;
+class PilaDeTablas;
+extern PilaDeTablas Entorno;
 
 #endif

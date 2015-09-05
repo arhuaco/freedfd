@@ -61,7 +61,7 @@ OE_Asignacion::Ejecutar ()
    if (Buzon.GetHuboError ())
      return;
 
-   PilaDeTablas.AsignarValor (Id, t, Vec, NInd);
+   Entorno.AsignarValor (Id, t, Vec, NInd);
    delete t;
 
     //if (Buzon.GetHuboError ())

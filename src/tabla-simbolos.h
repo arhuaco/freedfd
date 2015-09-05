@@ -17,6 +17,23 @@ class Tabla {
   Variable *Buscar(const char *Id);
   Token *Leer(const char *Id, unsigned *Indices, int Dim);
   void AsignarValor(const char *Id, Token *UnToken, unsigned *Indices, int Dim);
+
+  // Usado para actualizar variables de un subprograma desde otra tabla.
+  // Retorna verdadero cuando se ha actualizado el primer padre.
+  bool ActualizarVariables(Variable *muestra, Variable *primera) {
+    for (Variable *var : simbolos_) {
+      if (var->GetPrimerPadre() == primera) {
+        var->SetFU(true);
+        var->SetCampo(muestra->GetCampo());
+        var->SetTipo(muestra->GetCampo()->GetTipo());
+      }
+      if (var == primera) {
+        return true;
+      }
+    }
+    return false;
+  }
+
   ~Tabla();
 };
 

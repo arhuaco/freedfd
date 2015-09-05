@@ -3,54 +3,41 @@
 #include <errores.h>
 
 void PilaDeTablas::Vacear() {
-  while (Tope) {
-    Tabla *Aux = Tope;
-    Tope = Tope->GetSig();
-    delete Aux;
+  while (pila_.size() > 0) {
+    Desapilar();
   }
 }
 
 Token *PilaDeTablas::Leer(const char *Id, unsigned *Indices, int Dim) {
-  if (!Tope) {
+  if (pila_.size() == 0) {
     Buzon.SetIdentificadorAsociado(Id);
     Buzon.Error(VARIABLE_NO_EXISTE);
     return 0;
   }
-  return Tope->Leer(Id, Indices, Dim);
+  return GetTablaActual()->Leer(Id, Indices, Dim);
 }
 
 Variable *PilaDeTablas::Buscar(const char *Id) {
-  if (!Tope) {
+  if (pila_.size() == 0) {
     Buzon.SetIdentificadorAsociado(Id);
     Buzon.Error(VARIABLE_NO_EXISTE);
     return 0;
   }
-  return Tope->Buscar(Id);
+  return GetTablaActual()->Buscar(Id);
 }
 
 void PilaDeTablas::ActualizarVariables(Variable *Muestra) {
   Variable *Primera = Muestra->GetPrimerPadre();
   bool HastaAqui = false;
-  for (Tabla *t = Tope; t && !HastaAqui; t = t->GetSig())
-    for (Variable *v = t->GetInicio(); v; v = v->GetSig()) {
-      if (v->GetPrimerPadre() == Primera) {
-        v->SetFU(true);
-        v->SetCampo(Muestra->GetCampo());
-        v->SetTipo(Muestra->GetCampo()->GetTipo());
-      }
-      if (v == Primera) {
-        HastaAqui = true;
-        break;
-      }
+  for (int idx = pila_.size() - 1; idx >= 0; --idx) {
+    if (pila_[idx]->ActualizarVariables(Muestra, Primera)) {
+      break; /* El primer padre ha sido actualizado. */
     }
-}
-
-void ActualizarVariables(Variable *Muestra) {
-  PilaDeTablas.ActualizarVariables(Muestra);
+  }
 }
 
 Token *EntornoEjecucion_BuscaSimbolo(const char *symbol) {
-  Token *Retorno = PilaDeTablas.Leer(symbol, 0, 0);
+  Token *Retorno = Entorno.Leer(symbol, 0, 0);
   if (Buzon.GetHuboError()) return 0;
   Retorno->SetTipoAlmacenamiento(VARIABLE);
   return Retorno;
