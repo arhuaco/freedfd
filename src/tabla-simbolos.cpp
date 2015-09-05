@@ -5,18 +5,17 @@
 #include <string.h>
 
 Tabla::Tabla() {
-  Inicio = 0;
   ContadorTabla++;
 }
 
 Variable *Tabla::Buscar(const char *Id) {
   /* TODO: hacer que sea más rápido con hashing */
-  Variable *Aux = Inicio;
-  while (Aux) {
-    if (!strcasecmp(Id, Aux->GetIdentificador())) break;
-    Aux = Aux->GetSig();
+  for (Variable *var: simbolos_) {
+      if (!strcasecmp(Id, var->GetIdentificador()) {
+          return var;
+      }
   }
-  return Aux;
+  return NULL;
 }
 
 Token *Tabla::Leer(const char *Id, unsigned *Indices, int Dim) {
@@ -31,12 +30,10 @@ Token *Tabla::Leer(const char *Id, unsigned *Indices, int Dim) {
 
 Tabla::~Tabla() {
   ContadorTabla--;
-  Variable *Aux;
-  while (Inicio) {
-    Aux = Inicio;
-    Inicio = Inicio->GetSig();
-    if ((Aux->GetFU()) && (!Aux->GetFP())) delete Aux->GetCampo();
-    delete Aux;
+  for (Variable *var: simbolos_) {
+    if ((var->GetFU()) && (!var->GetFP())) {
+        delete var->GetCampo();
+    }
   }
 }
 
@@ -48,8 +45,7 @@ Variable *Tabla::Crear(const char *Id, Token *UnToken, Variable *Vengo,
     delete NuevaVariable;
     return 0;
   }
-  NuevaVariable->SetSig(Inicio);
-  Inicio = NuevaVariable;
+  simbolos_.push_back(NuevaVariable);
   return NuevaVariable;
 }
 
@@ -61,8 +57,7 @@ Variable *Tabla::Crear(const char *Id, Variable *Vengo, bool FP) {
     delete NuevaVariable;
     return 0;
   }
-  NuevaVariable->SetSig(Inicio);
-  Inicio = NuevaVariable;
+  simbolos_.push_back(NuevaVariable);
   return NuevaVariable;
 }
 
@@ -75,4 +70,5 @@ void Tabla::AsignarValor(const char *Id, Token *UnToken, unsigned *Indices,
   else
     Aux->AsignarValor(UnToken, Indices, Dim);
 
-  return; }
+  return;
+}
