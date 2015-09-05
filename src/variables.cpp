@@ -21,7 +21,7 @@
 #include <entorno-ejecucion.h>
 #include <dfd-wrappers.h>
 
-#include <string.h>
+#include <algorithm>
 
 void
 CampoVariable::AsignarValor (Token * UnToken, unsigned *Indices,
@@ -205,8 +205,7 @@ Variable::Variable (const char *Id, Token * UnToken, Variable * Vengo,
                     unsigned *Indices, int Dim)
 {
   ContadorVariable++;
-  Identificador = new char[strlen (Id) + 1];
-  strcpy (Identificador, Id);
+  Identificador = dfd_strdup(Id);
   Campo = new CampoVariable (UnToken, Indices, Dim, Id);
   if (Buzon.GetHuboError () == true)
     {

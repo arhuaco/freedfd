@@ -14,6 +14,10 @@
     51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 */
 
+
+/* Global variable for the moment. */
+bool AngulosEnGrados = true;
+
 /*
  * Las siguientes son las funciones que llevan a cabo las operaciones
  * logicas, reales y de cadena entre datos en un DFD, y algunas funciones
@@ -144,7 +148,7 @@ Seno (Token ** Pila)
 
   long double ValorDominio = Operando->GetDatoReal ();
   BorrarTokenSiEsVariable (Operando);
-  ValorDominio = Estado.AngulosEnGrados ? ValorDominio * (M_PI / 180.0L) :
+  ValorDominio = AngulosEnGrados ? ValorDominio * (M_PI / 180.0L) :
     ValorDominio;
   long double ValorRetorno;
   if (fabsl (cosl (ValorDominio)) == 1.0L)
@@ -179,7 +183,7 @@ Coseno (Token ** Pila)
   long double ValorRetorno;
   long double ValorDominio = Operando->GetDatoReal ();
   BorrarTokenSiEsVariable (Operando);
-  ValorDominio = Estado.AngulosEnGrados ? ValorDominio * (M_PI / 180.0L) :
+  ValorDominio = AngulosEnGrados ? ValorDominio * (M_PI / 180.0L) :
     ValorDominio;
   if (fabsl (sinl (ValorDominio)) == 1.0L)
     ValorRetorno = 0.0L;
@@ -214,7 +218,7 @@ Tangente (Token ** Pila)
 
   long double ValorDominio = Operando->GetDatoReal ();
   BorrarTokenSiEsVariable (Operando);
-  ValorDominio = Estado.AngulosEnGrados ? ValorDominio * M_PI / 180.0L :
+  ValorDominio = AngulosEnGrados ? ValorDominio * M_PI / 180.0L :
     ValorDominio;
   long double ValorSeno = sinl (ValorDominio);
   long double ValorCoseno = cosl (ValorDominio);
@@ -350,7 +354,7 @@ ArcoSeno (Token ** Pila)
   long double ValorRetorno = asinl (ValorDominio);
   if (Buzon.GetHuboError ())
     return;
-  ValorRetorno = Estado.AngulosEnGrados ? ValorRetorno * (180.0L / M_PI) :
+  ValorRetorno = AngulosEnGrados ? ValorRetorno * (180.0L / M_PI) :
     ValorRetorno;
   Token *TokenRetorno = ConsigueToken (ValorRetorno);
   if (Buzon.GetHuboError ())
@@ -380,7 +384,7 @@ ArcoCoseno (Token ** Pila)
   long double ValorRetorno = acosl (ValorDominio);
   if (Buzon.GetHuboError ())
     return;
-  ValorRetorno = Estado.AngulosEnGrados ? ValorRetorno * (180.0L / M_PI) :
+  ValorRetorno = AngulosEnGrados ? ValorRetorno * (180.0L / M_PI) :
     ValorRetorno;
   Token *TokenRetorno = ConsigueToken (ValorRetorno);
   if (Buzon.GetHuboError ())
@@ -410,7 +414,7 @@ ArcoTangente (Token ** Pila)
   long double ValorRetorno = atanl (ValorDominio);
   if (Buzon.GetHuboError ())
     return;
-  ValorRetorno = Estado.AngulosEnGrados ? ValorRetorno * (180.0L / M_PI) :
+  ValorRetorno = AngulosEnGrados ? ValorRetorno * (180.0L / M_PI) :
     ValorRetorno;
   Token *TokenRetorno = ConsigueToken (ValorRetorno);
   if (Buzon.GetHuboError ())
