@@ -1,9 +1,9 @@
     FreeDFD: Flowchart editor and Interpreter
     Copyright (C) 1997-2008
 
-    Nelson Castillo Izquierdo <arhuaco@freaks-unidos.net>
+    Nelson Castillo Izquierdo <nelsoneci@gmail.com>
     Eduardo Daza Castillo <eduardodazacastillo@gmail.com>
-    Fabi·n C·rdenas Varela <f_cardenas@yahoo.com>
+    Fabi√°n C√°rdenas Varela <f_cardenas@yahoo.com>
 
     For the complete list of Authors and collaborators, please check
     http://freedfd.freaks-unidos.net.
